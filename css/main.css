@@ -45,3 +45,111 @@ q:before, q:after {
 blockquote, q {
 	quotes: "" "";
 }
+/**************************************************************\
+|**************************************************************|
+|*****************************MISC*****************************|
+|**************************************************************|
+\**************************************************************/
+body{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ed5e5e+0,af2230+100,af2230+101 */
+background: #ed5e5e; /* Old browsers */
+background: -moz-linear-gradient(top,  #ed5e5e 0%, #af2230 100%, #af2230 101%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ed5e5e 0%,#af2230 100%,#af2230 101%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ed5e5e 0%,#af2230 100%,#af2230 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed5e5e', endColorstr='#af2230',GradientType=0 ); /* IE6-9 */
+
+}
+.container{
+	display: grid;
+	grid-template-columns: 150px 1fr 1fr 150px;
+	grid-template-rows: 110px 100px 60px auto 20px;
+	grid-template-areas: 
+    "header header header header" 
+    ". prog prog ."
+    ". tabs . ."
+    "left main main right"
+    ". . . .";
+    min-height: 100vh;
+}
+
+/**************************************************************\
+|**************************************************************|
+|****************************HEADER****************************|
+|**************************************************************|
+\**************************************************************/
+header{
+	grid-area: header;
+}
+.progretion{
+	grid-area: prog;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+	align-items: center;
+}
+#meny.visabale{
+	display: block;
+}
+#meny{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 360px;
+	background: #2F2D51;
+}
+
+/**************************************************************\
+|**************************************************************|
+|*****************************MAIN*****************************|
+|**************************************************************|
+\**************************************************************/
+.tabs{
+	grid-area: tabs;
+	align-self: end;
+	/*Horizontal list*/
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 50px;
+}
+.tabs li{
+	padding: 5px 10px;
+}
+.tabs li:nth-child(1){
+	background: blue;
+}
+.tabs li:nth-child(2){
+	background: rgb(100,100,255);
+}
+.tabs li:nth-child(3){
+	background: rgb(150,150,255);
+}
+.tabs li:nth-child(4){
+	background: rgb(200,200,255);
+}
+.tabs li:nth-child(5){
+	background: rgb(250,250,255);
+}
+main{
+	grid-area: main;
+	background: blue;
+	min-height: 500px;
+}
+.aside{
+	align-self: center;
+	justify-self: center;
+	font-size: 100px;
+}
+.right-arrow{
+	grid-area: right;
+}
+.left-arrow{
+	grid-area: left;
+}
+
+/**************************************************************\
+|**************************************************************|
+|****************************ASIDES****************************|
+|**************************************************************|
+\**************************************************************/
