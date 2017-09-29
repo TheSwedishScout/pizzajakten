@@ -8,12 +8,14 @@
 	<meta charset="UTF-8">
 	<title>Pizza jakten</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://use.typekit.net/iau7beu.js"></script>
+	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
 <body>
 <div class="container">
 	<header>
-		<img id="burger" src="images/burger.png"/>
-		Loggo
+		<img id="burger" class="shadow" src="images/burger.png"/>
+		<img src="images/Logga.png" alt="Logga">
 
 	</header>
 	<div id="meny">
@@ -34,3 +36,9 @@
 		<li>steg 4</li>
 		<li>steg 5</li>
 	</ul>
+<aside class="right-arrow aside">
+	<img class="shadow" src="images/right-arrow.png"/>
+</aside>
+<aside class="left-arrow aside">
+	<img class="shadow" src="images/left-arrow.png"/>
+</aside>
