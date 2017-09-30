@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src="https://use.typekit.net/iau7beu.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+<?php
+	require 'function.php';
+?>
 </head>
 <body>
 <div class="container">
@@ -18,7 +21,7 @@
 		<img src="images/Logga.png" alt="Logga">
 
 	</header>
-	<div id="meny">
+	<div id="meny" class="shadow">
 		<img src="" alt="kundvangn">
 		<img src="" alt="Favoriter">
 		<img src="" alt="min sida">

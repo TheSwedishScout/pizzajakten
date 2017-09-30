@@ -11,7 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 	  if (!isClickInside && !meny) {
+	  	event.preventDefault();
 	    document.getElementById('meny').classList.remove("visabale");
+		document.removeEventListener('click', hide)
 	  }
 	};
 })
