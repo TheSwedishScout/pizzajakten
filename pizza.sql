@@ -1,20 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.5.1
--- http://www.phpmyadmin.net
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
 --
--- Värd: 127.0.0.1
--- Tid vid skapande: 02 okt 2017 kl 16:42
--- Serverversion: 5.7.11
--- PHP-version: 5.6.19
+-- Värd: localhost:8889
+-- Tid vid skapande: 03 okt 2017 kl 15:48
+-- Serverversion: 5.6.35
+-- PHP-version: 7.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Databas: `pizza`
@@ -423,7 +417,9 @@ INSERT INTO `ingredienseronpizza` (`id`, `ingrediens`, `pizza`) VALUES
 (295, 'rödlök', 49),
 (296, 'cayennepeppar', 49),
 (297, 'ruccola', 49),
-(298, 'champinjoner', 17);
+(298, 'champinjoner', 17),
+(299, 'tomat', 51),
+(300, 'Ost', 51);
 
 -- --------------------------------------------------------
 
@@ -458,7 +454,8 @@ CREATE TABLE `pizzerior` (
 --
 
 INSERT INTO `pizzerior` (`id`, `namn`, `hasGlutenFree`, `lng`, `lat`, `openinghouers`) VALUES
-(1, 'Biblos', 1, 57.793, 14.2759, '{mon:11-22, tis::11-22, ons:11-22, tor:11-22, fre:11-22, lör:11-22, sön:11-22}');
+(1, 'Biblos', 1, 57.793, 14.2759, '{mon:11-22, tis:11-22, ons:11-22, tor:11-22, fre:11-22, lör:11-22, sön:11-22}'),
+(2, 'Alcamo', 1, 57.7813, 14.1787, '{all:11-22}');
 
 -- --------------------------------------------------------
 
@@ -530,7 +527,8 @@ INSERT INTO `pizzorinpizzeria` (`id`, `name`, `pizzeria`, `pizzanr`, `pris`, `St
 (47, 'Havets Läckerheter', 1, 48, 110, 0, 0),
 (48, 'Bianco', 1, 49, 110, 0, 0),
 (49, 'Calabria', 1, 50, 110, 0, 0),
-(50, 'Dubbel Ciao Ciao', 1, 51, 110, 0, 0);
+(50, 'Dubbel Ciao Ciao', 1, 51, 110, 0, 0),
+(51, 'Margharita', 2, 1, 85, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -611,7 +609,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT för tabell `ingredienseronpizza`
 --
 ALTER TABLE `ingredienseronpizza`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=299;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=301;
 --
 -- AUTO_INCREMENT för tabell `orders`
 --
@@ -621,12 +619,12 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT för tabell `pizzerior`
 --
 ALTER TABLE `pizzerior`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT för tabell `pizzorinpizzeria`
 --
 ALTER TABLE `pizzorinpizzeria`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT för tabell `user`
 --
@@ -662,7 +660,3 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `pizzorinpizzeria`
   ADD CONSTRAINT `pizzorInPizzeria_fk0` FOREIGN KEY (`pizzeria`) REFERENCES `pizzerior` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
