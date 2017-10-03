@@ -189,7 +189,7 @@ main{
 }
 main.left{
 	grid-area: main1;
-	background: red;
+	background: rgb(83, 156, 236);
 	min-height: 500px;
 }
 main.right{
