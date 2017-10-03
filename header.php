@@ -33,11 +33,11 @@
 		<input type="search" placeholder="sök" name="">
 	</div>
 	<ul class="progretion">
-		<li>steg 1</li>
-		<li>steg 2</li>
-		<li>steg 3</li>
-		<li>steg 4</li>
-		<li>steg 5</li>
+		<li>ingredienser</li>
+		<li>location</li>
+		<li>kundkorg</li>
+		<li>kassa</li>
+		<li>Klart</li>
 	</ul>
 <aside class="right-arrow aside">
 	<img class="shadow" src="images/right-arrow.png"/>
