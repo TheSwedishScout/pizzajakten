@@ -58,7 +58,29 @@ if (isset($_POST['nyPizza'])) {
 	$pizza['ingredienser'] = array_map('test_input',array_map('trim',explode(",", test_input($_POST['ingredienser']))));
 	
 	$pizza['pris'] = (int)test_input($_POST['pris']);
-	var_dump($pizza);
+	
+	#kolla att pizzerian finns
+	$conn = connect_to_db();
+	$stmt = $conn->prepare("SELECT id FROM pizzerior where id = ? ");
+	$stmt->bind_param('i', $pizza['pizzeria']);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$errors = [];
+	if ($result['num_rows'] != 1) {
+		$errors[] = "pizzeria dose not exists!";
+	}
+	#lägg in pizzan till pizzerian
+
+	# kolla om ingredienserna finns 
+
+	# lägg till ingredienser som saknas till db
+
+	#koppla ingredienser till pizza
+
+
+	$conn->close();
+	
+	
 }
 ?>
 <main class="left">
