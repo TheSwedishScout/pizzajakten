@@ -3,11 +3,10 @@
 include 'header.php';
 
 if (isset($_POST['nyPizzeria'])) {
-	echo "hej";
 	$pizzeria = [];
 	$pizzeria['namn'] = test_input($_POST['pizzeria']);
-	$pizzeria['lng'] = test_input($_POST['lng']);
-	$pizzeria['lat'] = test_input($_POST['lat']);
+	$pizzeria['lng'] = (float)test_input($_POST['lng']);
+	$pizzeria['lat'] = (float)test_input($_POST['lat']);
 	if(isset($_POST['oppetalladagar'])){
 		/*{'mon':"hh-mm"}*/
 		$open = test_input($_POST['mondag-open']);
@@ -40,16 +39,30 @@ if (isset($_POST['nyPizzeria'])) {
 		$closeSon = test_input($_POST['sondag-close']);
 		$pizzeria['open'] = "{'mon':'{$open} - {$close}', 'tis':'{$openTis} - {$closeTis}', 'ons':'{$openOns} - {$closeOns}', 'tor':'{$openTor} - {$closeTor}', 'fre':'{$openFre} - {$closeFre}', 'lor':'{$openLor} - {$closeLor}', 'son':'{$openSon} - {$closeSon}'}";
 	}
-	$gluten = 0;
+	$pizzeria['gluten'] = 0;
 	if (isset($_POST['gluten'])) {
-		$gluten = 1;
+		$pizzeria['gluten'] = 1;
 	}
+	$conn = connect_to_db();
+	$stmt = $conn->prepare("INSERT INTO `pizzerior`(`id`, `namn`, `hasGlutenFree`, `lng`, `lat`, `openinghouers`) VALUES (NULL,?,?,?,?,?)");
+	$stmt->bind_param('sidds', $pizzeria['namn'], $pizzeria['gluten'], $pizzeria['lng'], $pizzeria['lat'], $pizzeria['open']);
+	$stmt->execute();
+	$conn->close();
+	//var_dump($pizzeria);
+}
+if (isset($_POST['nyPizza'])) {
+	$pizza = [];
+	$pizza['pizzeria'] = (int)test_input($_POST['pizzeria']);
+	$pizza['namn'] = test_input($_POST['namn']);
+	$pizza['pizzanr'] = (int)test_input($_POST['listnr']);
+	$pizza['ingredienser'] = array_map('test_input',array_map('trim',explode(",", test_input($_POST['ingredienser']))));
 	
-	var_dump($pizzeria);
+	$pizza['pris'] = (int)test_input($_POST['pris']);
+	var_dump($pizza);
 }
 ?>
 <main class="left">
-	<h1>Ny pizzeria</h1>
+	<h2>Ny pizzeria</h2>
 <form method="POST" action="">
 	<label for="pizzeria">namn*:</label>
 	<input type="text" required name="pizzeria"><br>
@@ -92,8 +105,39 @@ if (isset($_POST['nyPizzeria'])) {
 	<input type="submit" name="nyPizzeria">
 
 </form>
+<?php
+if (isset($_POST['nyPizzeria'])) {
+ printf("%d Row inserted.\n", $stmt->affected_rows); 
+}
+?>
 </main>
-<main class="right"></main>
+<main class="right">
+	<?php
+	$conn = connect_to_db();
+		$sql = "SELECT `id`, `namn` FROM `pizzerior` WHERE 1";
+		$result = $conn->query($sql);
+		$rows = $result->fetch_all(MYSQLI_ASSOC);
+		
+	?>
+	<h2>Ny pizza</h2>
+	<form method="POST">
+		pizzeria select get from db
+		<select name="pizzeria">
+			<?php
+				foreach ($rows as $row) {
+					echo "<option value='".$row['id']."'>{$row['namn']}</option>";
+				}
+			?>
+		</select><br>
+		namn: <input type="text" name="namn"><br>
+		pizza nr <input type="number" name="listnr"><br>
+		ingredienser <- komma separerad lista
+		<input type="text" name="ingredienser"><br>
+		pris nummer 
+		<input type="nummer" name="pris">
+		<input type="submit" name="nyPizza">
+	</form>
+</main>
 <script type="text/javascript" src="js/input.js"></script>
 <?php
 	include 'footer.php';
