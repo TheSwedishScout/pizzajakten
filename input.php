@@ -55,7 +55,7 @@ if (isset($_POST['nyPizza'])) {
 	$pizza['pizzeria'] = (int)test_input($_POST['pizzeria']);
 	$pizza['namn'] = test_input($_POST['namn']);
 	$pizza['pizzanr'] = (int)test_input($_POST['listnr']);
-	$pizza['ingredienser'] = array_map('test_input',array_map('trim',explode(",", test_input($_POST['ingredienser']))));
+	$pizza['ingredienser'] = array_map('ucwords',array_map('strtolower',array_map('test_input',array_map('trim',explode(",", test_input($_POST['ingredienser']))))));
 	
 	$pizza['pris'] = (int)test_input($_POST['pris']);
 	
@@ -66,19 +66,46 @@ if (isset($_POST['nyPizza'])) {
 	$stmt->execute();
 	$result = $stmt->get_result();
 	$errors = [];
-	if ($result['num_rows'] != 1) {
+	//var_dump($result->num_rows);
+	if ($result->num_rows != 1) {
 		$errors[] = "pizzeria dose not exists!";
 	}
-	#lägg in pizzan till pizzerian
-
 	# kolla om ingredienserna finns 
+	$ingredienser = "'".implode("', '", $pizza['ingredienser'])."'";
+	//$sql = "SELECT count(*) from ingredienser where ingredienser.namn in (?)";
+	$sql = "SELECT GROUP_CONCAT(namn) as ingredienser, count(*) as count from ingredienser where ingredienser.namn in ($ingredienser)";
+	$stmt = $conn->prepare($sql);
+	//$stmt->bind_param('s',$ingredienser);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	//var_dump($result);
+	$result = $result->fetch_array(MYSQLI_ASSOC);
+	//var_dump($result);
+	//echo(count($pizza['ingredienser']));
+	if($result['count'] != count($pizza['ingredienser'])){
+		$ingredienserInDB = array_map('ucwords',array_map('strtolower',explode(",", $result['ingredienser'])));
+		/*var_dump($ingredienserInDB);
+		var_dump($pizza['ingredienser']);*/
+		//ucwords(strtolower($bar))
+		$skilnad = array_diff($pizza['ingredienser'], $ingredienserInDB);
+		var_dump($skilnad);
+		//$errors[] = "tyvär men $result['ingredienser'] saknas i vår databas, var god och lägg till dem.";
+		# lägg till ingredienser som saknas till db
+	}
 
-	# lägg till ingredienser som saknas till db
+	#OM INGA FEL SÅ 
+
+	#lägg in pizzan till pizzerian
+	/*
+	$sql = "INSERT INTO `pizzorinpizzeria`(`id`, `name`, `pizzeria`, `pizzanr`, `pris`, `favorits`, `orders`) VALUES (NULL,?,?,?,?,0,0)";
+	$stmt = $conn->prepare("SELECT id FROM pizzerior where id = ? ");
+	$stmt->bind_param('siii',$pizza['namn'], $pizza['pizzeria'], $pizza['pizzanr'], $pizza['pris']);
+	$stmt->execute();
+	*/
+
 
 	#koppla ingredienser till pizza
 
-
-	$conn->close();
 	
 	
 }
@@ -153,11 +180,26 @@ if (isset($_POST['nyPizzeria'])) {
 		</select><br>
 		namn: <input type="text" name="namn"><br>
 		pizza nr <input type="number" name="listnr"><br>
-		ingredienser <- komma separerad lista
+		ingredienser
+		<ul>
+			<li>Ost</li>
+			<li>Tomatsås</li>
+		</ul>
 		<input type="text" name="ingredienser"><br>
 		pris nummer 
 		<input type="nummer" name="pris">
 		<input type="submit" name="nyPizza">
+	</form>
+	<form name="nyIngrediens">
+		<input type="text" placeholder="namn" name="namn">
+		<select>
+			<option>grönsak</option>
+			<option>kryda</option>
+			<option>krydda</option>
+			<option>kött</option>
+			<option>ost</option>
+			<option>övrigt</option>
+		</select>
 	</form>
 </main>
 <script type="text/javascript" src="js/input.js"></script>

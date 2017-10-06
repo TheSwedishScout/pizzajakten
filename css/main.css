@@ -57,7 +57,7 @@ background: -moz-linear-gradient(top,  #ed5e5e 0%, #af2230 100%, #af2230 101%); 
 background: -webkit-linear-gradient(top,  #ed5e5e 0%,#af2230 100%,#af2230 101%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  #ed5e5e 0%,#af2230 100%,#af2230 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed5e5e', endColorstr='#af2230',GradientType=0 ); /* IE6-9 */
-font-family: "bebas-neue";
+/*font-family: "bebas-neue";*/
 color: #fff;
 font-size: 1em;
 
