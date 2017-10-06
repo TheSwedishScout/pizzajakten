@@ -7,22 +7,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pizza jakten</title>
-<<<<<<< HEAD
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-=======
-	<link rel="stylesheet" type="text/css" href="./css/main.css">
->>>>>>> 68c1f85b5f304430c710cf1951f0685d98259ddc
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
 	<script src="https://use.typekit.net/iau7beu.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <?php
-	require 'function.php';
+	require '../function.php';
 ?>
 </head>
 <body>
 <div class="container">
 	<header>
-		<img id="burger" class="shadow" src="images/burger.png"/>
-		<img src="images/Logga.png" alt="Logga">
+		<img id="burger" class="shadow" src="../images/burger.png"/>
+		<img src="../images/Logga.png" alt="Logga">
 
 	</header>
 	<div id="meny" class="shadow">
@@ -44,8 +40,8 @@
 		<li>Klart</li>
 	</ul>
 <aside class="right-arrow aside">
-	<img class="shadow" src="images/right-arrow.png"/>
+	<img class="shadow" src="../images/right-arrow.png"/>
 </aside>
 <aside class="left-arrow aside">
-	<img class="shadow" src="images/left-arrow.png"/>
+	<img class="shadow" src="../images/left-arrow.png"/>
 </aside>
