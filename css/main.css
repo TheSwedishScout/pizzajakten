@@ -257,3 +257,21 @@ main.right{
 .left-arrow{
 	grid-area: left;
 }
+
+button {
+    background-color: #b5b5b5; /* Green */
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 11px 14px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: helvetica;
+    cursor: pointer;
+}
+
+button:active {
+  background-color: #8a8686;

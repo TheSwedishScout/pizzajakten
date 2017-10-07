@@ -13,7 +13,6 @@
 </div>
 <main class="left">
 	<h2>Sid  specifikt</h2>
-<div class="lista">
      <?php 
             $db = connect_to_db();
             $sql = "SELECT namn FROM ingredienser WHERE category='grönsak'";
@@ -22,7 +21,7 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-                    echo $row["namn"]. $row["category"]. "<br>";
+               ?> <button> <?php echo $row["namn"]. $row["category"]. "<br>";?> </button> <?php
                 }
             } 
             else {
@@ -30,7 +29,6 @@
             }
             $conn->close();
         ?>
-    </div>
 </main>
 <main class="right">
 	<h2>Sid  specifikt</h2>

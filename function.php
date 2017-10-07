@@ -23,7 +23,6 @@ function connect_to_db(){
 	if ($conn->connect_error) {
 
 		die("Connection failed: " . $conn->connect_error);
-
 	} 
 
 	$sql_main = "SET NAMES 'utf8'";
@@ -35,4 +34,6 @@ function connect_to_db(){
 	//sets utf-8 as CHARSET in mySQL§
 	return $conn;
 }
+
+
 ?>
