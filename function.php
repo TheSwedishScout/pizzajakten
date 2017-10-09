@@ -36,15 +36,15 @@ function connect_to_db(){
 	return $conn;
 }
 
-	function getIngredients($kategori='')
-	{
-		$conn = connect_to_db();
-		$stmt = $conn->prepare("SELECT namn FROM ingredienser WHERE category = ? ");
-		$stmt->bind_param('s', $kategori);
-		$stmt->execute();
-		$result = $stmt->get_result();
+function getIngredients($kategori='')
+{
+	$conn = connect_to_db();
+	$stmt = $conn->prepare("SELECT namn, category FROM ingredienser WHERE category = ? ");
+	$stmt->bind_param('s', $kategori);
+	$stmt->execute();
+	$result = $stmt->get_result();
 
-		$conn->close();
-		return $result;
-	}
+	$conn->close();
+	return $result;
+}
 ?>
