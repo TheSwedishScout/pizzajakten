@@ -16,10 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.removeEventListener('click', hide)
 	  }
 	};
-<<<<<<< HEAD
-=======
-	function ajax_request() {
-		
+	function ajax_request() {	
 	}
->>>>>>> 68c1f85b5f304430c710cf1951f0685d98259ddc
 })
