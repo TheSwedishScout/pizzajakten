@@ -7,11 +7,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pizza jakten</title>
-<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-=======
+
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
->>>>>>> 68c1f85b5f304430c710cf1951f0685d98259ddc
+
 	<script src="https://use.typekit.net/iau7beu.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <?php
