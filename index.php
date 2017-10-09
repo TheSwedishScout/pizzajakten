@@ -20,7 +20,7 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while($row = $result->fetch_assoc()) {
-               ?> <button> <?php echo $row["namn"]. $row["category"];?> </button> <?php
+               ?> <button> <?php echo $row["namn"];?> </button> <?php
                 }
             } 
             else {
