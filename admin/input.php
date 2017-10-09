@@ -185,7 +185,11 @@ if (isset($_POST['nyPizzeria'])) {
 			<li>Ost</li>
 			<li>Tomatsås</li>
 		</ul>
+<<<<<<< HEAD
 		<input type="text" id="ingredinesIn" name="ingredienser"><br>
+=======
+		<input type="text" name="ingredienser"><br>
+>>>>>>> fumktion för ingredienser
 		pris nummer 
 		<input type="nummer" name="pris">
 		<input type="submit" name="nyPizza">
@@ -203,7 +207,11 @@ if (isset($_POST['nyPizzeria'])) {
 		</select>
 	</form>
 </main>
+<<<<<<< HEAD
 <script type="text/javascript" src="js/input.js"></script>
+=======
+<script type="text/javascript" src="../js/input.js"></script>
+>>>>>>> fumktion för ingredienser
 <?php
 	include 'footer.php';
 ?>

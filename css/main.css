@@ -58,10 +58,17 @@ background: -webkit-linear-gradient(top,  #ed5e5e 0%,#af2230 100%,#af2230 101%);
 background: linear-gradient(to bottom,  #ed5e5e 0%,#af2230 100%,#af2230 101%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed5e5e', endColorstr='#af2230',GradientType=0 ); /* IE6-9 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 font-family: "bebas-neue";
 =======
 /*font-family: "bebas-neue";*/
 >>>>>>> 68c1f85b5f304430c710cf1951f0685d98259ddc
+=======
+
+font-family: "bebas-neue";
+/*font-family: "bebas-neue";*/
+
+>>>>>>> fumktion för ingredienser
 color: #fff;
 font-size: 1em;
 
@@ -105,13 +112,30 @@ header{
 	position: relative;
 	text-align: center;
 }
-header #burger{
-	position: absolute;
+
+#burger:active {
+    color: red;
+}
+
+#menuButton {
+    position: absolute;
 	left: 0;
 	top: 0;
     padding: 22px 32px;
     cursor: pointer;
+    z-index: 999;
 }
+
+#meny{
+	position: absolute;
+	left: -360px;
+	top: 0;
+	bottom: 0;
+	width: 360px;
+	background: #2F2D51;
+	z-index: 190;
+}
+
 .progretion{
 	grid-area: prog;
 	display: grid;
@@ -119,19 +143,7 @@ header #burger{
 	justify-items: center;
 	align-items: center;
 }
-#meny.visabale{
-	display: block;
-}
-#meny{
-	display: none;
-	position: absolute;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	width: 360px;
-	background: #2F2D51;
-	z-index: 190;
-}
+
 
 /**************************************************************\
 |**************************************************************|
@@ -259,7 +271,7 @@ main.right{
 }
 
 button {
-    background-color: #b5b5b5; /* Green */
+    background-color: #b5b5b5;
     border: none;
     border-radius: 25px;
     color: white;
@@ -275,3 +287,6 @@ button {
 
 button:active {
   background-color: #8a8686;
+}
+    
+    

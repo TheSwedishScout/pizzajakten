@@ -23,6 +23,7 @@ function connect_to_db(){
 	if ($conn->connect_error) {
 
 		die("Connection failed: " . $conn->connect_error);
+
 	} 
 
 	$sql_main = "SET NAMES 'utf8'";
@@ -35,5 +36,15 @@ function connect_to_db(){
 	return $conn;
 }
 
+	function getIngredients($kategori='')
+	{
+		$conn = connect_to_db();
+		$stmt = $conn->prepare("SELECT namn FROM ingredienser WHERE category = ? ");
+		$stmt->bind_param('s', $kategori);
+		$stmt->execute();
+		$result = $stmt->get_result();
 
+		$conn->close();
+		return $result;
+	}
 ?>
