@@ -4,12 +4,10 @@ document.addEventListener("DOMContentLoaded", function(){
         debugger
         for(var i = 0; i < options.length; i++){
             var btn = document.createElement("button");
-            var mainDiv = document.getElementsByClassName('left')[0]; // lägg i variabel
+            var mainDiv = document.getElementsByClassName('left')[0]; 
             
             btn.innerText=options[i].namn;
-            // variabelns namn.appendChild(BTN)
             mainDiv.appendChild(btn);
         }
     })
 })
- 

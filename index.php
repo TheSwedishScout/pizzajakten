@@ -13,7 +13,6 @@
 </div>
 <main class="left">
 	<h2>Sid  specifikt</h2>
-
 </main>
 <main class="right">
 	<h2>Sid  specifikt</h2>
