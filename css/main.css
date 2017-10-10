@@ -112,13 +112,13 @@ header{
     color: red;
 }
 
-#menuButton {
+#burger {
     position: absolute;
 	left: 0;
 	top: 0;
     padding: 22px 32px;
     cursor: pointer;
-    z-index: 999;
+    /*z-index: 999;*/
 }
 
 #meny{
@@ -129,8 +129,11 @@ header{
 	width: 360px;
 	background: #2F2D51;
 	z-index: 190;
+	transition: left 0.4s;
 }
-
+#meny.visabale{
+	left: 0px;
+}
 .progretion{
 	grid-area: prog;
 	display: grid;
