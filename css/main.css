@@ -71,8 +71,8 @@ font-size: 1em;
 .container{
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
-	grid-template-rows: 110px 100px 60px auto 20px;
-	grid-template-areas: 
+    grid-template-rows: 75px 160px 60px auto 20px;
+    grid-template-areas: 
     "header header header header" 
     ". prog prog ."
     ". tabs . ."
