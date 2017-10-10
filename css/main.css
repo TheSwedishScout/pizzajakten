@@ -258,6 +258,33 @@ main.right{
 }
 
 
+
+
+/*hamburger meny*/
+#meny {
+	padding-top: 100px;
+	padding-left: 20px;
+}
+
+#meny>nav {
+	margin-top: 70px;
+	margin-bottom: 40px; 
+}
+
+#meny>nav>h3 {
+	font-size: 35px;
+	padding-top: 15px;
+}
+
+input[type=search] {
+	width: 280px;
+	margin-top: 30px;
+	padding: 12px 20px;
+	border-radius: 18px;
+	box-sizing: border-box;
+}
+
+
 /**************************************************************\
 |**************************************************************|
 |****************************ASIDES****************************|
