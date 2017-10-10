@@ -33,7 +33,7 @@
 			<h3>Hitta din pizzeria</h3>
 			<h3>Pizzerior</h3>
 		</nav>
-		<input type="search" placeholder="sök" name="">
+		<input type="search" placeholder="Sök" name="">
 	</div>
 	<ul class="progretion">
 		<li><img src="images/pizza1.png"></li>
