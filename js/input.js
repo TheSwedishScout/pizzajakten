@@ -24,9 +24,4 @@ document.addEventListener('DOMContentLoaded', function(e) {
 				
 			}
 	}
-<<<<<<< HEAD
-
-=======
-	
->>>>>>> 68c1f85b5f304430c710cf1951f0685d98259ddc
 })
