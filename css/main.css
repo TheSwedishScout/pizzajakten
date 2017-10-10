@@ -121,9 +121,9 @@ header{
     z-index: 999;
 }
 
-#meny{
+#burger{
 	position: absolute;
-	left: -360px;
+
 	top: 0;
 	bottom: 0;
 	width: 360px;
