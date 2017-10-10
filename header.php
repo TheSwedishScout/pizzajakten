@@ -39,7 +39,7 @@
 		<li><img src="images/pizza1.png"></li>
 		<li><img src="images/pizza2.png"></li>
 		<li><img src="images/pizza3.png"></li>
-		<li>kassa</li>
+		<li><img src="images/pizza4.png"></li>
 		<li><img src="images/pizza5.png"></li>
 	</ul>
 <aside class="right-arrow aside">
