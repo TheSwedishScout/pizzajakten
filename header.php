@@ -36,11 +36,11 @@
 		<input type="search" placeholder="sök" name="">
 	</div>
 	<ul class="progretion">
-		<li>ingredienser</li>
-		<li>location</li>
-		<li>kundkorg</li>
+		<li><img src="images/pizza1.png"></li>
+		<li><img src="images/pizza2.png"></li>
+		<li><img src="images/pizza3.png"></li>
 		<li>kassa</li>
-		<li>Klart</li>
+		<li><img src="images/pizza5.png"></li>
 	</ul>
 <aside class="right-arrow aside">
 	<img class="shadow" src="images/right-arrow.png"/>
