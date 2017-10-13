@@ -43,7 +43,6 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             this.classList.add('active');
             GetCategory(this.innerText);
             var mainDiv = document.getElementsByClassName('left')[0];;
-            debugger
             mainDiv.style.background=this.style.background;
             
         });        
@@ -51,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
       
     
     
-    debugger;
+    
     //add event listerner 
 
     
