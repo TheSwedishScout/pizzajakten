@@ -17,7 +17,7 @@
 
 <!-- Filkarna -->
 <div class="tabs">
-	<a class="shadow <?php echo !isset($tab) || $tab == 'GRÖNSAKER' ? 'active' : null; ?>" href="?t=GRÖNSAKER">GRÖNSAKER</a>
+	<a class="shadow <?php echo !isset($tab) || $tab == 'GRÖNSAKER' ? 'active' : null; ?>" href="?t=GRÖNSAKER">grönsak</a>
 	<a class="shadow <?php echo isset($tab) && $tab == 'TOPPING' ? 'active' : null; ?>" href="?t=TOPPING">TOPPING</a>
 	<a class="shadow <?php echo isset($tab) && $tab == 'KÖTT' ? 'active' : null; ?>" href="?t=KÖTT">KÖTT</a>
 	<a class="shadow <?php echo isset($tab) && $tab == 'OSTER' ? 'active' : null; ?>" href="?t=OSTER">OSTER</a>
