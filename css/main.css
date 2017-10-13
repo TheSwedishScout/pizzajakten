@@ -78,7 +78,7 @@ font-size: 1em;
     ". tabs . ."
     "left main1 main2 right"
     ". . . .";
-    height: 100vh;
+    height: 100%;
 }
 /***********************Shadows************************/
 .shadow{
@@ -134,10 +134,10 @@ header{
 }
 
 
-
 #meny.visabale{
 	left: 0px;
 }
+
 .progretion{
 	grid-area: prog;
 	display: grid;
@@ -146,8 +146,25 @@ header{
 	align-items: center;
 }
 
-.progretion img{
-    width: 70%;
+.progretion a>img{
+    width: 90%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.progretion a>img:hover {
+	transition-timing-function: ease-in;
+	transition: filter 1s;
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+
+}
+
+.progretion .active img{
+	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+
+
 }
 
 
