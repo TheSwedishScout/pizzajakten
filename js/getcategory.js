@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
     function GetCategory(cat) { 
         ajax.get("assets/getcategory.php", {'category':cat}, function (data) { // hämtar data från asset... med en get parameter "category" 
             var options= JSON.parse(data); // skapar en array från json data
-            var mainDiv = document.getElementsByClassName('left')[0]; // skapar en länk till högra rutan
+            var mainDiv = document.getElementsByClassName('left')[0]; // skapar en länk till vänstra bakgrundsrutan
             mainDiv.innerHTML='';
             for(var i = 0; i < options.length; i++){ //loppar igenom alla ingredienser
                 var btn = document.createElement("button"); // skapar en knapp
@@ -15,8 +15,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 
                 //gör så att knappen är tryckbar och att den gör något
                 (btn.addEventListener('click',function(e){
-                    this.classList.toggle('activeButton') // aktiv knapp som är tryckt
-                    
+                    this.classList.toggle('activeButton') // aktiv knapp som är tryckt. går att "trycka av"
                     
                     var index = choosenIng.indexOf(this.innerText);
                     if (index > -1){
@@ -25,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                     }else{
                         choosenIng.push(this.innerText);
                     }
+                    //splice gör att det tas bort från arrayen
                     console.log(choosenIng);
                 }))
             }
@@ -48,16 +48,11 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             
         });        
     }
-      
-    
-    
     debugger;
-    //add event listerner 
-
-    
+        //add event listerner 
         //ta bort active classen från alla tabbar 
         //lägg till active på tabben man just klickade på
         // hämta ingredienserna som ska visas under den tabben
-        // byt bakgrunds färg på main
+        // byt bakgrundsfärg på main
 
 })
