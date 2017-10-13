@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                     }else{
                         choosenIng.push(this.innerText);
                     }
+                    GetPizza(choosenIng);
                     //splice gör att det tas bort från arrayen
                     console.log(choosenIng);
                 }))
@@ -47,13 +48,25 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             
         });        
     }
-
-    
         //add event listerner       
-    //add event listerner 
+        //add event listerner 
         //ta bort active classen från alla tabbar 
         //lägg till active på tabben man just klickade på
         // hämta ingredienserna som ska visas under den tabben
         // byt bakgrundsfärg på main
 
+    function GetPizza(choosenIng) { 
+        ajax.get("assets/getPizzas.php", {'ingredienser':choosenIng}, function (data) { // hämtar data från asset... med en get parameter 
+            
+      var result = JSON.parse(data);
+            debugger
+        })
+    }
+    
+    
 })
+
+
+
+
+
