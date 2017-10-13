@@ -19,7 +19,6 @@
 		    }
 		}
 		$conn->close();
-
 	?>
 </ul>
 
@@ -29,7 +28,20 @@
 	<h2>Sid  specifikt</h2>
 </main>
 <main class="right">
-	<h2>Sid  specifikt</h2>
+	<h2>Din bästa match:</h2>
+    
+    <ul class="resultat">
+        <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+         <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+        
+        
+    </ul>
 </main>
 <script src="js/getcategory.js"></script>
 <?php
