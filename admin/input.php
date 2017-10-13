@@ -169,7 +169,7 @@ if (isset($_POST['nyPizzeria'])) {
 		
 	?>
 	<h2>Ny pizza</h2>
-	<form method="POST">
+	<form method="POST" id="AddPizza">
 		pizzeria select get from db
 		<select name="pizzeria">
 			<?php
@@ -182,8 +182,6 @@ if (isset($_POST['nyPizzeria'])) {
 		pizza nr <input type="number" name="listnr"><br>
 		ingredienser
 		<ul id="list">
-			<li>Ost</li>
-			<li>Tomatsås</li>
 		</ul>
 		<input type="text" id="ingredinesIn" name="ingredienser"><br>
 		pris nummer

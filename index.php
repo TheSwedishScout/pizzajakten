@@ -17,25 +17,11 @@
 <!-- Main sidorna-->
 <main class="left">
 	<h2>Sid  specifikt</h2>
-         <?php 
-        
-            $result = getIngredients('Kött');
-
-            if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_assoc()) {
-               ?> <button> <?php echo $row["namn"];?> </button> <?php
-                }
-            } 
-            else {
-                echo "0 results";
-            }
-        ?>
 </main>
 <main class="right">
 	<h2>Sid  specifikt</h2>
 </main>
-
+<script src="js/getcategory.js"></script>
 <?php
 	include 'footer.php';
 ?>

@@ -121,6 +121,7 @@ header{
     /*z-index: 999;*/
 }
 
+
 #meny{
 	position: absolute;
 	left: -385px;
@@ -131,6 +132,9 @@ header{
 	z-index: 190;
 	transition: left 0.4s;
 }
+
+
+
 #meny.visabale{
 	left: 0px;
 }
