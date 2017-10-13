@@ -15,8 +15,8 @@
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <?php
 	require 'function.php';
-
-	$page = end(explode('/', $_SERVER['REQUEST_URI']));
+	$link = explode('/', $_SERVER['REQUEST_URI']);
+	$page = end($link);
 
 ?>
 </head>
