@@ -7,11 +7,11 @@
 
 
 
-<main class="left">
+<main class="left pizzerior">
 	<h2>Sid  specifikt</h2>
          <!-- Lista på pizzerior-->
 </main>
-<main class="right">
+<main class="right pizzerior">
 	<h2>Sid  specifikt</h2>
         <!--Karta på pizzerior med knappar för location, rating och price-->
 </main>
