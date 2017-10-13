@@ -3,6 +3,16 @@
 	if (isset($_GET['t'])){
 		$tab = test_input($_GET['t']);
 	}
+	//$conn = connect_to_db();
+	$conn = connect_to_db();
+				//$sql = "SELECT id, first_name, last_name FROM author";
+				/*$sql = "SELECT category FROM `ingredienser` GROUP BY category";
+				if ($result = $conn->query($sql)) {
+					while ($row = $result->fetch_assoc()) {
+						echo("<option value='".$row['id']."' >". $row['first_name']." ".$row['last_name']."</option>");
+				    }
+				}
+				$conn->close();*/
 ?>
 <div class="tabs">
 	<a class="shadow <?php echo !isset($tab) || $tab == 'GRÖNSAKER' ? 'active' : null; ?>" href="?t=GRÖNSAKER">GRÖNSAKER</a>
