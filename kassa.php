@@ -2,12 +2,12 @@
 	include 'header.php';
 	
 ?>
-<main class="left">
+<main class="left kassa">
 	<h2>Sid  specifikt</h2>
 		<!-- LISTA på beställning(samma som kundkorg)-->
          
 </main>
-<main class="right">
+<main class="right kassa">
 	<h2>Sid  specifikt</h2>
 
 		<form action="klar.php" method="POST">

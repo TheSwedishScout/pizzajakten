@@ -266,7 +266,7 @@ main{
 }
 main.left{
 	grid-area: main1;
-	background: rgb(83, 156, 236);
+	background: #5D9CEC;
 	
 }
 main::-webkit-scrollbar-track
@@ -297,8 +297,41 @@ main::-webkit-scrollbar-button {
 }
 main.right{
 	grid-area: main2;
-	background: rgb(81, 81, 229);
+	background: #4A89DC;
 	
+}
+
+
+/*ALLA SIDORS BAKRUNDSFÄRGER*/
+main.left.pizzerior {
+	background: #A0D468; 
+}
+main.right.pizzerior {
+	background: #8CC512; 
+}
+
+
+main.left.varukorg {
+	background: #AC92EC; 
+}
+main.right.varukorg {
+	background: #967ADC; 
+}
+
+
+main.left.kassa {
+	background: #FFCE54; 
+}
+main.right.kassa {
+	background: #F6BB42; 
+}
+
+
+main.left.klar {
+	background: #4FC1E9; 
+}
+main.right.klar {
+	background: #3BAFDA; 
 }
 
 
