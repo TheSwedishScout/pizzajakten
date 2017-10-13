@@ -7,6 +7,7 @@
 ?>
 
 <!-- Filkarna -->
+
 <ul class="tabs">
 	<?php
 		$conn = connect_to_db();
@@ -21,6 +22,7 @@
 
 	?>
 </ul>
+
 
 <!-- Main sidorna-->
 <main class="left">
