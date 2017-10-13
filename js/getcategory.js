@@ -43,13 +43,14 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             this.classList.add('active');
             GetCategory(this.innerText);
             var mainDiv = document.getElementsByClassName('left')[0];;
-            debugger
             mainDiv.style.background=this.style.background;
             
         });        
     }
-    debugger;
-        //add event listerner 
+
+    
+        //add event listerner       
+    //add event listerner 
         //ta bort active classen från alla tabbar 
         //lägg till active på tabben man just klickade på
         // hämta ingredienserna som ska visas under den tabben
