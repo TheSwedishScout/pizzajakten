@@ -123,7 +123,7 @@ header{
 
 #meny{
 	position: absolute;
-	left: -360px;
+	left: -385px;
 	top: 0;
 	bottom: 0;
 	width: 360px;
@@ -145,6 +145,32 @@ header{
 .progretion img{
     width: 70%;
 }
+
+
+/*hamburger meny*/
+#meny {
+	padding-top: 100px;
+	padding-left: 20px;
+}
+
+#meny>nav {
+	margin-top: 70px;
+	margin-bottom: 40px; 
+}
+
+#meny>nav>h3 {
+	font-size: 35px;
+	padding-top: 15px;
+}
+
+input[type=search] {
+	width: 280px;
+	margin-top: 30px;
+	padding: 12px 20px;
+	border-radius: 18px;
+	box-sizing: border-box;
+}
+
 
 /**************************************************************\
 |**************************************************************|
@@ -251,33 +277,6 @@ main.right{
 	grid-area: main2;
 	background: rgb(81, 81, 229);
 	
-}
-
-
-
-
-/*hamburger meny*/
-#meny {
-	padding-top: 100px;
-	padding-left: 20px;
-}
-
-#meny>nav {
-	margin-top: 70px;
-	margin-bottom: 40px; 
-}
-
-#meny>nav>h3 {
-	font-size: 35px;
-	padding-top: 15px;
-}
-
-input[type=search] {
-	width: 280px;
-	margin-top: 30px;
-	padding: 12px 20px;
-	border-radius: 18px;
-	box-sizing: border-box;
 }
 
 
