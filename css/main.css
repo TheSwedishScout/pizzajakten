@@ -223,6 +223,7 @@ header{
 #meny>nav>h3 {
 	font-size: 35px;
 	padding-top: 15px;
+	cursor: pointer;
 }
 
 input[type=search] {
@@ -462,32 +463,6 @@ button:active {
 	grid-template-columns: repeat(3, 1fr);
 }
 
-.helpText {
-    text-align: center;
-    position: absolute;
-    height: 70%;
-    width: 43%;
-    margin: -3% 0 0 -23%;
-    top: 31%;
-    left: 50%;
-    line-height: 22px;
-}
-
-.helpText p {
-    font-family: helvetica;
-    margin-top: 30px;
-}
-
-.helpText h1{   
-    font-size: -webkit-xxx-large;
-}
-
-/**************************************************************\
-|**************************************************************|
-|****************************KASSA****************************|
-|**************************************************************|
-\**************************************************************/
-
 
 
 /**************************************************************\
@@ -503,7 +478,6 @@ main.right.kassa {
 
 
 }
-
 
 /* FORM */
 
@@ -636,6 +610,56 @@ input::placeholder {
     line-height: 22px;
 }
 
+
+
+/**************************************************************\
+|**************************************************************|
+|*************************** HUR FUNKAR DET - HELP-sida *******|
+|**************************************************************|
+|**************************************************************|
+\**************************************************************/
+
+.helpText {
+    text-align: center;
+    position: absolute;
+    height: 70%;
+    width: 43%;
+    margin: -3% 0 0 -23%;
+    top: 26%;
+    left: 50%;
+    line-height: 22px;
+}
+
+.helpText p {
+    font-family: helvetica;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.helpText h1{   
+    font-size: -webkit-xxx-large;
+}
+
+#help-button {
+	background-color: #499348;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    padding: 11px 14px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: helvetica;
+    cursor: pointer;
+}
+
+#help-button:hover {
+	background-color: #6fbf57;
+	transition-timing-function: ease-in;
+	transition: 1s;
+}
 
 
 
