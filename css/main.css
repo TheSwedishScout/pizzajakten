@@ -203,7 +203,7 @@ input[type=search] {
 	align-self: end;
 	/*Horizontal list*/
 	display: grid;
-	grid-template-columns: repeat(5, 1fr 20px);
+	grid-template-columns: repeat(6, 1fr 20px);
 	grid-template-rows: 50px;
 	/*justify-items: stretch;*/
 }
@@ -252,6 +252,12 @@ input[type=search] {
 	grid-column: 8 /11;
 	grid-row:1;
 	z-index: 1;
+}
+.tabs li:nth-child(6){
+	background: rgb(78,0,10);
+	grid-column: 10 /13;
+	grid-row:1;
+	z-index: 0;
 }
 .tabs li.active{
 	border-radius: 23px 23px 0 0;
