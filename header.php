@@ -36,11 +36,11 @@
 
 <!-- Hamburgermenyns innehåll -->	
 	<div id="meny" class="shadow">
-		<img src="" alt="kundvangn">
-		<img src="" alt="Favoriter">
-		<img src="" alt="min sida">
+		<img src="images/cart.png" alt="kundvangn">
+		<img src="images/star.png" alt="Favoriter">
+		<img src="images/user.png" alt="min sida">
 		<nav>
-			<h3>Hur fungerar det?</h3>
+            <h3><a href="help.php">Hur fungerar det?</a></h3>
 			<h3>Hitta din pizzeria</h3>
 			<h3>Pizzerior</h3>
 		</nav>
