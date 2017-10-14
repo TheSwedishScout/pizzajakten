@@ -203,7 +203,7 @@ input[type=search] {
 	align-self: end;
 	/*Horizontal list*/
 	display: grid;
-	grid-template-columns: repeat(5, 1fr 20px);
+	grid-template-columns: repeat(6, 1fr 20px);
 	grid-template-rows: 50px;
 	/*justify-items: stretch;*/
 }
@@ -387,9 +387,17 @@ button:active {
     text-align: center;
     padding: 2%;
     display: inline-block;
+    background: green;
+    margin-bottom: 10px;
 }
 
 .resultatInner h3{
     font-family: helvetica;
+    font-size: small;
+}
+
+.resultatInner h4{
+    font-family: helvetica;
+    font-style: italic;
     font-size: small;
 }
