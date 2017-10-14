@@ -24,7 +24,6 @@
 </head>
 
 
-
 <!-- Hamburgermenyn -->
 <body>
 <div class="container">
@@ -32,6 +31,8 @@
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<img src="images/Logga.png" alt="Logga">
+        <img id="user" src="images/user.png">
+        <img id="cart" src="images/cart.png">
 	</header>
 
 <!-- Hamburgermenyns innehåll -->	

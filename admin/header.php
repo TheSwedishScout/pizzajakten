@@ -22,7 +22,7 @@
 
 	</header>
 	<div id="meny" class="shadow">
-		<img src="" alt="kundvangn">
+		<img src="images/cart.png" alt="kundvangn">
 		<img src="" alt="Favoriter">
 		<img src="" alt="min sida">
 		<nav>
