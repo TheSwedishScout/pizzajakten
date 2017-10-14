@@ -31,7 +31,7 @@
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<img src="images/Logga.png" alt="Logga">
-        <img id="user" src="images/user.png">
+        <a href="logIn.php"><img id="user" src="images/user.png"></a> 
         <img id="cart" src="images/cart.png">
 	</header>
 
@@ -39,7 +39,7 @@
 	<div id="meny" class="shadow">
 		<img src="images/cart.png" alt="kundvangn">
 		<img src="images/star.png" alt="Favoriter">
-		<img src="images/user.png" alt="min sida">
+        <a href="logIn.php"><img src="images/user.png" alt="min sida"></a>
 		<nav>
             <h3><a href="help.php">Hur fungerar det?</a></h3>
 			<h3>Hitta din pizzeria</h3>

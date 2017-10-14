@@ -57,9 +57,29 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
 
     function GetPizza(choosenIng) { 
         ajax.get("assets/getPizzas.php", {'ingredienser':choosenIng}, function (data) { // hämtar data från asset... med en get parameter 
-            
-      var result = JSON.parse(data);
-            debugger
+            var result = JSON.parse(data);
+            var ul = document.getElementsByClassName('resultat')[0];
+            ul.innerHTML = "";
+            for (var pizza of result ){
+                //Create and print a pizza object
+                var li = document.createElement("li");
+                li.classList.add("resultatInner");
+                var image = document.createElement("img");
+                image.src = "images/pizza6.png";
+                var h2 = document.createElement("h2");
+                h2.innerText = pizza.namn;
+                var h3 = document.createElement("h3");
+                var ingred = pizza.ingredienser.join(", ");
+                h3.innerText = ingred;
+                /*var image = document.createElement("h4");
+                image.innerText = "images/pizza6.png";
+                **/
+                li.appendChild(image);
+                li.appendChild(h2);
+                li.appendChild(h3);
+                ul.appendChild(li);
+
+            }
         })
     }
     
