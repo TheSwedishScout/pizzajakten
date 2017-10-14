@@ -2,144 +2,85 @@
 include("../function.php");
 include('../config.php');
 
-$pizzas = [];
-class pizza{
-	public $id;
-	public $name;
-	public $ingredientsID;
-	public $ingredients = [];
-	public $matcningar;
-	public $procent;
-	public $pizzerior;
-	
 
-	public function __construct($id,$name, $ingredients, $matcningar, $pizzerior){
-		$this->id = $id;
-		$this->name = $name;
-		$this->ingredientsID = $ingredients;
-		$this->matcningar = $matcningar;
-		$this->pizzerior = $pizzerior;
-	}
-	public function getNames($list){
-		$this->ingredients = $list;
-		$this->procent = ($this->matcningar/count($this->ingredients))*100;	
-	}
-	public function clean()
-	{
-		$this->ingredients = [];
-	}
-}
-$conn = connect_to_db();
+
 if(isset($_GET['ingredienser'])){
-	$inIngredienser = test_input($_GET['ingredienser']);
-	$inIngredienser = explode(",", $inIngredienser);
-	$antal = count($inIngredienser);
-	$inIngredienser = implode("' OR ingrediens = '", $inIngredienser);
-
-
-	//Bör ändrsas så man kan välja på ingredienaser först kan vara så att det blir en ny fil och denna är mer till att välja på mest popolära HAVING COUNT(pizza) >= 1
-	$sql = "SELECT pizza, COUNT(*) as antal FROM `ingredienseronpizza` WHERE ingrediens = '$inIngredienser' GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC";
-	$result = $conn->query($sql);
-
-	if ($result->num_rows > 0) {
-	    // output data of each row
-	    $pizzorToGet = [];
-	    $matchande_ingredienser = [];
-	    while($row = $result->fetch_assoc()) {
-	    	$pizzorToGet[] = $row['pizza'];
-	    	$matchande_ingredienser[$row['pizza']] = $row['antal'];
-	    	//$antalen = $row['antal'];
-	    	//var_dump( $antalen);
-	    }
-	    //echo $antal;
-	    $pizzorToGetId = implode(", ", $pizzorToGet);
-	    $pizzorToGet = implode(" OR id = ", $pizzorToGet);
-	    //var_dump($pizzorToGet);
-	    //WHERE `id` = $pizzorToGet
-		$sql1 = "SELECT * FROM `pizzorinpizzeria` WHERE `id` = $pizzorToGet ORDER BY FIELD(id, $pizzorToGetId) ASC";
-	}else{
-		$sql1 = "SELECT * FROM `pizzorinpizzeria`";
+	/**
+	* 
+	*/
+	class pizza
+	{	
+		public $ingredienser;
+		public $namn;
+		public $matcningar;
+		public $procent;
+		
+		public function __construct($namn, $ingredienser, $matcningar)
+		{
+			$this->namn = $namn;
+			$this->ingredienser = $ingredienser;
+			$this->matcningar = $matcningar;
+			$this->procent = ($this->matcningar/count($ingredienser))*100;
+		}
 	}
-}else{
-	$sql1 = "SELECT * FROM `pizzorinpizzeria`";
-}
-	$result1 = $conn->query($sql1);
-	$dislpayed_ingredients = [];
-	if ($result1->num_rows > 0) {
-	    // output data of each row
-	    while($row1 = $result1->fetch_assoc()) {
-	        //echo "id: " . $row1["id"]. " - Name: " . $row1["namn"];
-	        $id = $row1["id"];
-	        //loop för ingredienserna
-	        $sql2 = "SELECT ingrediens FROM `ingredienseronpizza` WHERE `pizza` = $id ORDER BY `ingredienseronpizza`.`ingrediens` ASC";
-			$result2 = $conn->query($sql2);
-			$ingredients = [];
-			if ($result2->num_rows > 0) {
-			    // output data of each row
-			    while($row2 = $result2->fetch_assoc()) {
-			    		$ingredients[] = $row2["ingrediens"];
-			    		$dislpayed_ingredients[] = $row2["ingrediens"];
-			    		//var_dump($row2);
-			    		//byt nummer mot  deras namn
-			    }
-			}
-	        //get pizzerior tht have that pizza. 
-	        $sqlPizzeria= "SELECT pizzerior.* FROM pizzerior, pizzorinpizzeria AS pi WHERE pi.id = $id AND pi.pizzeria = pizzerior.id";
-	        $resultPizzeria = $conn->query($sqlPizzeria);
-	        $pizzerior = [];
-	        //var_dump($row1);
-	        if ($resultPizzeria->num_rows > 0){
-	        	while ($rowPizzeria = $resultPizzeria->fetch_assoc()) {
-	        		$pizzerior[] = $rowPizzeria["namn"];
-	        	}
-	        }
-			if(isset($matchande_ingredienser)){
-	        	$pizzas[]= new pizza($id, $row1["name"], $ingredients, $matchande_ingredienser[$id], $pizzerior);
-	        }else{
-	        	$pizzas[]= new pizza($id, $row1["name"], $ingredients, NULL, $pizzerior);
-	        }
-	    }
-	} else {
-	    echo "0 results";
-	}
-	$dislpayed_ingredients = array_unique($dislpayed_ingredients);
-	$where = implode("' OR `namn` = '", $dislpayed_ingredients);
-	$associativeArray = [];
+	$pizzor = [];
+	$conn = connect_to_db();
+	$ing = test_input($_GET['ingredienser']);
+	$ingred = array_map("trim",explode(",", $ing));
+	$ingred = implode("' OR ingrediens LIKE '", $ingred);
 
-	$sql3 = "SELECT * FROM `ingredienser` WHERE `namn` = '$where'  ORDER BY `namn` ASC";
-	$result3 = $conn->query($sql3);
-	if ($result3->num_rows > 0) {
-	    // output data of each row
-	    while($row3 = $result3->fetch_assoc()) {
-	    	//echo $row3['id'] ." = ".$row3['namn']."<br>";
-	    	$associativeArray[$row3['namn']] = $row3['namn'];
-	    }
-	}
-
-	foreach($pizzas as $key=>$value){
-	  echo $value->getNames($associativeArray);
-	}
-
-//var_dump($pizzas);
-//var_dump($matchande_ingredienser);
-	//var_dump($pizzas);
-	foreach ($pizzas as $pizza) {
-		$pizza->clean();
+	$sql = "SELECT pizza, COUNT(*) as antal FROM ingredienseronpizza WHERE ingrediens LIKE '{$ingred}' GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC";
+	if (isset($_GET['antal'])) {
+		$antal = (int)test_input($_GET['antal']);
+		$sql .= " LIMIT $antal";
 	}
 	
-	//$pizzas = array_map("clean" $pizzas);
-usort($pizzas, 'cmp');
-$json = json_encode($pizzas, JSON_UNESCAPED_UNICODE);
+	$res = $conn->query($sql);
+	//var_dump($res);
+	$return =  $res->fetch_all(MYSQLI_ASSOC); // alla pizzor med hur många ingredienser som matchar de sökta;
+	//var_dump($return);
+
+	foreach ($return as $pizza) {
+		$sql = "SELECT pizzorinpizzeria.*, ingredienseronpizza.ingrediens FROM `pizzorinpizzeria`, ingredienseronpizza WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id AND pizzorinpizzeria.id = ?";
+		$stmt = $conn->prepare($sql);
+		//var_dump($pizza);
+		$stmt->bind_param("i", $pizza['pizza']);
+		$stmt->execute();
+		$result = $stmt->get_result();
+		$ingredienser = [];
+		$namn = "";
 
 
-$conn->close();
-print_r($json);
-
-function cmp($a, $b) {
+		while($row = $result->fetch_assoc()) {
+			$ingredienser[] = ($row['ingrediens']);
+			$namn = $row['name'];
+			//echo("hej");
+		}
+		//var_dump($ingredienser);
+		sort($ingredienser);
+		$exists = false;
+		foreach ($pizzor as $check) {
+			if($check->ingredienser == $ingredienser){
+				$exists = true;
+				break;
+			}
+		}
+		if(!$exists){
+			$pizzor[] = new pizza($namn, $ingredienser, $pizza['antal']);
+		}
+		
+	}
+	function cmp($a, $b) {
     if ($a->matcningar == $b->matcningar) {
         return ($a->procent < $b->procent) ? 1 : -1;
     }
-    return ($a->matcningar < $b->matcningar) ? 1 : -1;
+	    return ($a->matcningar < $b->matcningar) ? 1 : -1;
+	}
+	usort($pizzor, 'cmp');
+	$conn->close();
+	//var_dump($pizzor);
+	$json = json_encode($pizzor, JSON_UNESCAPED_UNICODE);
+	print_r($json);
 }
 
 ?>
