@@ -20,7 +20,7 @@
 <div class="container">
 		<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
-		<img src="images/Logga.png" alt="Logga">
+		<a href="index.php"><img src="images/Logga.png" alt="Logga"></a>
         <img id="user" src="images/user.png">
         <img id="cart" src="images/cart.png">
 	</header>
@@ -29,7 +29,7 @@
 		<img src="images/star.png" alt="Favoriter">
 		<img src="images/user.png" alt="min sida">
 		<nav>
-			<h3>Hur fungerar det?</h3>
+			<h3><a href="help.php">Hur fungerar det?</a></h3>
 			<h3>Hitta din pizzeria</h3>
 			<h3>Pizzerior</h3>
 		</nav>
@@ -40,20 +40,22 @@
 Code taken from https://codepen.io/colorlib/pen/rxddKy
 -->
 
+
+
 <div class="login-page">
   <div class="form">
     <form method="POST" action="" class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
+      <input type="text" placeholder="användarnamn" name="username"/>
+      <input type="password" placeholder="lösenord" name="password"/>
       <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
+      <button>Skapa konto</button>
+      <p class="message">Redan registrerad? <a href="#">Logga in</a></p>
     </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    <form class="login-form" id="loginForm">
+      <input type="text" placeholder="användarnamn" name="username"/>
+      <input type="password" placeholder="lösenord" name="password"/>
+      <button>Logga in</button>
+      <p class="message">Inte registrerad? <a href="#">Skapa ett konto</a></p>
     </form>
   </div>
 </div>
