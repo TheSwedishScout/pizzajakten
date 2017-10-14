@@ -530,7 +530,7 @@ input[type=submit], input[type=reset] {
 
 }
 
-input[type=text],[type="email"] {
+.kassa>input[type=text],.kassa>input[type="email"] {
 	background: rgba(255, 241, 153, 0.54);
 	border: none;
 	border-radius: 25px;
