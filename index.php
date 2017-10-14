@@ -28,7 +28,12 @@
 
     
     <ul class="resultat">
-        <li class="resultatInner"><img src="images/pizza6.png"><h2> Pizzanamn</h2><h3>Lök, tomat, paprika, bearnaisesås</h3><h4>saknar: Kebab, creme fraiche</h4></li>
+        <!--<li class="resultatInner">
+        	<img src="images/pizza6.png">
+        	<h2>Pizzanamn</h2>
+        	<h3>Lök, tomat, paprika, bearnaisesås</h3>
+        	<h4>saknar: Kebab, creme fraiche</h4>
+        </li>
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, bearnaisesås</h3></li>
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
@@ -36,6 +41,7 @@
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
+     -->
     </ul>
 </main>
 
