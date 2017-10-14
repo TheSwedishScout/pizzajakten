@@ -393,9 +393,17 @@ button:active {
     text-align: center;
     padding: 2%;
     display: inline-block;
+    background: green;
+    margin-bottom: 10px;
 }
 
 .resultatInner h3{
     font-family: helvetica;
+    font-size: small;
+}
+
+.resultatInner h4{
+    font-family: helvetica;
+    font-style: italic;
     font-size: small;
 }
