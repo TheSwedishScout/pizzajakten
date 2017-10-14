@@ -41,7 +41,13 @@
          <li class="resultatInner"><h2><img src="images/pizza6.png"> Pizzanamn</h2><h3>Lök, tomat, paprika, skinks, bearnaisesås</h3></li>
     </ul>
 </main>
+
+
 <script src="js/getcategory.js"></script>
+
+
+
+
 <?php
 	include 'footer.php';
 ?>

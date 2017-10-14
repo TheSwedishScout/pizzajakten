@@ -14,7 +14,7 @@
 
 
 <main class="left klar">
-	<h2>Sid  specifikt</h2>
+	<h2></h2>
          <?php
             $to      = $mail;
             $firstname = $name;
@@ -29,7 +29,7 @@
 
 </main>
 <main class="right klar">
-	<h2>Sid  specifikt</h2>
+	<h2></h2>
 </main>
 
 <?php

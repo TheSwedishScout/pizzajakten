@@ -52,10 +52,10 @@
 
 <!-- Bilderna i tidslinjen som ska navigera användaren genom köpet-->
 	<ul class="progretion">
-				<a class="<?php echo !isset($page) || $page == 'index.php' || $page == '' ? 'active' : null; ?>" href="index.php"><img src="images/pizza1.png"></a>
-				<a class="<?php echo isset($page) && $page == 'pizzerior.php' ? 'active' : null; ?>" href="pizzerior.php"><img src="images/pizza2.png"></a>
-				<a class=" <?php echo isset($page) && $page == 'varukorg.php' ? 'active' : null; ?>" href="varukorg.php"><img src="images/pizza3.png"></a>
-				<a class=" <?php echo isset($page) && $page == 'kassa.php' ? 'active' : null; ?>" href="kassa.php"><img src="images/pizza4.png"></a>
+				<a class= "active" href="index.php"><img src="images/pizza1.png"></a>
+				<a class="<?php echo isset($page) && $page == 'pizzerior.php' || $page == 'varukorg.php' || $page == 'kassa.php' || $page == 'klar.php' ? 'active' : null; ?>" href="pizzerior.php"><img src="images/pizza2.png"></a>
+				<a class=" <?php echo isset($page) && $page == 'varukorg.php' || $page == 'kassa.php' || $page == 'klar.php'  ? 'active' : null; ?>" href="varukorg.php"><img src="images/pizza3.png"></a>
+				<a class=" <?php echo isset($page) && $page == 'kassa.php' || $page == 'klar.php' ? 'active' : null; ?>" href="kassa.php"><img src="images/pizza4.png"></a>
 				<a class=" <?php echo isset($page) && $page == 'klar.php' ? 'active' : null; ?>" href="klar.php"><img src="images/pizza5.png"></a>
 
 
