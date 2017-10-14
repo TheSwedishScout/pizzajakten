@@ -5,8 +5,11 @@ include 'header.php';
 if (isset($_POST['nyPizzeria'])) {
 	$pizzeria = [];
 	$pizzeria['namn'] = test_input($_POST['pizzeria']);
+	/*
 	$pizzeria['lng'] = (float)test_input($_POST['lng']);
 	$pizzeria['lat'] = (float)test_input($_POST['lat']);
+	*/
+	$pizzeria['adress'] = test_input($_POST['adress']);
 	if(isset($_POST['oppetalladagar'])){
 		/*{'mon':"hh-mm"}*/
 		$open = test_input($_POST['mondag-open']);
@@ -44,8 +47,8 @@ if (isset($_POST['nyPizzeria'])) {
 		$pizzeria['gluten'] = 1;
 	}
 	$conn = connect_to_db();
-	$stmt = $conn->prepare("INSERT INTO `pizzerior`(`id`, `namn`, `hasGlutenFree`, `lng`, `lat`, `openinghouers`) VALUES (NULL,?,?,?,?,?)");
-	$stmt->bind_param('sidds', $pizzeria['namn'], $pizzeria['gluten'], $pizzeria['lng'], $pizzeria['lat'], $pizzeria['open']);
+	$stmt = $conn->prepare("INSERT INTO `pizzerior`(`id`, `namn`, `hasGlutenFree`, `openinghouers`, `adress`) VALUES (NULL,?,?,?,?)");
+	$stmt->bind_param('siss', $pizzeria['namn'], $pizzeria['gluten'], $pizzeria['open'], $pizzeria['adress'] );
 	$stmt->execute();
 	$conn->close();
 	//var_dump($pizzeria);
@@ -114,11 +117,14 @@ if (isset($_POST['nyPizza'])) {
 	<h2>Ny pizzeria</h2>
 <form method="POST" action="">
 	<label for="pizzeria">namn*:</label>
-	<input type="text" required name="pizzeria"><br>
-	<label for="lng">longditute* (57.787242):</label>
-	<input type="number" min="-180" max="180" step=0.000001 required name="lng"><br>
-	<label for="lat">latitude* (14.243169):</label>
-	<input type="number" min="-87.711799" max="89.450161" step=0.000001 required name="lat"><br>
+	<input type="text" placeholder="pizzarians namn" required name="pizzeria"><br>
+	<!--
+		<label for="lng">longditute* (57.787242):</label>
+		<input type="number" min="-180" max="180" step=0.000001 required name="lng"><br>
+		<label for="lat">latitude* (14.243169):</label>
+		<input type="number" min="-87.711799" max="89.450161" step=0.000001 required name="lat"><br>
+	-->
+	<input type="text" placeholder="adress" required name="adress">
 	Alla dagar samma öppetider <input type="checkbox" id="alldays" name="oppetalladagar"><br>
 	vardag och helg tider <input type="checkbox" id="weekend" name="vardahhelg"><br>
 	<label id="firstTimeinputName">Måndag</label>* <br>
