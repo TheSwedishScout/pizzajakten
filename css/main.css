@@ -393,6 +393,24 @@ main.right.klar {
 	background: #3BAFDA; 
 }
 
+/*STYLING AV PIZZERIOR-SIDAN*/
+
+main.left.pizzerior img {
+    width: 70%;
+    margin: 10px;
+}
+
+main.left.pizzerior  {
+    text-align: center;
+    padding: 10% 10% 0 10%;
+}
+
+main.left.pizzerior h3 {
+    font-family: helvetica;
+
+}
+
+
 
 /**************************************************************\
 |**************************************************************|
