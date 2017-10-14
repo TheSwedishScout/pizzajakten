@@ -20,7 +20,7 @@
 <div class="container">
 		<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
-		<img src="images/Logga.png" alt="Logga">
+		<a href="index.php"><img src="images/Logga.png" alt="Logga"></a>
         <img id="user" src="images/user.png">
         <img id="cart" src="images/cart.png">
 	</header>
