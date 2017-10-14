@@ -1,8 +1,5 @@
 <?php
 	include 'header.php';
-	if (isset($_GET['t'])){
-		$tab = test_input($_GET['t']);
-	}
 	//$conn = connect_to_db();
 ?>
 

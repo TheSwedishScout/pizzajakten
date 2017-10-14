@@ -82,22 +82,10 @@ font-size: 1em;
     height: 100vh;
 }
 
-/*
-.container{
-	display: grid;
-	grid-template-columns: 150px 1fr 1fr 150px;
-    grid-template-rows: 30px 100px 60px auto 20px;
-    grid-template-areas: 
-    "header header header header" 
-    ". prog prog ."
-    ". tabs . ."
-    "left main1 main2 right"
-    ". . . .";
-    height: 100vh;
+a {
+    text-decoration: none;
+    color: white;
 }
-*/
-
-
 
 /***********************Shadows************************/
 .shadow{
@@ -127,6 +115,34 @@ header{
 	text-align: center;
 }
 
+#cart {
+    width: 4%;
+    position: absolute;
+    right: 150px;
+    top: 13px;
+}
+
+#cart:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+#user {
+    width: 4%;
+    position: absolute;
+    right: 200px;
+    top: 13px;
+}
+
+#user:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
 #burger:active {
     color: red;
 }
@@ -140,7 +156,15 @@ header{
     /*z-index: 999;*/
 }
 
-
+#meny img {
+    width: 20%;
+}
+#meny img:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+    cursor: pointer;
+}
 #meny{
 	position: absolute;
 	left: -385px;
@@ -151,7 +175,6 @@ header{
 	z-index: 190;
 	transition: left 0.4s;
 }
-
 
 #meny.visabale{
 	left: 0px;
@@ -164,11 +187,12 @@ header{
 	justify-items: center;
 	align-items: center;
 }
+
 .progretion a{
 	text-align: center;	
 }
 .progretion a>img{
-    width: 90%;
+    width: 70%;
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
@@ -178,16 +202,12 @@ header{
 	transition: filter 1s;
 	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     filter: grayscale(0%);
-
 }
 
 .progretion .active img{
 	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     filter: grayscale(0%);
-
-
 }
-
 
 /*hamburger meny*/
 #meny {
@@ -342,13 +362,14 @@ main.right{
 }
 
 
+/*ALLA SIDORS BAKRUNDSFÄRGER*/
+
 main.left.pizzerior {
 	background: #A0D468; 
 }
 main.right.pizzerior {
 	background: #8CC512; 
 }
-
 
 main.left.varukorg {
 	background: #AC92EC; 
@@ -442,14 +463,44 @@ button:active {
 	grid-template-columns: repeat(3, 1fr);
 }
 
+<<<<<<< HEAD
+=======
+.helpText {
+    text-align: center;
+    position: absolute;
+    height: 70%;
+    width: 43%;
+    margin: -3% 0 0 -23%;
+    top: 31%;
+    left: 50%;
+    line-height: 22px;
+}
+
+.helpText p {
+    font-family: helvetica;
+    margin-top: 30px;
+}
+
+.helpText h1{   
+    font-size: -webkit-xxx-large;
+}
 
 
 
 
+
+>>>>>>> 72a7146b8cbb69516680151b331759f95a6f079d
+
+
+
+
+<<<<<<< HEAD
 /**************************************************************\
 |**************************************************************|
 |****************************KASSA****************************|
 |**************************************************************|
 \**************************************************************/
+=======
+>>>>>>> 72a7146b8cbb69516680151b331759f95a6f079d
 
 
