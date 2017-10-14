@@ -70,15 +70,17 @@
 //n_page är alla som går till nästkommande sida medan p_page är alla som går till föregånde sida!
 	$n_page = '';
 	$p_page = '';
+	$n_page_hidden = '';
+	$p_page_hidden = '';
 
 	switch ($page) {
 		case '':
 			$n_page = "pizzerior.php";
-			$p_page = "";
+			$p_page_hidden = 'hidden'; //döljer previous page
 			break;
 		case "index.php":
 			$n_page = "pizzerior.php";
-			$p_page = "";
+			$p_page_hidden = 'hidden'; //döljer previous page
 			break;
 		case "pizzerior.php":
 			$n_page = "varukorg.php";
@@ -93,7 +95,7 @@
 			$p_page = "varukorg.php";
 			break;
 		case "klar.php":
-			$n_page = "";
+			$n_page_hidden = 'hidden'; //döljer next page
 			$p_page = "kassa.php";
 			break;
 
@@ -102,8 +104,8 @@
 
 <!-- Pilarna på sidorna som ska navigera användaren framåt och bakåt i processen-->
 <aside class="right-arrow aside">
-	<a href="<?php echo $n_page;?>"><img class="shadow" src="images/right-arrow.png"/></a>
+	<a class="<?php echo $n_page_hidden; ?>" href="<?php echo $n_page;?>"><img class="shadow" src="images/right-arrow.png"/></a>
 </aside>
 <aside class="left-arrow aside">
-	<a href="<?php echo $p_page;?>"><img class="shadow" src="images/left-arrow.png"/></a>
+	<a class="<?php echo $p_page_hidden; ?>" href="<?php echo $p_page;?>"><img class="shadow" src="images/left-arrow.png"/></a>
 </aside>
