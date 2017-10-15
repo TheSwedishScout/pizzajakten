@@ -580,7 +580,7 @@ main.right.kassa {
 
 /* FORM */
 
-input[type=submit], input[type=reset] {
+.kassa>input[type=submit], .kassa>input[type=reset] {
 	background: rgba(255, 241, 153, 0.8);
 	border: none;
 	border-radius: 25px;
@@ -600,6 +600,41 @@ input[type=submit], input[type=reset] {
     font-family: helvetica;
     cursor: pointer;
 
+}
+
+.kassa input[type=submit]:hover {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.kassa input[type=submit]:active {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.kassa input[type=submit]:focus {
+	background: rgba(227, 176, 22, 0.4));
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+.kassa input[type=reset]:hover {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.kassa input[type=reset]:active {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.kassa input[type=reset]:focus {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
 }
 
 .kassa>input[type=text],.kassa>input[type="email"] {
@@ -792,7 +827,7 @@ input::placeholder {
 /**************************************************************\
 |**************************************************************|
 |*************************** PIZZERIOR-LISTSIDAN******* *******|
-|**************************************************************|
+|**********************************höger sida******************|
 |**************************************************************|
 \**************************************************************/
 .hittaPizzeria {
@@ -829,3 +864,70 @@ input::placeholder {
     line-height: 22px;
     letter-spacing: 1px;
     }
+
+
+.right.pizzerior li {
+	padding: 15px;
+	column-count: 2;
+	display: block;
+	height: 100px;
+}
+
+.right.pizzerior>form {
+	width: 50%;
+	margin: 0px;
+	float: right;
+}
+
+.right.pizzerior input[type=submit]{
+	margin: 0px;
+	float: right;
+
+	background: rgba(191, 232, 150, 0.7);
+	color: rgba(127, 191, 63, 1);
+
+	border: none;
+	border-radius: 25px;
+    color: white;
+    padding: 11px 30px;
+    box-sizing: border-box;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: helvetica;
+    cursor: pointer;
+}	
+
+.right.pizzerior input[type=submit]:hover {
+	background: rgba(38, 62, 13, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.right.pizzerior input[type=submit]:active {
+	background: rgba(38, 62, 13, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.right.pizzerior input[type=submit]:focus {
+	background: rgba(38, 62, 13, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
