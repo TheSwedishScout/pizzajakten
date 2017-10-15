@@ -30,7 +30,7 @@
 
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
-		<a href="index.php"><img src="images/Logga.png" alt="Logga"></a>
+		<a href="index.php" class="logga"><img src="images/Logga.png" alt="Logga"></a>
         <a href="logIn.php"><img id="user" src="images/user.png"></a> 
         <a href="varukorg.php"><img id="cart" src="images/cart.png"></a>
 	</header>
@@ -42,8 +42,7 @@
         <a href="logIn.php"><img src="images/user.png" alt="min sida"></a>
 		<nav>
             <h3><a href="help.php">Hur fungerar det?</a></h3>
-			<h3>Hitta din pizzeria</h3>
-			<h3>Pizzerior</h3>
+            <h3><a href="hittaPizzeria.php">Hitta din pizzeria</a></h3>
 		</nav>
 		<input type="search" placeholder="sök" name="">
 	</div>
@@ -52,16 +51,46 @@
 
 
 <!-- Bilderna i tidslinjen som ska navigera användaren genom köpet-->
-	<ul class="progretion">
-				<a class= "active" href="index.php"><img src="images/pizza1.png"></a>
-				<a class="<?php echo isset($page) && $page == 'pizzerior.php' || $page == 'varukorg.php' || $page == 'kassa.php' || $page == 'klar.php' ? 'active' : null; ?>" href="pizzerior.php"><img src="images/pizza2.png"></a>
-				<a class=" <?php echo isset($page) && $page == 'varukorg.php' || $page == 'kassa.php' || $page == 'klar.php'  ? 'active' : null; ?>" href="varukorg.php"><img src="images/pizza3.png"></a>
-				<a class=" <?php echo isset($page) && $page == 'kassa.php' || $page == 'klar.php' ? 'active' : null; ?>" href="kassa.php"><img src="images/pizza4.png"></a>
-				<a class=" <?php echo isset($page) && $page == 'klar.php' ? 'active' : null; ?>" href="klar.php"><img src="images/pizza5.png"></a>
+	<div class="progretion">
+		<ul>
 
+		<li>
+			
+			<a class= "active" href="index.php">
+
+				<img src="images/pizza1.png"/>
+
+			</a>
+		</li>
+		
+		<li>
+			<a class="<?php echo isset($page) && $page == 'pizzerior.php' || $page == 'varukorg.php' || $page == 'kassa.php' || $page == 'klar.php' ? 'active' : null; ?>" href="pizzerior.php">
+				<img src="images/pizza2.png">
+
+			</a>
+		</li>
+		<li>
+			<a class=" <?php echo isset($page) && $page == 'varukorg.php' || $page == 'kassa.php' || $page == 'klar.php'  ? 'active' : null; ?>" href="varukorg.php">
+				<img src="images/pizza3.png">
+
+			</a>
+		</li>
+		<li>
+			<a class=" <?php echo isset($page) && $page == 'kassa.php' || $page == 'klar.php' ? 'active' : null; ?>" href="kassa.php">
+				<img src="images/pizza4.png">
+
+			</a>
+		</li>
+		<li>
+			<a class=" <?php echo isset($page) && $page == 'klar.php' ? 'active' : null; ?>" href="klar.php">
+				<img src="images/pizza5.png">
+
+			</a>
+		</li>
+		
 
 	</ul>
-
+</div>
 
 
 
