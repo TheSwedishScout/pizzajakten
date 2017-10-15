@@ -8,7 +8,6 @@
 <ul class="tabs">
 	<?php
 		$conn = connect_to_db();
-		//$sql = "SELECT id, first_name, last_name FROM author";
 		$sql = "SELECT category FROM `ingredienser` GROUP BY category";
 		if ($result = $conn->query($sql)) {
 			while ($row = $result->fetch_assoc()) {
@@ -22,20 +21,13 @@
 
 <!-- Main sidorna-->
 <main class="left">
-	<h2>Sid  specifikt</h2>
 </main>
 <main class="right">
-
-    
     <ul class="resultat">
     </ul>
 </main>
 
-
 <script src="js/getcategory.js"></script>
-
-
-
 
 <?php
 	include 'footer.php';
