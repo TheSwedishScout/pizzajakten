@@ -32,13 +32,13 @@
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php"><img src="images/Logga.png" alt="Logga"></a>
         <a href="logIn.php"><img id="user" src="images/user.png"></a> 
-        <img id="cart" src="images/cart.png">
+        <a href="varukorg.php"><img id="cart" src="images/cart.png"></a>
 	</header>
 
 <!-- Hamburgermenyns innehåll -->	
 	<div id="meny" class="shadow">
-		<img src="images/cart.png" alt="kundvangn">
-		<img src="images/star.png" alt="Favoriter">
+		<a href="varukorg.php"><img src="images/cart.png" alt="kundvangn"></a>
+		<!--<img src="images/star.png" alt="Favoriter">-->
         <a href="logIn.php"><img src="images/user.png" alt="min sida"></a>
 		<nav>
             <h3><a href="help.php">Hur fungerar det?</a></h3>
