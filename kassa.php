@@ -8,7 +8,8 @@
          
 </main>
 <main class="right kassa">
-	<h2></h2>
+	<h2>Kassa</h2>
+	<h3>Fyll i dina uppgifter så skickas din beställning till pizzerian</h3>
 
 		<form class="kassa" action="klar.php" method="POST">
 		  <input type="text" name="firstname" placeholder="Förnamn">
@@ -17,6 +18,8 @@
 		  	<input type="submit" value="Send">
 			<input type="reset" value="Reset">
 		</form> 
+
+	<p>Du får ett bekärftelsemail via den email du har angivit</p>
 
 
 </main>

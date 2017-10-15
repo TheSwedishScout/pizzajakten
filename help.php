@@ -22,17 +22,16 @@
 		<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php"><img src="images/Logga.png" alt="Logga"></a>
-        <img id="user" src="images/user.png">
-        <img id="cart" src="images/cart.png">
+        <a href="logIn.php"><img id="user" src="images/user.png"></a> 
+        <a href="varukorg.php"><img id="cart" src="images/cart.png"></a>
 	</header>
 	<div id="meny" class="shadow">
 		<img src="images/cart.png" alt="kundvangn">
 		<img src="images/star.png" alt="Favoriter">
 		<img src="images/user.png" alt="min sida">
 		<nav>
-			<h3>Hur fungerar det?</h3>
-			<h3>Hitta din pizzeria</h3>
-			<h3>Pizzerior</h3>
+            <h3><a href="help.php">Hur fungerar det?</a></h3>
+            <h3><a href="hittaPizzeria.php">Hitta din pizzeria</a></h3>
 		</nav>
 		<input type="search" placeholder="sök" name="">
 	</div>
