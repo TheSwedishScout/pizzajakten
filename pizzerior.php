@@ -35,22 +35,28 @@
         
         <ul>
         	<li>
-
-
+        		<h3>Margahreta</h3>
+        		<h3>Biblos</h3>
+        		<p>Drottninggatan 18, 561 31 Huskvarna</p>
+        		<p>85kr</p>
+                
+                <form action="">
+                    <input type="submit" name="Välj denna" value="Välj pizza">
+                    <input type="hidden" name="">
+                </form>
         	</li>
         	<li>
         		<h3>Margahreta</h3>
         		<h3>Biblos</h3>
         		<p>Drottninggatan 18, 561 31 Huskvarna</p>
         		<p>85kr</p>
+                
+                <form action="">
+                    <input type="submit" name="Välj denna" value="Välj pizza">
+                    <input type="hidden" name="">
+                </form>
         	</li>
-        	<li>
-        		<h3>Margahreta</h3>
-        		<h3>Biblos</h3>
-        		<p>Drottninggatan 18, 561 31 Huskvarna</p>
-        		<p>85kr</p>
-        	</li>
-
+            <li>
                 <h3>Margahreta</h3>
                 <h3>Biblos</h3>
                 <p>Drottninggatan 18, 561 31 Huskvarna</p>
