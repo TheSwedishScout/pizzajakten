@@ -396,9 +396,6 @@ main.right{
 	background: #4A89DC;	
 }
 
-
-/*ALLA SIDORS BAKRUNDSFÄRGER*/
-
 main.left.pizzerior {
 	background: #A0D468; 
 }
@@ -407,10 +404,10 @@ main.right.pizzerior {
 }
 
 main.left.varukorg {
-	background: #AC92EC; 
+	background: #4FC1E9; 
 }
 main.right.varukorg {
-	background: #967ADC; 
+	background: #3BAFDA; 
 }
 
 
@@ -423,10 +420,10 @@ main.right.kassa {
 
 
 main.left.klar {
-	background: #4FC1E9; 
+	background: #AC92EC; 
 }
 main.right.klar {
-	background: #3BAFDA; 
+	background: #967ADC; 
 }
 
 /*STYLING AV PIZZERIOR-SIDAN*/
@@ -444,6 +441,22 @@ main.left.pizzerior  {
 main.left.pizzerior h3 {
     font-family: helvetica;
 
+}
+
+main.right.pizzerior li{
+	padding: 2% ; 
+}
+
+main.right.pizzerior p{
+    font-family: helvetica;
+    font-size: smaller;
+    padding-top: 2px;
+}
+
+
+main.right.pizzerior h3{
+    font-size: larger;
+    letter-spacing: 1px;
 }
 
 
@@ -593,10 +606,23 @@ input::placeholder {
 
 
 
+/**************************************************************\
+|**************************************************************|
+|*******************  KLAR-sida   *****************************|
+|**************************************************************|
+|**************************************************************|
+\**************************************************************/
 
+#klar-pic {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	padding-top: 200px;
+	width: 600px;
 
-
-
+	z-index: -3;
+}
 
 
 
@@ -739,9 +765,9 @@ input::placeholder {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    font-family: helvetica;
+    font-family: 'helvetica' ;
     cursor: pointer;
-     text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 #help-button:hover {
