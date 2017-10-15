@@ -21,20 +21,13 @@
 
 <!-- Main sidorna-->
 <main class="left">
-	<h2>Sid  specifikt</h2>
 </main>
 <main class="right">
-
-    
     <ul class="resultat">
     </ul>
 </main>
 
-
 <script src="js/getcategory.js"></script>
-
-
-
 
 <?php
 	include 'footer.php';
