@@ -2,7 +2,9 @@
 	include 'header.php';
 	if (isset($_GET['ingredienser'])) {
 		$ing = test_input($_GET['ingredienser']);
-		
+		$ing = explode(",", $ing);
+        $ing = implode(", ", $ing);
+
 	}
 ?>
 
@@ -10,7 +12,7 @@
 	<h2></h2>
          <!-- Lista på pizzerior-->
         <img src="images/pizza7.png">
-    <h3>Skinka, ost, tomatsås, chaminjoner, bearnaisessås, kött, bacon, osv </h3>
+    <h3>      <?php  echo $ing; ?></h3>
 </main>
 <main class="right pizzerior">
 	<h2></h2>
