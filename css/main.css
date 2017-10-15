@@ -657,7 +657,9 @@ input::placeholder {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   line-height: 22px;
 }
-
+.form .errorMSG{
+	background: #F00;
+}
 .form input[type=text],[type="email"],[type="password"] {
 	border: none;
 	border-radius: 25px;
