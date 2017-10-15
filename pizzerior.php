@@ -1,11 +1,10 @@
 <?php
 	include 'header.php';
-	
+	if (isset($_GET['ingredienser'])) {
+		$ing = test_input($_GET['ingredienser']);
+		
+	}
 ?>
-
-
-
-
 
 <main class="left pizzerior">
 	<h2></h2>

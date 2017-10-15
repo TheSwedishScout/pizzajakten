@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             ul.innerHTML = "";
             for (var pizza of result ){
                 //Create and print a pizza object
+                var link = document.createElement("a");
+                link.href = "pizzerior.php?ingredienser="+pizza.ingredienser.join(",")
                 var li = document.createElement("li");
                 li.classList.add("resultatInner");
                 var image = document.createElement("img");
@@ -74,9 +76,10 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 /*var image = document.createElement("h4");
                 image.innerText = "images/pizza6.png";
                 **/
-                li.appendChild(image);
-                li.appendChild(h2);
-                li.appendChild(h3);
+                link.appendChild(image);
+                link.appendChild(h2);
+                link.appendChild(h3);
+                li.appendChild(link);
                 ul.appendChild(li);
 
             }

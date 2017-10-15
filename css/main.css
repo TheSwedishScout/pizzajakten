@@ -72,7 +72,7 @@ font-size: 1em;
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
     /*grid-template-rows: 1fr 2fr 1fr auto 1fr;//*/
-    grid-template-rows: 12% 15% 10% auto 1%;
+    grid-template-rows: 15% 15% 10% auto 1%;
     grid-template-areas: 
     "header header header header" 
     ". prog prog ."
@@ -113,6 +113,13 @@ header{
 	grid-area: header;
 	position: relative;
 	text-align: center;
+}
+.logga{
+	display: block;	
+	height: 100%;
+}
+.logga img{
+	height: 100%;
 }
 
 #cart {
@@ -179,36 +186,64 @@ header{
 #meny.visabale{
 	left: 0px;
 }
-
 .progretion{
 	grid-area: prog;
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	justify-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+.progretion ul{
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
 	align-items: center;
 }
-
-.progretion a{
-	text-align: center;	
+.progretion li{
+	flex-grow:1;
+	text-align: center;
+	height: 100%;
 }
-.progretion a>img{
-    width: 70%;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+.progretion li a{
+	display: block;
+	height: 100%;
+}
+
+.progretion li img{
+	height: 100%;
+}
+/*.progretion{
+	grid-area: prog;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.progretion li{
+	height: 100%;
+	flex-grow:1;
+}
+.progretion a{
+	height: 100%;
+	display: block;	
+}
+.progretion a img{
+	height: 100%;
+    -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 }
-
+/*
 .progretion a>img:hover {
 	transition-timing-function: ease-in;
 	transition: filter 1s;
-	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+	-webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
 }
 
 .progretion .active img{
-	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+	-webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
-
+*/
 /*hamburger meny*/
 #meny {
 	padding-top: 100px;
@@ -467,7 +502,9 @@ button:active {
 .activeButton {
 	background: #499348;
 }
-    
+.resultatInner a{
+	display:block;
+}
 .resultatInner img {
     max-width: 100%;
 }
