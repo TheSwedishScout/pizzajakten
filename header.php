@@ -121,12 +121,12 @@
 			$p_page = "pizzerior.php";
 			break;
 		case "kassa.php":
-			$n_page = "klar.php";
+			$n_page_hidden = 'hidden'; //döljer next page
 			$p_page = "varukorg.php";
 			break;
 		case "klar.php":
 			$n_page_hidden = 'hidden'; //döljer next page
-			$p_page = "kassa.php";
+			$p_page_hidden = 'hidden';
 			break;
 
 	}

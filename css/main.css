@@ -71,7 +71,7 @@ font-size: 1em;
 .container{
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
-    /*grid-template-rows: 1fr 2fr 1fr auto 1fr;//*/
+    /*grid-template-rows: 1fr 2fr 1fr auto 1fr; */
     grid-template-rows: 15% 15% 10% auto 1%;
     grid-template-areas: 
     "header header header header" 
@@ -231,7 +231,7 @@ header{
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 }
-/*
+
 .progretion a>img:hover {
 	transition-timing-function: ease-in;
 	transition: filter 1s;
