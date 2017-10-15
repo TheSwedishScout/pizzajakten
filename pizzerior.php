@@ -6,20 +6,22 @@
         $ing = implode(", ", $ing);
 	}
 
-
-		$conn = connect_to_db();
-		$sql = "SELECT 'namn' FROM `ingredienser` WHERE id=?";
-		if ($result = $conn->query($sql)) {
-			while ($row = $result->fetch_assoc()) {
-		    }
-		}
-		$conn->close();
 //
+//		$conn = connect_to_db();
+//		$sql = "SELECT 'namn' FROM `ingredienser` WHERE id=?";
+//		if ($result = $conn->query($sql)) {
+//			while ($row = $result->fetch_assoc()) {
+//		    }
+//		}
+//		$conn->close();
+////
 //    if (isset($_GET['namn'])) {
 //        $pizzeriaNamn = test_input($_GET['namn']);
 //		$pizzeriaNamn = explode(",", $pizzeriaNamn);
 //        $pizzeriaNamn = implode(", ", $pizzeriaNamn);
 //    }
+
+
 ?>
 
 <main class="left pizzerior">
@@ -33,8 +35,7 @@
         
         <ul>
         	<li>
-<<<<<<< HEAD
-                 <?php  echo $pizzeriaNamn; ?>
+
 
         	</li>
         	<li>
@@ -49,7 +50,6 @@
         		<p>Drottninggatan 18, 561 31 Huskvarna</p>
         		<p>85kr</p>
         	</li>
-=======
 
                 <h3>Margahreta</h3>
                 <h3>Biblos</h3>
@@ -83,7 +83,7 @@
                     <input type="hidden" name="">
                 </form>
             </li>
->>>>>>> a288f91b856ea8a92827e64aefc44330ac61fbd7
+
         </ul>
 </main>
 
