@@ -40,7 +40,7 @@ if (!isset($_SESSION['user_id'])){
 			//exit();
 			$response = ['sucsess' => true];
 		}else{
-			$response['error'] = $stmt;
+			$response['error'] = "sqlError";
 			
 		}
 	}else{
