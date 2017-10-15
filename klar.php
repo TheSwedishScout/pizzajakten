@@ -8,13 +8,14 @@
         $name = test_input($_POST['firstname']);
     }
 
-
 ?>
 
 
 
-<main class="left klar">
-	<h2></h2>
+<img id="klar-pic" src="images/klar2.png">
+
+
+
          <?php
             $to      = $mail;
             $firstname = $name;
@@ -27,10 +28,6 @@
         mail($to, $subject, $message, $headers);
         ?>
 
-</main>
-<main class="right klar">
-	<h2></h2>
-</main>
 
 <?php
 	include 'footer.php';
