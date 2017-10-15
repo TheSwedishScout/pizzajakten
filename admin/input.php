@@ -205,7 +205,82 @@ if (isset($_POST['nyPizzeria'])) {
 			<option>ost</option>
 			<option>övrigt</option>
 		</select>
+	</form><br><br>
+    
+    
+<!--    ANNIKA TESTAR-->
+    <?php
+	$conn = connect_to_db();
+		$sql = "SELECT `id`, `namn` FROM `pizzerior` WHERE 1";
+		$result = $conn->query($sql);
+		$rows = $result->fetch_all(MYSQLI_ASSOC);
+		
+	?>
+    
+    <!-- LISTA MED PIZZERIOR DENNA DEL ÄR RÄTT-->
+	<h2>Uppdatera pizza</h2>
+	<form method="POST" id="updatePizza">
+		pizzeria select get from db
+        
+        <select name="pizzeria">
+			<?php
+				foreach ($rows as $row) {
+					echo "<option value='".$row['id']."'>{$row['namn']}</option>";
+				}
+			?>
+		</select><br>
+        
+        <?php
+        $sql = "SELECT `name` FROM `pizzorinpizzeria` WHERE pizzeria=?";
+        ?>
+        
+        
+        <form method="GET" id="fromPizzeria">
+        <select name="uppdatera">
+			<?php
+				foreach ($rows as $row) {
+					echo "<option value='".$row['id']."'>{$row['namn']}</option>";
+//                    echo $_GET["name"];
+				}
+			?>
+		</select><br>
+        
+<!--
+        
+		namn: <input type="text" name="namn"><br>
+		pizza nr <input type="number" name="listnr"><br>
+		ingredienser
+-->
+		<ul id="list">
+		</ul>
+<!--		<input type="text" id="ingredinesIn" name="ingredienser"><br>-->
+        
+        
+<!--
+		pris nummer
+		<input type="nummer" name="pris">
+-->
+        
+        
+		<input type="submit" name="nyPizza">
 	</form>
+	<form name="nyIngrediens">
+<!--
+		<h2>Ny ingrediens</h2>
+		<input type="text" placeholder="namn" name="namn">
+		<select>
+			<option>grönsak</option>
+			<option>kryda</option>
+			<option>krydda</option>
+			<option>kött</option>
+			<option>ost</option>
+			<option>övrigt</option>
+		</select>
+-->
+	</form>
+    
+    
+    
 </main>
 <script type="text/javascript" src="js/input.js"></script>
 
