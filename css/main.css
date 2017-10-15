@@ -411,6 +411,22 @@ main.left.pizzerior h3 {
 
 }
 
+main.right.pizzerior li{
+	padding: 2% ; 
+}
+
+main.right.pizzerior p{
+    font-family: helvetica;
+    font-size: smaller;
+    padding-top: 2px;
+}
+
+
+main.right.pizzerior h3{
+    font-size: larger;
+    letter-spacing: 1px;
+}
+
 
 
 /**************************************************************\
