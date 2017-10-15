@@ -30,9 +30,10 @@
 </main>
 <main class="right pizzerior">
 	<h2></h2>
-        <!--Karta på pizzerior med knappar för location, rating och price-->
+        
         <ul>
         	<li>
+<<<<<<< HEAD
                  <?php  echo $pizzeriaNamn; ?>
 
         	</li>
@@ -48,6 +49,41 @@
         		<p>Drottninggatan 18, 561 31 Huskvarna</p>
         		<p>85kr</p>
         	</li>
+=======
+
+                <h3>Margahreta</h3>
+                <h3>Biblos</h3>
+                <p>Drottninggatan 18, 561 31 Huskvarna</p>
+                <p>85kr</p>
+                
+                <form action="">
+                    <input type="submit" name="Välj denna" value="Välj pizza">
+                    <input type="hidden" name="">
+                </form>
+            </li>
+            <li>
+                <h3>Margahreta</h3>
+                <h3>Biblos</h3>
+                <p>Drottninggatan 18, 561 31 Huskvarna</p>
+                <p>85kr</p>
+                
+                <form action="">
+                    <input type="submit" name="Välj denna" value="Välj pizza">
+                    <input type="hidden" name="">
+                </form>
+            </li>
+            <li>
+                <h3>Margahreta</h3>
+                <h3>Biblos</h3>
+                <p>Drottninggatan 18, 561 31 Huskvarna</p>
+                <p>85kr</p>
+                
+                <form action="">
+                    <input type="submit" name="Välj denna" value="Välj pizza">
+                    <input type="hidden" name="">
+                </form>
+            </li>
+>>>>>>> a288f91b856ea8a92827e64aefc44330ac61fbd7
         </ul>
 </main>
 
