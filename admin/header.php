@@ -18,7 +18,7 @@
 <div class="container">
 	<header>
 		<img id="burger" class="shadow" src="../images/burger.png"/>
-		<img src="../images/Logga.png" alt="Logga">
+		<a href="../index.php"><img src="../images/Logga.png" alt="Logga"></a>
 
 	</header>
 	<div id="meny" class="shadow">

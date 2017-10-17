@@ -26,14 +26,14 @@ function connect_to_db(){
 
 	} 
 
-	/*$sql_main = "SET NAMES 'utf8'";
+	$sql_main = "SET NAMES 'utf8'";
 	$result = $conn->query($sql_main);
 	//mysqli::set_charset('utf8'); // when using mysqli
 
 	$sql_second ="CHARSET 'utf8'";
 	$result = $conn->query($sql_second);
 	//sets utf-8 as CHARSET in mySQL§
-	*/
+	
 	return $conn;
 }
 

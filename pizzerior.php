@@ -2,24 +2,37 @@
 	include 'header.php';
 	if (isset($_GET['ingredienser'])) {
 		$ing = test_input($_GET['ingredienser']);
-		$ing = explode(",", $ing);
-        $ing = implode(", ", $ing);
-	}
+		$ingredienser = explode(",", $ing);
+        $ing = implode(", ", $ingredienser);
 
+        $query = "'".implode("', '", $ingredienser). "'";
+        $amount = count($ingredienser);
+        $conn = connect_to_db();
+        /*
+        $sql = "SELECT 'namn' FROM `ingredienser` WHERE id=?";
+        if ($result = $conn->query($sql)) {
+            while ($row = $result->fetch_assoc()) {
+            }
+        }*/
+        $sql = "SELECT ingredienseronpizza.pizza FROM ingredienseronpizza, pizzorinpizzeria
+        WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id AND ingredienseronpizza.ingrediens IN ({$query})
+        GROUP BY ingredienseronpizza.pizza
+        HAVING COUNT(*) = {$amount};";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+
+#ost, skinka, tomatsås, tonfisk
+
+        $conn->close();
+	}
 //
-//		$conn = connect_to_db();
-//		$sql = "SELECT 'namn' FROM `ingredienser` WHERE id=?";
-//		if ($result = $conn->query($sql)) {
-//			while ($row = $result->fetch_assoc()) {
-//		    }
-//		}
-//		$conn->close();
-////
-//    if (isset($_GET['namn'])) {
-//        $pizzeriaNamn = test_input($_GET['namn']);
-//		$pizzeriaNamn = explode(",", $pizzeriaNamn);
-//        $pizzeriaNamn = implode(", ", $pizzeriaNamn);
-//    }
+  //  if (isset($_GET['namn'])) {
+  //      $pizzeriaNamn = test_input($_GET['namn']);
+		// $pizzeriaNamn = explode(",", $pizzeriaNamn);
+  //      $pizzeriaNamn = implode(", ", $pizzeriaNamn);
+  //  }
 
 
 ?>
@@ -32,6 +45,16 @@
 </main>
 <main class="right pizzerior">
 	<h2></h2>
+    <?php
+    var_dump($sql);
+    if ($result->num_rows > 0) {
+            echo("<ul>");
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                var_dump($row);
+            }
+        }
+        ?>
         
         <ul>
         	<li>
@@ -42,7 +65,8 @@
                 
                 <form action="">
                     <input type="submit" name="Välj denna" value="Välj pizza">
-                    <input type="hidden" name="">
+                    <input type="hidden" name="pizzeria" value="1">
+                    <input type="hidden" name="pizza" value="5">
                 </form>
         	</li>
         	<li>
