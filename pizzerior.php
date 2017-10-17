@@ -1,11 +1,13 @@
 <?php
+//    require 'function.php';
 	include 'header.php';
+//An associative array of variables passed to the current script via the URL parameters. Are there ingredients in the url? checks via isset. 
+
 	if (isset($_GET['ingredienser'])) {
 		$ing = test_input($_GET['ingredienser']);
 		$ing = explode(",", $ing);
         $ing = implode(", ", $ing);
 	}
-
 //
 //		$conn = connect_to_db();
 //		$sql = "SELECT 'namn' FROM `ingredienser` WHERE id=?";
@@ -20,8 +22,6 @@
 //		$pizzeriaNamn = explode(",", $pizzeriaNamn);
 //        $pizzeriaNamn = implode(", ", $pizzeriaNamn);
 //    }
-
-
 ?>
 
 <main class="left pizzerior">

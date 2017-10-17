@@ -48,4 +48,15 @@ function getIngredients($kategori='')
 	$conn->close();
 	return $result;
 }
+
+//
+
+
+
+
+
+
+
+
+
 ?>

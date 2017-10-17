@@ -23,24 +23,29 @@ if(isset($_GET['ingredienser'])){
 			$this->procent = ($this->matcningar/count($ingredienser))*100;
 		}
 	}
-	$pizzor = [];
+	$pizzor = [];     //Skapar en tom array av pizzor
 	$conn = connect_to_db();
-	$ing = test_input($_GET['ingredienser']);
-	$ingred = array_map("trim",explode(",", $ing));
-	$ingred = implode("' OR ingrediens LIKE '", $ingred);
+	$ing = test_input($_GET['ingredienser']); //hämtar ingredienser från url'en om ingredienser är definierat
+	$ingred = array_map("trim",explode(",", $ing)); //array_map är en funktion som tar alla ingrediener 
+	$ingred = implode("' OR ingrediens LIKE '", $ingred); //Returnerar en sträng av arrayen 
 
-	$sql = "SELECT pizza, COUNT(*) as antal FROM ingredienseronpizza WHERE ingrediens LIKE '{$ingred}' GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC";
-	if (isset($_GET['antal'])) {
+
+	$sql = "SELECT pizza, COUNT(*) as antal FROM ingredienseronpizza WHERE ingrediens LIKE '{$ingred}' GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC"; 
+    //Om antal är angett i url'en så limiteras sql till att köras så många gånger som antal är
+    if (isset($_GET['antal'])) {
 		$antal = (int)test_input($_GET['antal']);
 		$sql .= " LIMIT $antal";
 	}
 	
 	$res = $conn->query($sql);
 	//var_dump($res);
-	$return =  $res->fetch_all(MYSQLI_ASSOC); // alla pizzor med hur många ingredienser som matchar de sökta;
+	$return =  $res->fetch_all(MYSQLI_ASSOC); //alla pizzor med hur många ingredienser som matchar de sökta;
 	//var_dump($return);
 
-	foreach ($return as $pizza) {
+	foreach ($return as $pizza) { //för varje pizza i pizzaresultatet körs denna loop
+        //VÄLJ alla attribut från tabellerna pizzorinpizzeria 
+        //och ingrediedienser från tabellen ingredienseronpizza
+        //
 		$sql = "SELECT pizzorinpizzeria.*, ingredienseronpizza.ingrediens FROM `pizzorinpizzeria`, ingredienseronpizza WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id AND pizzorinpizzeria.id = ?";
 		$stmt = $conn->prepare($sql);
 		//var_dump($pizza);
@@ -49,7 +54,6 @@ if(isset($_GET['ingredienser'])){
 		$result = $stmt->get_result();
 		$ingredienser = [];
 		$namn = "";
-
 
 		while($row = $result->fetch_assoc()) {
 			$ingredienser[] = ($row['ingrediens']);
