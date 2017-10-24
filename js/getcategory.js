@@ -85,8 +85,6 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             }
         })
     }
-    
-    
 })
 
 

@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.sucsess){
                 user.value = "";
                 pass.value = "";
+                location.href = document.referrer;
             }else{
                 
                 errorMSG.innerText = data.error;
@@ -17,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         // Code taaken from: https://codepen.io/colorlib/pen/rxddKy
     });
+    document.getElementById('register-form').addEventListener('change', function(e){
+        let errorMSG = this.children[5];
+        errorMSG.innerText = "";
+        
+    })
     document.getElementById('register-form').addEventListener('submit', function(e){
         e.preventDefault()
         let username = this.children['username'];
@@ -27,10 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
         ajax.post('assets/register_parse.php', {"username":username.value, "password":password.value, "name":name.value, "email":email.value}, function(data){
             var data = JSON.parse(data);
             if (data.sucsess){
-                user.value = "";
-                pass.value = "";
+                username.value = ""
+                password.value = ""
+                name.value = ""
+                email.value = ""
+                switshinput(username.parentNode);
             }else{
-                
                 errorMSG.innerText = data.error;
             }
         })
@@ -38,16 +46,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     var message = document.getElementsByClassName('message');
     for (var text of message){
-        var ost = text.getElementsByTagName('a')[0];
-        ost.addEventListener('click', function (e) {
-            var form = this.parentNode.parentNode;
-            this.parentNode.parentNode.style.display = "none";
+        text.getElementsByTagName('a')[0].addEventListener('click', switshinput);
+    }
+    function switshinput(e) {
+        if(e.tagName =="FORM"){
+            var form = e;
+        }else{
+            var form = e.target.parentNode.parentNode;
+        }
+            form.style.display = "none";
             if(form.nextElementSibling != null){
                 form.nextElementSibling.style.display = "block";
             }else{
                 form.previousElementSibling.style.display = "block";
             }
-        })
-    } 
+    }
     
 })

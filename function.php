@@ -33,6 +33,7 @@ function connect_to_db(){
 	$sql_second ="CHARSET 'utf8'";
 	$result = $conn->query($sql_second);
 	//sets utf-8 as CHARSET in mySQL§
+	
 	return $conn;
 }
 
@@ -47,4 +48,15 @@ function getIngredients($kategori='')
 	$conn->close();
 	return $result;
 }
+
+//
+
+
+
+
+
+
+
+
+
 ?>

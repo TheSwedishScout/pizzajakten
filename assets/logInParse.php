@@ -13,17 +13,20 @@ if (!isset($_SESSION['user_id'])){
         $in_user_lvl = test_input($_POST['user_lvl']);
     }
     /*$pre_page = test_input($_POST['page']);  FIXAAA */
+
     $username = test_input($_POST['username']);
     $password = test_input($_POST['password']);
     
     $sql = "SELECT password, user_lvl, name, username FROM `user` WHERE `username` = ? OR email = ?";
     //echo($sql);
     $conn = connect_to_db();
+
+    
     $stmt = $conn->prepare($sql);
+
     $stmt->bind_param("ss", $username, $username);
     $stmt->execute();
     $result = $stmt->get_result();
-        //var_dump($result);
         if ($result->num_rows > 0) {
             // output data of each row
             $row = $result->fetch_assoc();
