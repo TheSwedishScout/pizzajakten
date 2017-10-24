@@ -929,3 +929,82 @@ input::placeholder {
 }
 
 
+
+
+
+
+
+
+/**************************************************************\
+|**************************************************************|
+|***************** Kassa och varukorg beställningslista *******|
+|**************************************************************|
+\**************************************************************/
+
+/*"Pizza_namn" "Pizza_pris" "Pizza_radera" h2 order*/
+
+.left.varukorg {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.left.kassa {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.order {
+	padding-top: 15px;
+	padding-bottom: 30px;
+	font-size: 30px;
+	margin: 0 auto;
+	text-align: center;
+
+}
+.Pizza_namn {
+	font-size: 23px;
+	margin-bottom: 5px;
+}
+.Pizza_pris {
+	font-size: 17px;
+	margin-bottom: 20px;
+}
+.left.kassa input[type=submit] {
+	border: none;
+	border-radius: 25px;
+    color: black;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "helvetica";
+
+    float: left;
+	  outline: 0;
+	  background: #f2f2f2;
+	  width: 100px;
+	  margin: 0 0 15px;
+	  padding: 15px;
+	  box-sizing: border-box;
+	  font-size: 14px;
+}
+.left.varukorg input[type=submit] {
+	border: none;
+	border-radius: 25px;
+    color: black;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "helvetica";
+
+	  outline: 0;
+	  background: #f2f2f2;
+	  width: 100%;
+	  margin: 0 0 15px;
+	  padding: 15px;
+	  box-sizing: border-box;
+	  font-size: 14px;
+}
+
+
