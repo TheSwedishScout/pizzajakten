@@ -1,6 +1,6 @@
 <?php
 	//Sessionstart måste ligga innan HTml-tecken
-	session_start ();
+
 	include 'header.php';
 
 	if (isset($_POST['delete'])) {
@@ -87,7 +87,12 @@
 
 </main>
 <main class="right varukorg">
-	<h2></h2>
+	<ul class="continue">
+        <li><h2>ÄR DU BELÅTEN ELLER VILL DU HA MER?</h2></li>
+        <li><button><p><a href="index.php">Forsätt handla</a></p></button></li>
+        <li><button><p><a href="kassa.php">Gå till kassan</a></p></button></li>
+        <li><button><p><a href="login.php">Logga in</a></p></button></li>
+    </ul>
         <!-- Knappar för "fortsätt handla som länkar tillbaka till index", logga in fuktion, gästanvändare, ring till pizzerian-knapp-->
 </main>
 
