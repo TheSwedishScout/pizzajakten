@@ -15,8 +15,9 @@
 	if(isset($_POST["pizza"])) {
 
 			$item_array = [	'id' => test_input($_POST["pizza"]),
-							'pizza_ingredienser' => test_input($_POST["pizza_ingredienser"]),
+							//'pizza_ingredienser' => test_input($_POST["pizza_ingredienser"]),
 							'pizza_quantity' => 1];
+			//var_dump($item_array);
 			//Hämtar pris, pizza namn osv från databasen
 			$conn = connect_to_db(); //connectar till databas
 			$SQL = 'SELECT id, name, pizzeria, pris FROM pizzorinpizzeria WHERE id = ?'; //Definerar vad som ska hämtas ifrån databasen
@@ -26,7 +27,7 @@
 			//var_dump($stmt);
 			$res = $stmt->get_result(); //Ger vairablen-namn till de columner som hämtas i databasen så att det är lättare att läsa koden sen,
 			$row = $res->fetch_assoc();
-			
+			//var_dump($row);
 			$item_array = array_merge($item_array, $row);
 
 			/*
@@ -36,7 +37,6 @@
 			$item_array['pris'] = $pris;
 			*/
 			 //Lägger till id, name, pizzeria och pris i item_array ovan
-			var_dump($item_array);
 
 
 
@@ -53,13 +53,13 @@
 	if (!empty($_SESSION["shopping-cart"])){
 		$total = 0;
 		foreach ($_SESSION["shopping-cart"] as $keys => $values) {
-			var_dump($values)
+			//var_dump($values)
 ?>	
 <ul>
 	<form method="post">
 	<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
 	<li><?php echo $values["name"]; ?></li> 
-	<li><?php echo $values["pizza_ingredienser"]; ?></li>
+	<!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
 	<li>$ <?php echo $values["pris"]; ?></li> 
 	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
 	<li><input type="submit" name="delete" value="Ta bort"></li>

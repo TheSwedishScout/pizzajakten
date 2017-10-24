@@ -34,7 +34,7 @@
                 while($row = $result->fetch_assoc()) {
                 $conn = connect_to_db();
                     //Gör ett statement där vi "joinar" de olika databaserna och sätter samman informationen, där id't sedan är dynamiskt utifrån vad vi tidigare valt
-                    $stmt = $conn->prepare("SELECT pizzorinpizzeria.name, pizzerior.namn, pizzerior.adress, pizzorinpizzeria.pris FROM pizzorinpizzeria, pizzerior WHERE pizzorinpizzeria.id = ? AND pizzorinpizzeria.pizzeria=pizzerior.id");
+                    $stmt = $conn->prepare("SELECT pizzorinpizzeria.id, pizzorinpizzeria.name, pizzerior.namn, pizzerior.adress, pizzorinpizzeria.pris FROM pizzorinpizzeria, pizzerior WHERE pizzorinpizzeria.id = ? AND pizzorinpizzeria.pizzeria=pizzerior.id");
                     $stmt->bind_param('i', $row['pizza']); //i är för integer, alltså det vi får ut från id't
                     $stmt->execute();
                     $result2 = $stmt->get_result();
@@ -47,10 +47,10 @@
                                 <h3><?php echo($row2['namn']); ?></h3>
                                 <p><?php echo($row2['adress']); ?></p>
                                 <h3><?php echo($row2['pris']); ?> kr</h3>
-                                <form action="">
+                                <form action="varukorg.php" method="POST">
                                     <input type="submit" name="Välj denna" value="Välj pizza">
-                                    <input type="hidden" name="pizzeria" value="1">
-                                    <input type="hidden" name="pizza" value="5">
+                                    
+                                    <input type="hidden" name="pizza" value="<?php echo $row2['id'] ?>">
                                 </form>
                             </li>  
                             <?php
