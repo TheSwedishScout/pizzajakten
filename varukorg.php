@@ -84,10 +84,7 @@
 		} 
 
 ?>
-<<<<<<< HEAD
-=======
 
->>>>>>> fd6aa070be08c79047cef680822c161460d7eda0
 </main>
 <main class="right varukorg">
 	<ul class="continue">
