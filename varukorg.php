@@ -1,6 +1,6 @@
 <?php
 	//Sessionstart måste ligga innan HTml-tecken
-	session_start ();
+
 	include 'header.php';
 
 	if (isset($_POST['delete'])) {
