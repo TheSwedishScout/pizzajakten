@@ -1,6 +1,6 @@
 <?php
 	//Sessionstart måste ligga innan HTml-tecken
-	session_start ();
+
 	include 'header.php';
 
 	if (isset($_POST['delete'])) {
@@ -47,7 +47,7 @@
 	
 ?>
 <main class="left varukorg">
-
+<h2 class="order">Din Varukorg</h2>
 
 <?php
 	if (!empty($_SESSION["shopping-cart"])){
@@ -58,11 +58,11 @@
 <ul>
 	<form method="post">
 	<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
-	<li><?php echo $values["name"]; ?></li> 
+	<li class="Pizza_namn"><?php echo $values["name"]; ?></li> 
 	<!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
-	<li>$ <?php echo $values["pris"]; ?></li> 
+	<li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
 	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
-	<li><input type="submit" name="delete" value="Ta bort"></li>
+	<li class="Pizza_radera"><input type="submit" name="delete" value="Ta bort"></li>
 	</form>
 
 </ul>
@@ -84,6 +84,10 @@
 		} 
 
 ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> fd6aa070be08c79047cef680822c161460d7eda0
 </main>
 <main class="right varukorg">
 	<ul class="continue">
