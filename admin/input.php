@@ -114,9 +114,11 @@ if (isset($_POST['nyPizza'])) {
 }
 ?>
 <main class="left">
-	<h2>Ny pizzeria</h2>
+	<div class="inputPizzeria">
+    <h2>Ny pizzeria</h2>
+
 <form method="POST" action="">
-	<label for="pizzeria">namn*:</label>
+	<label for="pizzeria">namn*:</label><br>
 	<input type="text" placeholder="pizzarians namn" required name="pizzeria"><br>
 	<!--
 		<label for="lng">longditute* (57.787242):</label>
@@ -124,7 +126,7 @@ if (isset($_POST['nyPizza'])) {
 		<label for="lat">latitude* (14.243169):</label>
 		<input type="number" min="-87.711799" max="89.450161" step=0.000001 required name="lat"><br>
 	-->
-	<input type="text" placeholder="adress" required name="adress">
+	<input type="text" placeholder="adress" required name="adress"><br>
 	Alla dagar samma öppetider <input type="checkbox" id="alldays" name="oppetalladagar"><br>
 	vardag och helg tider <input type="checkbox" id="weekend" name="vardahhelg"><br>
 	<label id="firstTimeinputName">Måndag</label>* <br>
@@ -160,11 +162,13 @@ if (isset($_POST['nyPizza'])) {
 	<input type="submit" name="nyPizzeria">
 
 </form>
+        
 <?php
 if (isset($_POST['nyPizzeria'])) {
  printf("%d Row inserted.\n", $stmt->affected_rows); 
 }
 ?>
+        </div>
 </main>
 <main class="right">
 	<?php

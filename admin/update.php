@@ -11,7 +11,7 @@
 	?>
 	<h2>Ny pizza</h2>
 	<form method="GET">
-		pizzeria select get from db
+		Välj pizzeria
 		<select name="pizzeria">
 			<?php
 			if (isset($_GET['pizzeria']) && !empty($_GET['pizzeria'])) {
