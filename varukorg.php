@@ -1,43 +1,48 @@
 <?php
+	//Sessionstart måste ligga innan HTml-tecken
+	session_start ();
 	include 'header.php';
 
-	session_start ();
-	if(isset($_POST["add-to-cart"])) {
-		
-		if (isset($_SESSION["shopping-cart"])) {
-			$item_array_id = $array_column($_SESSION["shopping-cart"], "item_id");
-			if(!in_array($_GET["id"], $item_array_id)) {
+	if (isset($_POST['delete'])) {
+		//letar efter _POST pizzaid i arrayn från session och columnen i arrayn "id"
+		$hittad = array_search($_POST['pizzaid'], array_column($_SESSION["shopping-cart"], 'id'));
 
-				$count = count($_SESSION["shopping-cart"]);
-				$item_array = array (
-					'item_id' => $_GET["pizzaid"],
-					'item_name' => $_POST["hidden_name"],
-					'item_price' => $_POST["hidden_price"],
-					'item_quantity' => $_POST["quantity"]
-					);
-				$_SESSION["shopping-cart"][$count] = $item_array;
-			}
+		//ta bort item från _session[cart] från position $hittad
+		array_splice($_SESSION['shopping-cart'], $hittad, 1); //1an betyder att den bara bort en pizza åt gången/per klick på ta bort
+	}
 
-			else {
+	
+	if(isset($_POST["pizza"])) {
 
-				echo '<script>("Pizza redan tillagd!")</script>';
-				echo '<script>window.location="index.php"</script>';
-
-			}
-
-		}
-		else {
-			$item_array = array (
-					'item_id' => $_GET["pizzaid"],
-					'item_name' => $_POST["hidden_name"],
-					'item_price' => $_POST["hidden_price"],
-					'item_quantity' => $_POST["quantity"]
-
-
-				);
+			$item_array = [	'id' => test_input($_POST["pizza"]),
+							'pizza_ingredienser' => test_input($_POST["pizza_ingredienser"]),
+							'pizza_quantity' => 1];
+			//Hämtar pris, pizza namn osv från databasen
+			$conn = connect_to_db(); //connectar till databas
+			$SQL = 'SELECT id, name, pizzeria, pris FROM pizzorinpizzeria WHERE id = ?'; //Definerar vad som ska hämtas ifrån databasen
+			$stmt = $conn->prepare($SQL); //prepare statment SQL förfrågan till databas
+			$stmt->bind_param("i", $item_array['id']); //Lägger värden på där de står frågetecken i texten
+			$stmt->execute(); //execute förfrågan till databas
+			//var_dump($stmt);
+			$res = $stmt->get_result(); //Ger vairablen-namn till de columner som hämtas i databasen så att det är lättare att läsa koden sen,
+			$row = $res->fetch_assoc();
 			
-			$_SESSION["shopping-cart"][0] = $item_array;
-		}
+			$item_array = array_merge($item_array, $row);
+
+			/*
+			$item_array['id'] = $id;
+			$item_array['name'] = $name;
+			$item_array['pizzeria'] = $pizzeria;
+			$item_array['pris'] = $pris;
+			*/
+			 //Lägger till id, name, pizzeria och pris i item_array ovan
+			var_dump($item_array);
+
+
+
+			
+			$_SESSION["shopping-cart"][] = $item_array;
+		//}
 	}
 	
 ?>
@@ -45,52 +50,34 @@
 
 
 <?php
-
-	$query = "SELECT * FROM pizzorinpizzeria ORDER BY id";
-	$result = mysqli_query($connect , $query);
-
-	if(mysqli_num_rows($result) > 0 ){
-			while($row = mysqli_fetch_array($result)){
-?>
-				<div class="col-md-4">
-					<form method="POST" action="kassa.php <?php echo $row["id"]; ?>">
-						<h3 class="text-info"> <?php echo $row["pizzaid"]?></h3>
-						<h3 class="text-danger">$ <?php echo $row["pris"]?></h3>
-						<input type="text" name="quantity" class="form-control" value="1"/>
-						<input type="hidden" name="hidden_name" value=" <?php echo $row["pizzaid"]; ?>" />
-						<input type="hidden" name="hidden_price" value=" <?php echo $row["pris"]; ?>" />
-						<input type="submit" name="add-to-cart" class="btn btn-success" value="add to cart" />
-					</form>
-				</div>
-<?php
-			}
-		} 
-
-?>
-
-<?php
 	if (!empty($_SESSION["shopping-cart"])){
 		$total = 0;
 		foreach ($_SESSION["shopping-cart"] as $keys => $values) {
-
+			var_dump($values)
 ?>	
-<tr>
-	<td><?php echo $values["item_name"]; ?></td>
-	<td><?php echo $values["item_quantity"]; ?></td>
-	<td>$ <?php echo $values["item_price"]; ?></td>
-	<td><?php echo number_format($values["item_quantity"] * $values["item_price"], 2); ?></td>
-	<td><a href="index.php?action=delete&id=<?php echo $values["item_id"]; ?>"><span class="text-danger">RADERA</span></a></td>
-</tr>
+<ul>
+	<form method="post">
+	<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
+	<li><?php echo $values["name"]; ?></li> 
+	<li><?php echo $values["pizza_ingredienser"]; ?></li>
+	<li>$ <?php echo $values["pris"]; ?></li> 
+	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
+	<li><input type="submit" name="delete" value="Ta bort"></li>
+	</form>
+
+</ul>
+
+
 <?php
-		$total = $total + ($values["item_quantity"] * $values["item_price"]]);
+		//$total = $total + ($values["item_quantity"] * $values["item_price"]);
 
 			}
 ?>
 
-<tr>
+<!--<tr>
 	<td colspan="3" align="right">Totalt</td>
 	<td align="right">$ <?php echo number_format($total, 2);  ?></td>
-</tr>
+</tr>-->
 
 <?php
 

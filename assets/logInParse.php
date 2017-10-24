@@ -1,7 +1,7 @@
 <?php
 //$password = $_POST['password'];
 //$username = $_POST['username'];
-include ("function.php");
+include ("../function.php");
 
 
 session_start();
