@@ -564,6 +564,7 @@ main.right .continue li {
 
 main.right .continue button {
     background-color: #76c6ec;
+    width: 100%;
 }
 
 main.right .continue h2 {
