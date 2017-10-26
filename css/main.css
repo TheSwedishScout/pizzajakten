@@ -954,7 +954,7 @@ input::placeholder {
     height: 70%;
     width: 43%;
     margin: -3% 0 0 -23%;
-    top: 46%;
+    top: 35%;
     left: 50%;
     line-height: 22px;
 }
@@ -966,6 +966,7 @@ input::placeholder {
 .admin button {
     background-color: #e26262
 }
+
 
 .inputPizzeria input {
     border: none;
