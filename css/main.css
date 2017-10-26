@@ -72,7 +72,7 @@ font-size: 1em;
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
     /*grid-template-rows: 1fr 2fr 1fr auto 1fr; */
-    grid-template-rows: 15% 15% 10% auto 1%;
+    grid-template-rows: 15% 15% 35px auto 1%;
     grid-template-areas: 
     "header header header header" 
     ". prog prog ."
@@ -290,7 +290,7 @@ input[type=search] {
 	/*Horizontal list*/
 	display: grid;
 	grid-template-columns: repeat(6, 1fr 20px);
-	grid-template-rows: 50px;
+	grid-template-rows: 35px;
 	/*justify-items: stretch;*/
 }
 .tabs li{
@@ -299,13 +299,12 @@ input[type=search] {
 	justify-self: stretch;
 	align-self: stretch;
 	text-align: center;
-	line-height: 44px;
+	line-height: 35px;
 	font-size: 20px;
 	text-decoration: none;
 	color:#fff;
 	cursor: pointer;
-	border-radius: 0 24px 0 0; 
-	
+	border-radius: 0 24px 0 0; 	
 }
 
 
@@ -398,40 +397,50 @@ main::-webkit-scrollbar-button {
 main.left{
 	grid-area: main1;
 	background: #5D9CEC;
+	margin-bottom: 20px;
 }
 main.right{
 	grid-area: main2;
-	background: #4A89DC;	
+	background: #4A89DC;
+	margin-bottom: 20px;	
 }
 
 main.left.pizzerior {
-	background: #A0D468; 
+	background: #A0D468;
+	margin-bottom: 20px; 
 }
 main.right.pizzerior {
-	background: #8CC512; 
+	background: #8CC512;
+	margin-bottom: 20px; 
 }
 
 main.left.varukorg {
-	background: #4FC1E9; 
+	background: #4FC1E9;
+	margin-bottom: 20px; 
 }
 main.right.varukorg {
-	background: #3BAFDA; 
+	background: #3BAFDA;
+	margin-bottom: 20px; 
 }
 
 
 main.left.kassa {
-	background: #FFCE54; 
+	background: #FFCE54;
+	margin-bottom: 20px; 
 }
 main.right.kassa {
-	background: #F6BB42; 
+	background: #F6BB42;
+	margin-bottom: 20px; 
 }
 
 
 main.left.klar {
-	background: #AC92EC; 
+	background: #AC92EC;
+	margin-bottom: 20px; 
 }
 main.right.klar {
-	background: #967ADC; 
+	background: #967ADC;
+	margin-bottom: 20px; 
 }
 
 /*STYLING AV PIZZERIOR-SIDAN*/
