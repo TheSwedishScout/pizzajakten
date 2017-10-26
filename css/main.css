@@ -545,31 +545,11 @@ button:active {
 
 
 
-/**************************************************************\
-|**************************************************************|
-|****************************VARUKORG*****************************|
-|*****************************************************|
-|**************************************************************|
-\**************************************************************/
 
 
-main.right .continue {
-    text-align: center;
-    padding: 3%;
-}
 
-main.right .continue li {
-    padding: 3%;
-}
 
-main.right .continue button {
-    background-color: #76c6ec;
-    width: 100%;
-}
 
-main.right .continue h2 {
-    font-size: xx-large;
-}
 
 /**************************************************************\
 |**************************************************************|
@@ -1038,47 +1018,39 @@ input::placeholder {
 .left.varukorg {
 	padding-left: 30px;
 	padding-right: 30px;
+
 }
+
 .left.kassa {
 	padding-left: 30px;
 	padding-right: 30px;
 }
+
 .order {
 	padding-top: 15px;
 	padding-bottom: 30px;
 	font-size: 30px;
 	margin: 0 auto;
 	text-align: center;
-
 }
+
 .Pizza_namn {
 	font-size: 23px;
+	letter-spacing: 1px;
 	margin-bottom: 5px;
 }
+
 .Pizza_pris {
 	font-size: 17px;
+	letter-spacing: 1px;
 	margin-bottom: 20px;
 }
-.left.kassa input[type=submit] {
-	border: none;
-	border-radius: 25px;
-    color: black;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    font-family: "helvetica";
 
-    float: left;
-	  outline: 0;
-	  background: #f2f2f2;
-	  width: 100px;
-	  margin: 0 0 15px;
-	  padding: 15px;
-	  box-sizing: border-box;
-	  font-size: 14px;
-}
+
+
+
+/*Knappar till left på varukorgssidan-sidan*/
+
 .left.varukorg input[type=submit] {
 	border: none;
 	border-radius: 25px;
@@ -1089,13 +1061,80 @@ input::placeholder {
     display: inline-block;
     font-size: 16px;
     font-family: "helvetica";
+    color: rgba(51, 94, 132, 0.89);
 
 	  outline: 0;
-	  background: #f2f2f2;
-	  width: 100%;
+	  background: rgba(205, 231, 254, 0.7);
+	  width: 100px;
+	  margin: 0 0 15px;
+	  padding: 15px;
+	  box-sizing: border-box;
+	  font-size: 14px;
+
+	  float: right;
+
+}
+
+.left.varukorg input[type=submit]:hover {
+	background: rgba(28, 91, 146, 0.3);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.left.varukorg input[type=submit]:active {
+	background: rgba(28, 91, 146, 0.3);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.left.varukorg input[type=submit]:focus {
+	background: rgba(28, 91, 146, 0.3);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+
+
+/*Knappar till left på kassa-sidan*/
+
+.left.kassa input[type=submit] {
+	border: none;
+	border-radius: 25px;
+    color: black;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: "helvetica";
+    color: rgba(132, 114, 0, 0.8);
+
+	  outline: 0;
+	  background: rgba(255, 241, 153, 0.8);
+	  width: 100px;
 	  margin: 0 0 15px;
 	  padding: 15px;
 	  box-sizing: border-box;
 	  font-size: 14px;
 }
+
+
+.left.kassa input[type=submit]:hover {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.left.kassa input[type=submit]:active {
+	background: rgba(227, 176, 22, 0.4);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
+.left.kassa input[type=submit]:focus {
+	background: rgba(227, 176, 22, 0.4));
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
 
