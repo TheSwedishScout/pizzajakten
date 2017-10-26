@@ -650,7 +650,7 @@ button:active {
 	transition: 0.3s;
 }
 
-.kassa>input[type=text],.kassa>input[type="email"] {
+.kassa>input[type=text],.kassa>input[type="email"], .kassa>input[type=tel] {
 	background: rgba(255, 241, 153, 0.54);
 	border: none;
 	border-radius: 25px;

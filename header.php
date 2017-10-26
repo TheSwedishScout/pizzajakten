@@ -50,40 +50,38 @@
 	$p_page = '';
 	$n_page_hidden = '';
 	$p_page_hidden = '';
-
+	$page = explode(".", $page)[0];
 	switch ($page) {
 		case '':
 			$n_page = "pizzerior.php";
 			$p_page_hidden = 'hidden'; //döljer previous page
 			$page_nr = 1;
 			break;
-		case "index.php":
+		case "index":
 			$n_page = "pizzerior.php";
 			$p_page_hidden = 'hidden'; //döljer previous page
 			$page_nr = 1;
 			break;
-		case "pizzerior.php":
+		case "pizzerior":
 			$n_page = "varukorg.php";
 			$p_page = "index.php";
 			$page_nr = 2;
 			break;
-		case "varukorg.php":
+		case "varukorg":
 			$n_page = "kassa.php";
 			$p_page = "pizzerior.php";
 			$page_nr = 3;
 			break;
-		case "kassa.php":
+		case "kassa":
 			$n_page_hidden = 'hidden'; //döljer next page
 			$p_page = "varukorg.php";
 			$page_nr = 4;
 			break;
-		case "klar.php":
+		case "klar":
 			$n_page_hidden = 'hidden'; //döljer next page
 			$p_page_hidden = 'hidden';
 			$page_nr = 5;
 			break;
-			
-
 	}
 
 ?>
@@ -131,9 +129,8 @@
 		</li>
 		
 		<li>
-			<a class="<?php echo isset($page_nr) && $page_nr > 1 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>">
+			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>">
 				<img src="images/pizza2.png">
-
 			</a>
 		</li>
 		<li>
