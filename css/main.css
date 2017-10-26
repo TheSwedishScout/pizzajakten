@@ -241,7 +241,7 @@ header{
 
 .progretion a>img:hover {
 	transition-timing-function: ease-in;
-	transition: filter 1s;
+	transition: 0.4s;
 	-webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
 }
