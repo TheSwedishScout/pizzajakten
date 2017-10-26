@@ -431,6 +431,7 @@ main.left.kassa {
 main.right.kassa {
 	background: #F6BB42;
 	margin-bottom: 20px; 
+padding-right: 5%;
 }
 
 
@@ -587,13 +588,8 @@ button:active {
 	font-size: 12px;
 }
 
-main.right.kassa {
-	/* Se bakrundsärg under "alla sidors bakrundsfärger" (background: #F6BB42;)*/
-	padding-top: 50px;
-	padding-right: 5%;
+/*
 
-
-}
 
 /* FORM */
 
@@ -1077,16 +1073,14 @@ input::placeholder {
     font-size: 16px;
     font-family: "helvetica";
     color: rgba(51, 94, 132, 0.89);
-
-	  outline: 0;
-	  background: rgba(205, 231, 254, 0.7);
-	  width: 100px;
-	  margin: 0 0 15px;
-	  padding: 15px;
-	  box-sizing: border-box;
-	  font-size: 14px;
-
-	  float: right;
+    outline: 0;
+    background: rgba(205, 231, 254, 0.7);
+    width: 100px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    float: right;
 
 }
 
@@ -1148,6 +1142,7 @@ input::placeholder {
 	  padding: 15px;
 	  box-sizing: border-box;
 	  font-size: 14px;
+        float: right;
 }
 
 
