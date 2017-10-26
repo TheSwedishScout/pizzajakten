@@ -1025,10 +1025,14 @@ input::placeholder {
 
 /*"Pizza_namn" "Pizza_pris" "Pizza_radera" h2 order*/
 
+.raderaKnapp {
+    cursor: pointer;
+    color: white !important;
+}
+
 .left.varukorg {
 	padding-left: 30px;
 	padding-right: 30px;
-
 }
 
 .left.kassa {
@@ -1048,6 +1052,7 @@ input::placeholder {
 	font-size: 23px;
 	letter-spacing: 1px;
 	margin-bottom: 5px;
+    margin-top: 5%;
 }
 
 .Pizza_pris {
@@ -1101,6 +1106,23 @@ input::placeholder {
 	background: rgba(28, 91, 146, 0.3);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
+}
+
+.continue {
+    text-align: center;
+}
+
+.continue h2 {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.continue button {
+    background-color: rgba(205, 231, 254, 0.7);
+    width: 90%;
+    margin-top: 5%;
+    padding: 15px;
 }
 
 
