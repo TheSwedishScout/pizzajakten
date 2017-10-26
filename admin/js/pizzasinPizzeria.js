@@ -88,17 +88,19 @@ document.addEventListener("DOMContentLoaded", function() {
 						li.innerHTML = thisp.oldstate;
 						li.lastChild.addEventListener('click', andra)
 					})
-					spara.addEventListener("click",function (e){
+					spara.addEventListener("submit",function (e){
 						e.preventDefault();
 						removedIngred
 						thisp.id;
-							debugger;
+						this;
 						for (var ingToRemove of removedIngred) {
 							var index = thisp.ingredienser.indexOf(ingToRemove);
 							if (index > -1) {
 								thisp.ingredienser.splice(index, 1);
 							}
 						}
+						var data = {'pizza':thisp.id, 'namn': thisp.name, 'pris':thisp.pris, 'ingredienser':thisp.ingredienser};
+						debugger;
 						ajax.post("assets/updatepizza.php", data, reprint)
 						
 						li.lastChild.addEventListener('click', andra)
@@ -111,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				list.appendChild(li);
 				function reprint(data) {
 					// body...
+					debugger;
 				}
 			}
 			)()
