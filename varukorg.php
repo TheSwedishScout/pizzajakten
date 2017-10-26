@@ -58,13 +58,12 @@
 <ul>
 	<form method="post">
 	<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
-	<li class="Pizza_namn"><?php echo $values["name"]; ?></li> 
+	<li class="Pizza_namn"><?php echo $values["name"]; ?><input class="raderaKnapp" type="submit" name="delete" value="Ta bort"></li> 
 	<!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
 	<li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
 	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
-	<li class="Pizza_radera"><input type="submit" name="delete" value="Ta bort"></li>
-	</form>
 
+	</form>
 </ul>
 
 
@@ -96,5 +95,6 @@
 </main>
 
 <?php
+
 	include 'footer.php';
 ?>
