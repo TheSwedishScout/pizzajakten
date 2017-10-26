@@ -89,11 +89,10 @@
 <main class="right varukorg">
 	<ul class="continue">
         <li><h2>ÄR DU BELÅTEN ELLER VILL DU HA MER?</h2></li>
-        <li><button><p><a href="index.php">Forsätt handla</a></p></button></li>
-        <li><button><p><a href="kassa.php">Gå till kassan</a></p></button></li>
-        <li><button><p><a href="login.php">Logga in</a></p></button></li>
+        <li><a href="index.php"><button><p>Forsätt handla</p></a></button></li>
+        <li><a href="kassa.php"><button><p>Gå till kassan</p></a></button></li>
+        <li><a href="login.php"><button><p>Logga in</p></a></button></li>
     </ul>
-        <!-- Knappar för "fortsätt handla som länkar tillbaka till index", logga in fuktion, gästanvändare, ring till pizzerian-knapp-->
 </main>
 
 <?php
