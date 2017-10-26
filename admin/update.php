@@ -10,7 +10,7 @@
 	$rows = $result->fetch_all(MYSQLI_ASSOC);
 		
 	?>
-	<h2>Ny pizza</h2>
+	<h2>Välj pizzeria/pizza som ska updateras</h2>
 	<form id="selectPizzeria">
 		Välj pizzeria
 		<select name="pizzeria">

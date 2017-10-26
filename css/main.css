@@ -72,7 +72,7 @@ font-size: 1em;
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
     /*grid-template-rows: 1fr 2fr 1fr auto 1fr; */
-    grid-template-rows: 15% 15% 10% auto 1%;
+    grid-template-rows: 15% 15% 35px auto 1%;
     grid-template-areas: 
     "header header header header" 
     ". prog prog ."
@@ -241,7 +241,7 @@ header{
 
 .progretion a>img:hover {
 	transition-timing-function: ease-in;
-	transition: filter 1s;
+	transition: 0.4s;
 	-webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
 }
@@ -290,7 +290,7 @@ input[type=search] {
 	/*Horizontal list*/
 	display: grid;
 	grid-template-columns: repeat(6, 1fr 20px);
-	grid-template-rows: 50px;
+	grid-template-rows: 35px;
 	/*justify-items: stretch;*/
 }
 .tabs li{
@@ -299,13 +299,12 @@ input[type=search] {
 	justify-self: stretch;
 	align-self: stretch;
 	text-align: center;
-	line-height: 44px;
+	line-height: 35px;
 	font-size: 20px;
 	text-decoration: none;
 	color:#fff;
 	cursor: pointer;
-	border-radius: 0 24px 0 0; 
-	
+	border-radius: 0 24px 0 0; 	
 }
 
 
@@ -398,40 +397,51 @@ main::-webkit-scrollbar-button {
 main.left{
 	grid-area: main1;
 	background: #5D9CEC;
+	margin-bottom: 20px;
 }
 main.right{
 	grid-area: main2;
-	background: #4A89DC;	
+	background: #4A89DC;
+	margin-bottom: 20px;	
 }
 
 main.left.pizzerior {
-	background: #A0D468; 
+	background: #A0D468;
+	margin-bottom: 20px; 
 }
 main.right.pizzerior {
-	background: #8CC512; 
+	background: #8CC512;
+	margin-bottom: 20px; 
 }
 
 main.left.varukorg {
-	background: #4FC1E9; 
+	background: #4FC1E9;
+	margin-bottom: 20px; 
 }
 main.right.varukorg {
-	background: #3BAFDA; 
+	background: #3BAFDA;
+	margin-bottom: 20px; 
 }
 
 
 main.left.kassa {
-	background: #FFCE54; 
+	background: #FFCE54;
+	margin-bottom: 20px; 
 }
 main.right.kassa {
-	background: #F6BB42; 
+	background: #F6BB42;
+	margin-bottom: 20px; 
+padding-right: 5%;
 }
 
 
 main.left.klar {
-	background: #AC92EC; 
+	background: #AC92EC;
+	margin-bottom: 20px; 
 }
 main.right.klar {
-	background: #967ADC; 
+	background: #967ADC;
+	margin-bottom: 20px; 
 }
 
 /*STYLING AV PIZZERIOR-SIDAN*/
@@ -578,13 +588,8 @@ button:active {
 	font-size: 12px;
 }
 
-main.right.kassa {
-	/* Se bakrundsärg under "alla sidors bakrundsfärger" (background: #F6BB42;)*/
-	padding-top: 50px;
-	padding-right: 5%;
+/*
 
-
-}
 
 /* FORM */
 
@@ -645,7 +650,7 @@ main.right.kassa {
 	transition: 0.3s;
 }
 
-.kassa>input[type=text],.kassa>input[type="email"] {
+.kassa>input[type=text],.kassa>input[type="email"], .kassa>input[type=tel] {
 	background: rgba(255, 241, 153, 0.54);
 	border: none;
 	border-radius: 25px;
@@ -945,7 +950,7 @@ input::placeholder {
     height: 70%;
     width: 43%;
     margin: -3% 0 0 -23%;
-    top: 46%;
+    top: 35%;
     left: 50%;
     line-height: 22px;
 }
@@ -957,6 +962,7 @@ input::placeholder {
 .admin button {
     background-color: #e26262
 }
+
 
 .inputPizzeria input {
     border: none;
@@ -1015,10 +1021,14 @@ input::placeholder {
 
 /*"Pizza_namn" "Pizza_pris" "Pizza_radera" h2 order*/
 
+.raderaKnapp {
+    cursor: pointer;
+    color: white !important;
+}
+
 .left.varukorg {
 	padding-left: 30px;
 	padding-right: 30px;
-
 }
 
 .left.kassa {
@@ -1038,6 +1048,7 @@ input::placeholder {
 	font-size: 23px;
 	letter-spacing: 1px;
 	margin-bottom: 5px;
+    margin-top: 5%;
 }
 
 .Pizza_pris {
@@ -1062,16 +1073,14 @@ input::placeholder {
     font-size: 16px;
     font-family: "helvetica";
     color: rgba(51, 94, 132, 0.89);
-
-	  outline: 0;
-	  background: rgba(205, 231, 254, 0.7);
-	  width: 100px;
-	  margin: 0 0 15px;
-	  padding: 15px;
-	  box-sizing: border-box;
-	  font-size: 14px;
-
-	  float: right;
+    outline: 0;
+    background: rgba(205, 231, 254, 0.7);
+    width: 100px;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    float: right;
 
 }
 
@@ -1091,6 +1100,23 @@ input::placeholder {
 	background: rgba(28, 91, 146, 0.3);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
+}
+
+.continue {
+    text-align: center;
+}
+
+.continue h2 {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    font-size: 30px;
+}
+
+.continue button {
+    background-color: rgba(205, 231, 254, 0.7);
+    width: 90%;
+    margin-top: 5%;
+    padding: 15px;
 }
 
 
@@ -1116,6 +1142,7 @@ input::placeholder {
 	  padding: 15px;
 	  box-sizing: border-box;
 	  font-size: 14px;
+        float: right;
 }
 
 
