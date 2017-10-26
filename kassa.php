@@ -49,7 +49,7 @@
 		  <input type="text" name="lastname" placeholder="Efternamn" required>
 		  <input type="email" name="mail" placeholder="din.mail@hungrig.nu" required>
 		  <input type="text" name="Adress" placeholder="Adress" required>
-		  <input type="text" name="Adress" placeholder="Postnummer" required>
+		  <input type="tel" name="Adress" placeholder="Postnummer" required>
 		  	<input type="submit" value="Send">
 			<input type="reset" value="Reset">
 		</form> 
