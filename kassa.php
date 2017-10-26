@@ -25,12 +25,11 @@
 	?>
 	<ul>
 	<form method="post">
-	<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
-	<li class="Pizza_namn"><?php echo $values["name"]; ?></li> 
-	<!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
-	<li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
-	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
-	<li class="Pizza_radera"><input type="submit" name="delete" value="Ta bort"></li>
+        <!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
+        <li class="Pizza_namn"><?php echo $values["name"]; ?><input type="submit" name="delete" value="Ta bort"></li> 
+        <!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
+        <li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
+        <input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
 	</form>
 
 </ul>
@@ -41,7 +40,7 @@
          
 </main>
 <main class="right kassa">
-	<h2 id="kassaH2">Kassa</h2>
+	<h2 class="order">Kassa</h2>
 	<h3 id="kassaH3">Fyll i dina uppgifter så skickas din beställning till pizzerian</h3>
 
 		<form class="kassa" action="klar.php" method="POST">
