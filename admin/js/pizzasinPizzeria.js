@@ -71,6 +71,39 @@ document.addEventListener("DOMContentLoaded", function() {
 					}
 					
 					form.appendChild(uling2);
+					var display = document.createElement('ul');
+					form.appendChild(display);
+					/*lägg till ny ingrediens*/
+					var nying = document.createElement('input');
+					nying.type = 'text';
+					nying.placehoder = "Ny ingrediens";
+					form.appendChild(nying);
+					pizza.ingredienser=[];
+					nying.addEventListener("keydown", function (e) {
+						
+						if(e.key == "Tab" || e.key == 'Enter') {
+				            
+				            if(e.preventDefault) {
+				                e.preventDefault();
+				            }
+				            /*add to list of ingrediens*/
+				            var ul = display;
+				            var li = document.createElement("li");
+				            let input = this;
+				            ajax.get("../assets/gettopalikeingredients.php", {'term':this.value}, function (data) {
+								
+								var options= JSON.parse(data)[0];
+								if(typeof(options[0].namn) == "string")
+								pizza.ingredienser.push(options[0].namn);
+								
+				            	li.innerText = options[0].namn;
+								console.log(pizza);
+				            	ul.appendChild(li);
+				            	
+				            	input.value = "";
+							})
+				        }
+					})
 					/*knappar*/
 					/*avbryt spara*/
 					var avbryt = document.createElement('input');
@@ -88,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
 						li.innerHTML = thisp.oldstate;
 						li.lastChild.addEventListener('click', andra)
 					})
-					spara.addEventListener("submit",function (e){
+					form.addEventListener("submit",function (e){
 						e.preventDefault();
 						removedIngred
 						thisp.id;

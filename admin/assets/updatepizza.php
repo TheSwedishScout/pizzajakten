@@ -17,13 +17,17 @@ if(isset($_POST['pizza'])){
 	$stmt = $conn->prepare($sql);
 	$stmt->bind_param("sii",$namn, $pris, $id);
 	$stmt->execute();
-
+	$response = [];
 	if ($stmt->errno) {
-	  echo "FAILURE!!! " . $stmt->error;
+	  $response['error'] = $stmt->error;
 	}
-	else echo "Updated {$stmt->affected_rows} rows";
+	$response['sucsess'] = $stmt->affected_rows;
 
-	$json = json_encode($pizzor, JSON_UNESCAPED_UNICODE);
+	$result = $stmt->get_result();
+
+	var_dump($stmt->get_result());
+
+	$json = json_encode($response, JSON_UNESCAPED_UNICODE);
 	print_r($json);
 	$stmt->close();
 }

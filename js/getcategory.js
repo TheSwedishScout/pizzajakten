@@ -44,7 +44,15 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             this.classList.add('active');
             GetCategory(this.innerText);
             var mainDiv = document.getElementsByClassName('left')[0];;
-            mainDiv.style.background=this.style.background;
+            var classen = this.classList[1]
+            mainDiv.classList.remove("tab1");
+            mainDiv.classList.remove("tab2");
+            mainDiv.classList.remove("tab3");
+            mainDiv.classList.remove("tab4");
+            mainDiv.classList.remove("tab5");
+            mainDiv.classList.remove("tab6");
+            mainDiv.classList.add(classen);
+            
             
         });        
     }

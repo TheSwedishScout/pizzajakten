@@ -10,8 +10,10 @@
 		$conn = connect_to_db();
 		$sql = "SELECT category FROM `ingredienser` GROUP BY category";
 		if ($result = $conn->query($sql)) {
+			$i = 1;
 			while ($row = $result->fetch_assoc()) {
-				echo("<li class='shadow' >". $row['category']."</li>");
+				echo("<li class='shadow tab{$i}' >". $row['category']."</li>");
+				$i++;
 		    }
 		}
 		$conn->close();
