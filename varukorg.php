@@ -63,6 +63,7 @@
 	<li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
 	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
 
+    <?php     $_POST = array(); ?>    
 	</form>
 </ul>
 
