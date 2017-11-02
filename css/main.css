@@ -278,6 +278,70 @@ input[type=search] {
 	box-sizing: border-box;
 }
 
+/*counter som räknar hur mycket som ligger i varukorgen i hamburgermenyn och top-right*/
+/*se counter2 för counter i kassa och varukorg*/
+.counter1 {
+	background: #928FC1;
+	border: none;
+	border-radius: 50px;
+	box-sizing: border-box;
+	width: 30px;
+	height: 30px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	z-index: 100;
+
+	position: absolute;
+	top: 140px;
+    right: 300px;
+
+	text-align: center;
+	padding-top: 6px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-family: helvetica;
+    cursor: pointer;
+
+}
+.counter2 {
+	background: #928FC1;
+	border: none;
+	border-radius: 70px;
+	box-sizing: border-box;
+	width: 20px;
+	height: 20px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	z-index: 100;
+
+	position: absolute;
+	top: 49px;
+    right: 144px;
+
+	text-align: center;
+	padding-top: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    font-family: helvetica;
+    cursor: pointer;
+
+}
+
+.total {
+	width: 100%;
+	height: 50px;
+}
+
+.total>p {
+	float: right;
+	font-size: 20px;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+
+
+
 
 /**************************************************************\
 |**************************************************************|
@@ -619,6 +683,7 @@ button:active {
 }
 #kassaP {
 	font-size: 12px;
+	margin-bottom: 30px;
 }
 
 /*

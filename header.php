@@ -1,8 +1,23 @@
 <?php 
  //Header
 	session_start();
-?>
 
+	if (isset($_SESSION['shopping-cart'])) {
+	$items_in_cart = is_array($_SESSION['shopping-cart']) ? count($_SESSION['shopping-cart']) : 0 ; 
+	}//Kollar om de finns en array/session med antal saker i (dvs hur mycket som ligger i varukorgen) annars visar countern 0
+	else{
+		$items_in_cart = 0 ; //visar en nolla när det inte är några produkter i varukorgen
+	}
+	if(isset($_POST["pizza"]) && !empty($_POST["pizza"])) {//Kollar om variabeln _Post pizza är satt  coh om den inte är tom (att den är definerad), och adderar då +1 i varukorgen 
+		$items_in_cart++;
+	}
+	if(isset($_POST["delete"]) && !empty($_POST["delete"])) {//Kollar om variabeln _Post pizza är satt  coh om den inte är tom (att den är definerad), och adderar då +1 i varukorgen 
+		$items_in_cart--; //tar bort från shopping cart när man trycker på delete
+	}
+
+
+	
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,12 +112,13 @@
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php" class="logga"><img src="images/Logga.png" alt="Logga"></a>
         <a href="logIn.php"><img id="user" src="images/user.png"></a> 
-        <a href="varukorg.php"><img id="cart" src="images/cart.png"></a>
+        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 	</header>
 
 <!-- Hamburgermenyns innehåll -->	
 	<div id="meny" class="shadow">
 		<a href="varukorg.php"><img src="images/cart.png" alt="kundvangn"></a>
+		<div class="counter1"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 		<!--<img src="images/star.png" alt="Favoriter">-->
         <a href="logIn.php"><img src="images/user.png" alt="min sida"></a>
 		<nav>
