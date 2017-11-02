@@ -46,30 +46,38 @@ document.addEventListener("DOMContentLoaded", function() {
 					form.appendChild(pris)
 					var uling2 = document.createElement("ul");
 					/*ingrediener*/
-					thisp.ingredienser;
-					var removedIngred = [];
-					for(var ing2 of thisp.ingredienser){
-						(function () {
-							// body...
-							var ingredisd= ing2
-
-							var liing2 = document.createElement("li");
-							var remove = document.createElement("a");
-							remove.innerText =" X";
-							remove.href="#";
-							remove.addEventListener('click',function(e) {
-								e.preventDefault();
-								removedIngred.push(ingredisd);
-								debugger;
-								this.parentNode.parentNode.removeChild(this.parentNode);
-							})
-
-							liing2.innerText = ing2;
-							liing2.appendChild(remove);
-							uling2.appendChild(liing2);
-						})()
-					}
 					
+					var removedIngred = [];
+					function updateIngList(ingredienser) {
+						uling2.innerHTML ="";
+						for(var ing2 of ingredienser){
+							(function () {
+								// body...
+								var ingredisd= ing2
+
+								var liing2 = document.createElement("li");
+								var remove = document.createElement("a");
+								remove.innerText =" X";
+								remove.href="#";
+								remove.addEventListener('click',function(e) {
+									e.preventDefault();
+									thisp.ingredienser;
+									removedIngred.push(ingredisd);
+									var pos = thisp.ingredienser.indexOf(ingredisd);
+									thisp.ingredienser.splice(pos, 1);
+									/*Ingredienser som tarsbort ska tas bort från thisp.ingredienser*/
+									
+									
+									this.parentNode.parentNode.removeChild(this.parentNode);
+								})
+
+								liing2.innerText = ing2;
+								liing2.appendChild(remove);
+								uling2.appendChild(liing2);
+							})()
+						}
+					}
+					updateIngList(thisp.ingredienser);
 					form.appendChild(uling2);
 					var display = document.createElement('ul');
 					form.appendChild(display);
@@ -77,8 +85,25 @@ document.addEventListener("DOMContentLoaded", function() {
 					var nying = document.createElement('input');
 					nying.type = 'text';
 					nying.placehoder = "Ny ingrediens";
-					form.appendChild(nying);
-					pizza.ingredienser=[];
+					//Eventlistener för ingredienser
+					/*---------------------------------------------------------------------------------------------------------------------------*/
+					/*---------------------------------------------------------------------------------------------------------------------------*/
+					/*---------------------------------------------------------------------------------------------------------------------------*/
+					nying.addEventListener("input", function (e) {
+						//console.log(this.value.length);
+
+						if(this.value.length >= 3 && e.inputType != "deleteContentBackward" && e.inputType != 'deleteWordBackward'){
+							let input = this;
+							ajax.get("../assets/gettopalikeingredients.php", {'term':this.value}, function (data) {
+								var options= JSON.parse(data)[0];
+								
+								if(options.length > 0){
+									input.value = options[0].namn;
+								}
+								
+							})
+						}
+					});
 					nying.addEventListener("keydown", function (e) {
 						
 						if(e.key == "Tab" || e.key == 'Enter') {
@@ -87,23 +112,26 @@ document.addEventListener("DOMContentLoaded", function() {
 				                e.preventDefault();
 				            }
 				            /*add to list of ingrediens*/
-				            var ul = display;
+
 				            var li = document.createElement("li");
 				            let input = this;
 				            ajax.get("../assets/gettopalikeingredients.php", {'term':this.value}, function (data) {
 								
 								var options= JSON.parse(data)[0];
-								if(typeof(options[0].namn) == "string")
-								pizza.ingredienser.push(options[0].namn);
-								
-				            	li.innerText = options[0].namn;
-								console.log(pizza);
-				            	ul.appendChild(li);
-				            	
+								if(typeof(options[0].namn) == "string"){
+									thisp.ingredienser.push(options[0].namn);
+									
+									updateIngList(thisp.ingredienser);
+								}
 				            	input.value = "";
 							})
 				        }
 					})
+					/*-------------------------------------------------------------------------------------------------*/
+					/*-------------------------------------------------------------------------------------------------*/
+					/*-------------------------------------------------------------------------------------------------*/
+					/*-------------------------------------------------------------------------------------------------*/
+					form.appendChild(nying);
 					/*knappar*/
 					/*avbryt spara*/
 					var avbryt = document.createElement('input');
@@ -133,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function() {
 							}
 						}
 						var data = {'pizza':thisp.id, 'namn': thisp.name, 'pris':thisp.pris, 'ingredienser':thisp.ingredienser};
-						debugger;
+						console.log(data);
 						ajax.post("assets/updatepizza.php", data, reprint)
 						
 						li.lastChild.addEventListener('click', andra)
@@ -147,6 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				function reprint(data) {
 					// body...
 					debugger;
+					
 				}
 			}
 			)()
