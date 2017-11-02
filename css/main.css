@@ -872,6 +872,10 @@ input::placeholder {
     line-height: 22px;
 }
 
+.hittaPizzeria button{
+       background-color: rgba(255, 107, 107, 0.7);
+}
+
 .hittaPizzeria p {
     font-family: helvetica;
     margin-top: 30px;

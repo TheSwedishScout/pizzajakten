@@ -41,6 +41,7 @@
     <div class="hittaPizzeria">
         <h1>Hitta din pizzeria</h1>
         <p>Vilka pizzaställen finns egenligen? Här har vi samlat alla pizzerior så att du lätt kan gå in och kika på hela deras menyer!</p>
+                    <button>Tillbaka</button>
     </div>
     
     <div class="listaPizzerior">
@@ -60,6 +61,7 @@
                     ?>
         </ul>
     </div>
+
 
 <?php
 	include 'footer.php';
