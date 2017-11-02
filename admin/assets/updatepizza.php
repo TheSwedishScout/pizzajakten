@@ -10,7 +10,7 @@ if(isset($_POST['pizza'])){
 	}
 	if (isset($_POST['ingredienser'])) {
 		$ingredienser = test_input($_POST['ingredienser']);
-		var_dump($ingredienser);
+		//var_dump($ingredienser);
 	}
 	$conn = connect_to_db();
 	$sql = "UPDATE pizzorinpizzeria SET name = ?, pris = ? WHERE id = ?";
@@ -25,11 +25,15 @@ if(isset($_POST['pizza'])){
 
 	$result = $stmt->get_result();
 
-	var_dump($stmt->get_result());
+	//var_dump($stmt->get_result());
 
+	/*---------------------------------------Update ingredients---------------------------------------*/
+
+
+
+	$stmt->close();
 	$json = json_encode($response, JSON_UNESCAPED_UNICODE);
 	print_r($json);
-	$stmt->close();
 }
 
 ?>

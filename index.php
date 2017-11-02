@@ -23,6 +23,8 @@
 
 <!-- Main sidorna-->
 <main class="left">
+	<div id="selected"></div>
+	<div id="shoises"></div>
 </main>
 <main class="right">
     <ul class="resultat">

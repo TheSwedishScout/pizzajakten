@@ -17,6 +17,8 @@
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
+        $stmt->close();
+        $stmt ="";
         $conn->close();
     }
 ?>
@@ -34,10 +36,10 @@
                 while($row = $result->fetch_assoc()) {
                 $conn = connect_to_db();
                     //Gör ett statement där vi "joinar" de olika databaserna och sätter samman informationen, där id't sedan är dynamiskt utifrån vad vi tidigare valt
-                    $stmt = $conn->prepare("SELECT pizzorinpizzeria.id, pizzorinpizzeria.name, pizzerior.namn, pizzerior.adress, pizzorinpizzeria.pris FROM pizzorinpizzeria, pizzerior WHERE pizzorinpizzeria.id = ? AND pizzorinpizzeria.pizzeria=pizzerior.id");
-                    $stmt->bind_param('i', $row['pizza']); //i är för integer, alltså det vi får ut från id't
-                    $stmt->execute();
-                    $result2 = $stmt->get_result();
+                    $stmt2 = $conn->prepare("SELECT pizzorinpizzeria.id, pizzorinpizzeria.name, pizzerior.namn, pizzerior.adress, pizzorinpizzeria.pris FROM pizzorinpizzeria, pizzerior WHERE pizzorinpizzeria.id = ? AND pizzorinpizzeria.pizzeria=pizzerior.id");
+                    $stmt2->bind_param('i', $row['pizza']); //i är för integer, alltså det vi får ut från id't
+                    $stmt2->execute();
+                    $result2 = $stmt2->get_result();
                         while($row2 = $result2->fetch_assoc()) { ?>
                             <li>
                                 <!--                                
