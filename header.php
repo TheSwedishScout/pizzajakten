@@ -5,9 +5,16 @@
 	if (isset($_SESSION['shopping-cart'])) {
 	$items_in_cart = is_array($_SESSION['shopping-cart']) ? count($_SESSION['shopping-cart']) : 0 ; 
 	}//Kollar om de finns en array/session med antal saker i (dvs hur mycket som ligger i varukorgen) annars visar countern 0
-	else {
+	else{
 		$items_in_cart = 0 ; //visar en nolla när det inte är några produkter i varukorgen
 	}
+	if(isset($_POST["pizza"]) && !empty($_POST["pizza"])) {//Kollar om variabeln _Post pizza är satt  coh om den inte är tom (att den är definerad), och adderar då +1 i varukorgen 
+		$items_in_cart++;
+	}
+	if(isset($_POST["delete"]) && !empty($_POST["delete"])) {//Kollar om variabeln _Post pizza är satt  coh om den inte är tom (att den är definerad), och adderar då +1 i varukorgen 
+		$items_in_cart--; //tar bort från shopping cart när man trycker på delete
+	}
+
 
 	
 ?>
