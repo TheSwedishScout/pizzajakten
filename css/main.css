@@ -539,14 +539,26 @@ button:active {
 .resultatInner a{
 	display:block;
 }
+
+.resultatInner:hover {
+	opacity: .5;
+}
+
+.reultatInner h2::before {
+    content: "välj";
+}
 .resultatInner img {
     max-width: 100%;
+        content: "välj";
 }
 
 .resultatInner {
     text-align: center;
     padding: 2%;
     margin: 5px 15px 0 15px;
+    opacity: 1;
+    transition: opacity .2s ease-in;
+    
 }
 
 .resultatInner h3{
@@ -1139,6 +1151,12 @@ input::placeholder {
     padding: 15px;
 }
 
+.continue button:hover {
+   	background: rgba(28, 91, 146, 0.3);
+	transition-timing-function: ease-in;
+	transition: 0.3s;
+}
+
 
 
 /*Knappar till left på kassa-sidan*/
@@ -1183,5 +1201,29 @@ input::placeholder {
 	transition-timing-function: ease-in;
 	transition: 0.3s;
 }
+
+
+
+#selected {
+    list-style: none;
+    font-family: helvetica;
+    padding: 5px;
+}
+
+#selected li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 7px;
+    border: 1px solid;
+    border-radius: 18px;
+}
+
+#selected  li:hover  {
+    background-color: #ed5e5e;
+    cursor: pointer;
+}
+
 
 
