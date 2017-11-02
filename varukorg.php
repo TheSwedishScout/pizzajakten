@@ -2,7 +2,6 @@
 	//Sessionstart måste ligga innan HTml-tecken
 
 	include 'header.php';
-
 	if (isset($_POST['delete'])) {
 		//letar efter _POST pizzaid i arrayn från session och columnen i arrayn "id"
 		$hittad = array_search($_POST['pizzaid'], array_column($_SESSION["shopping-cart"], 'id'));
@@ -42,6 +41,7 @@
 
 			
 			$_SESSION["shopping-cart"][] = $item_array;
+			
 		//}
 	}
 	
@@ -85,6 +85,7 @@
 
 ?>
 
+<div class="total"><p>TOTALT: <?php echo $items_in_cart; ?></p></div> <!-- Echoar ut antal saker som ska ligga i varukorgen--> 
 </main>
 <main class="right varukorg">
 	<ul class="continue">

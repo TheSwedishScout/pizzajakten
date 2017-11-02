@@ -17,6 +17,7 @@
 ?>
 <main class="left kassa">
 	<h2 class="order">Din beställning</h2>
+
 	<?php 
 	if (!empty($_SESSION["shopping-cart"])){
 		$total = 0;
@@ -32,12 +33,18 @@
         <input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
 	</form>
 
+
+
 </ul>
+
+
 	<?php
+
 		}
 	}	
-	?>		
-         
+	?>	
+
+    <div class="total"><p>TOTALT: <?php echo $items_in_cart; ?></p></div> <!-- Echoar ut antal saker som ska ligga i varukorgen-->     
 </main>
 <main class="right kassa">
 	<h2 class="order">Kassa</h2>

@@ -25,8 +25,14 @@
                 'Reply-To: webmaster@example.com' . "\r\n" .
                 'X-Mailer: PHP/' . phpversion();
 
-        mail($to, $subject, $message, $headers);
+        mail($to, $subject, $message, $headers); //Mailar till ens angivna email när man har tryckt på submit
+
+
+
+            $_SESSION['shopping-cart'] = []; //Gör att sessionen avslutas och tidigare beställning rensas (startar om på 0 beställningar)
         ?>
+
+
 
 
 <?php
