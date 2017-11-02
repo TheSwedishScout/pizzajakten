@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){ //Ser till att scriptet inte laddar förens allt är inladdat
     var choosenIng = [];
+    var choosenIngElem = [];
     function GetCategory(cat) { 
         ajax.get("assets/getcategory.php", {'category':cat}, function (data) { // hämtar data från asset... med en get parameter "category" 
             var options= JSON.parse(data); // skapar en array från json data
@@ -14,19 +15,26 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 mainDiv.appendChild(btn); // puttar in ingrediensen i listan
                 
                 //gör så att knappen är tryckbar och att den gör något
-                (btn.addEventListener('click',function(e){
+                (btn.addEventListener('click', adding));
+
+                function adding(e){
                     this.classList.toggle('activeButton') // aktiv knapp som är tryckt. går att "trycka av"
                     
                     var index = choosenIng.indexOf(this.innerText);
                     if (index > -1){
                         choosenIng.splice(index,1);
+                        choosenIngElem[index].classList.remove('activeButton');
+                        choosenIngElem.splice(index,1);
+                        var indexOfElem = choosenIngElem.indexOf(this);
                         
                     }else{
                         choosenIng.push(this.innerText);
+                        choosenIngElem.push(this);
                     }
                     GetPizza(choosenIng);
                     //splice gör att det tas bort från arrayen
                     console.log(choosenIng);
+                    console.log(choosenIngElem);
                     
                     //Add a list of selected items on the top
                     var ul = document.getElementById('selected');
@@ -35,8 +43,9 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                         var li = document.createElement('li');
                         li.innerText = ingLoop;
                         ul.appendChild(li);
+                        (li.addEventListener('click', adding));
                     }
-                }))
+                }
             }
         })
     }
