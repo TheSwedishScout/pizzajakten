@@ -85,6 +85,7 @@
 
 ?>
 
+<div class="total"><p>TOTALT: <?php echo $items_in_cart; ?></p></div> <!-- Echoar ut antal saker som ska ligga i varukorgen--> 
 </main>
 <main class="right varukorg">
 	<ul class="continue">
