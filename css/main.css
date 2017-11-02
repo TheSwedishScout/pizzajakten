@@ -540,25 +540,30 @@ button:active {
 	display:block;
 }
 
-.resultatInner:hover {
-	opacity: .5;
+.resultatInner a:hover:after {
+    content: "VÄLJ";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    font-size: 300%;
 }
 
-.reultatInner h2::before {
-    content: "välj";
+.resultatInner:hover img {
+    opacity: 0.5;
 }
 .resultatInner img {
     max-width: 100%;
-        content: "välj";
 }
 
 .resultatInner {
+    position: relative;
     text-align: center;
     padding: 2%;
     margin: 5px 15px 0 15px;
     opacity: 1;
     transition: opacity .2s ease-in;
-    
 }
 
 .resultatInner h3{
