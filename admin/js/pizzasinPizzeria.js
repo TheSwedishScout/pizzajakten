@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
 					form.appendChild(pris)
 					var uling2 = document.createElement("ul");
 					/*ingrediener*/
-					thisp.ingredienser;
+					
 					var removedIngred = [];
 					function updateIngList(ingredienser) {
 						uling2.innerHTML ="";
@@ -61,7 +61,12 @@ document.addEventListener("DOMContentLoaded", function() {
 								remove.href="#";
 								remove.addEventListener('click',function(e) {
 									e.preventDefault();
+									thisp.ingredienser;
 									removedIngred.push(ingredisd);
+									var pos = thisp.ingredienser.indexOf(ingredisd);
+									thisp.ingredienser.splice(pos, 1);
+									/*Ingredienser som tarsbort ska tas bort från thisp.ingredienser*/
+									
 									
 									this.parentNode.parentNode.removeChild(this.parentNode);
 								})

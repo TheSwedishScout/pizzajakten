@@ -29,7 +29,7 @@ if(isset($_POST['pizza'])){
 
 	//ta bort alla ingredienser och lägg till de i listan på nytt.
 	if (isset($_POST['ingredienser'])) {
-		$ingredienser = explode(',',($_POST['ingredienser']));
+		$ingredienser = explode(',',test_input(($_POST['ingredienser'])));
 	
 	//tar bort ingredienser från pizzan
 		$sql2 = "DELETE FROM ingredienseronpizza WHERE pizza = ?";
