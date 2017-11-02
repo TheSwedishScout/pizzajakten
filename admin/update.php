@@ -36,15 +36,7 @@
 	            
 	?>
 	<ol id="pizzaz-in-pizzeria">
-		<li class="pizza">
-			<h3>1) Marhareta</h3>
-			<p>85kr</p>
-			<ul>
-				<li>
-					ingrediens
-				</li>
-			</ul>
-		</li>
+		
 	</ol>
 </main>
 <main class="right">
