@@ -111,7 +111,13 @@
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php" class="logga"><img src="images/Logga.png" alt="Logga"></a>
-        <a href="logIn.php"><img id="user" src="images/user.png"></a> 
+		<?php 
+		if(isset($_SESSION['user_id'])){
+        	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
+		}else{
+        	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
+		}
+		?>
         <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 	</header>
 
@@ -120,7 +126,15 @@
 		<a href="varukorg.php"><img src="images/cart.png" alt="kundvangn"></a>
 		<div class="counter1"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 		<!--<img src="images/star.png" alt="Favoriter">-->
-        <a href="logIn.php"><img src="images/user.png" alt="min sida"></a>
+		<?php 
+		
+		if(isset($_SESSION['user_id'])){
+        	echo '<a href="Min-Sida.php"><img src="images/user.png" alt="min sida"></a>';
+		}else{
+        	echo '<a href="logIn.php"><img src="images/user.png" alt="min sida"></a>';
+		}
+
+		?>
 		<nav>
             <h3><a href="help.php">Hur fungerar det?</a></h3>
             <h3><a href="hittaPizzeria.php">Hitta din pizzeria</a></h3>
