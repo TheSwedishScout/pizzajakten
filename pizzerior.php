@@ -11,9 +11,9 @@
         $amount = count($ingredienser);
         $conn = connect_to_db();
         $sql = "SELECT ingredienseronpizza.pizza FROM ingredienseronpizza, pizzorinpizzeria
-        WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id AND ingredienseronpizza.ingrediens IN ({$query})
-        GROUP BY ingredienseronpizza.pizza
-        HAVING COUNT(*) = {$amount};";
+        WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id
+          GROUP BY ingredienseronpizza.pizza HAVING SUM(IF (ingredienseronpizza.ingrediens IN ({$query}), 0, 100 )) < 10 AND count(*) = {$amount};";
+          //echo($sql);
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
