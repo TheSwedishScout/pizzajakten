@@ -35,7 +35,6 @@
 
 		}
 	}	
-	
         //här gör vi en autoifyllnings funktion för vårt form när man är inloggad. Då kollar vi id och 
         //vi plockar ut de olika raderna i vår tabell och LIMIT säger att vi bara ska ha en av varje. 
         $conn = connect_to_db();
@@ -49,25 +48,21 @@
 		$stmt->bind_result($namn, $email, $adress, $post_nr);
         $stmt->fetch();
         //Eftersom namn kan ha flera förnamn behöver vi hitta vad som är efternamn och dela upp dem så det matchar formet. alltså vi vill ha ett för och ett efternamn.
-        //
+        // vi säger att enamn blir när $namn trimmas och explodas. 
         $enamn = array_map('trim', explode(' ', $namn));
+        //enamn blir den sista delen/variablen av det vi trimmar
         $enamn = end($enamn);
-        $fnamn = str_replace($enamn,'', $namn);
-        var_dump($enamn, $fnamn);
-
-
-            //explode. efternamn är sista biten. str replace - sök efter ord och ersätt med annat. säk efter efternamn i namn. ersätt med ingenting. trim name. sista biten sparar man i en variabel. DET ÄR EFTERNAMNET. 
-            //Den andra är förnamnet
-        
-    ?>	
+        //Här ersätter vi första delen i enamn och gör det till ett förnamn. allt innan efternamnet då.
+        $fnamn = str_replace($enamn,'', $namn);  
+    ?>
 
     <div class="total"><p>TOTALT: <?php echo $items_in_cart; ?></p></div> <!-- Echoar ut antal saker som ska ligga i varukorgen-->     
 </main>
 <main class="right kassa">
 	<h2 class="order">Kassa</h2>
 	<h3 id="kassaH3">Fyll i dina uppgifter så skickas din beställning till pizzerian</h3>
-
 		<form class="kassa" action="klar.php" method="POST">
+<!--            Vi sätter ett value där vi lägger in variablerna vi har hämtat från tabellen-->
 		  <input type="text" value="<?php echo $fnamn;?>" name="firstname" placeholder="Förnamn" required>
 		  <input type="text" value="<?php echo $enamn;?>" name="lastname" placeholder="Efternamn" required>
 		  <input type="email" value="<?php echo $email;?>" name="mail" placeholder="din.mail@hungrig.nu" required>
@@ -76,12 +71,7 @@
 		  	<input type="reset" value="Rensa fält">
 		  	<input type="submit" value="Skicka">	
 		</form> 
-
 	<p id="kassaP">Du får ett bekärftelsemail via den email du har angivit</p>
-
-    
-  
-
 </main>
 
 <?php
