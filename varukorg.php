@@ -1,6 +1,4 @@
 <?php
-	//Sessionstart måste ligga innan HTml-tecken
-
 	include 'header.php';
 	if (isset($_POST['delete'])) {
 		//letar efter _POST pizzaid i arrayn från session och columnen i arrayn "id"
@@ -28,18 +26,11 @@
 			$row = $res->fetch_assoc();
 			//var_dump($row);
 			$item_array = array_merge($item_array, $row);
-
-			/*
-			$item_array['id'] = $id;
-			$item_array['name'] = $name;
-			$item_array['pizzeria'] = $pizzeria;
-			$item_array['pris'] = $pris;
-			*/
-			 //Lägger till id, name, pizzeria och pris i item_array ovan
+			//Lägger till id, name, pizzeria och pris i item_array ovan
 
 
 
-			
+			//Lägger till din order i shoping carten
 			$_SESSION["shopping-cart"][] = $item_array;
 			
 		//}
@@ -54,32 +45,19 @@
 		$total = 0;
 		foreach ($_SESSION["shopping-cart"] as $keys => $values) {
 			//var_dump($values)
-?>	
-<ul>
-	<form method="post">
-	<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
-	<li class="Pizza_namn"><?php echo $values["name"]; ?><input class="raderaKnapp" type="submit" name="delete" value="Ta bort"></li> 
-	<!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
-	<li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
-	<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
+			?>	
+			<ul>
+				<form method="post">
+				<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
+				<li class="Pizza_namn"><?php echo $values["name"]; ?><input class="raderaKnapp" type="submit" name="delete" value="Ta bort"></li> 
+				<!--<li><?php echo $values["pizza_ingredienser"]; ?></li>-->
+				<li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
+				<input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
 
-    <?php     $_POST = array(); ?>    
-	</form>
-</ul>
-
-
-<?php
-		//$total = $total + ($values["item_quantity"] * $values["item_price"]);
-
+				</form>
+			</ul>
+			<?php
 			}
-?>
-
-<!--<tr>
-	<td colspan="3" align="right">Totalt</td>
-	<td align="right">$ <?php echo number_format($total, 2);  ?></td>
-</tr>-->
-
-<?php
 
 		} 
 
@@ -97,6 +75,6 @@
 </main>
 
 <?php
-
+ 	$_POST = array(); 
 	include 'footer.php';
 ?>

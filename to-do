@@ -1,22 +1,24 @@
 VIKTIGA:
-•Lösenordsskyddade sidor
-•Select php pizzerior SQL
-•Kassa-right automatiska innloggningsuppgifter
+ • Lösenordsskyddade sidor
+ • Select php pizzerior SQL- DONE
+ • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
+ • Spara bestälda Pizzor i DB orders 
+ • COOKIES va det ett måste?
 
 
 Extra:
-•Min-sida sida (uppdatera lösen, adress, tel, mail)
-•Orderhistorik
-•klicka bort de ingredienser man valt
-•Knapp på klarsidan till index ("gör ny beställning")
-•felmeddelnaden på klar-sidan i vissa fall
-•LOGOTYP!!!!!!
+ • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
+ • Orderhistorik SELECT 
+ • klicka bort de ingredienser man valt - DONE
+ • Knapp på klarsidan till index ("gör ny beställning")
+ • felmeddelnaden på klar-sidan i vissa fall
+ • LOGOTYP!!!!!!
 
 
 
 
 Att göra:
-•Kontakta Jasmin om SQL
-•Kontakta Jasmin om redovisning
-•Gå igenom kod och kommentera
-•Lämna in på pinpong
+ • Kontakta Jasmin om SQL - DONE
+ • Kontakta Jasmin om redovisning
+ • Gå igenom kod och kommentera
+ • Lämna in på pinpong
