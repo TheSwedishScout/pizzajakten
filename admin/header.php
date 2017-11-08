@@ -1,5 +1,26 @@
 <?php 
- //Header
+session_start();
+$link = explode('/', $_SERVER['REQUEST_URI']);
+$page = end($link);
+    if($page='index.php' && !isset($_SESSION['user'])){
+         ?> <a href="../logIn.php">Logga in här</a>
+  <?php
+        die();
+    }
+    if (!isset($_SESSION['user']) && !isset($_SESSION['user']['lvl'])){
+        //SLÄNG UT DOM   
+            $response['error'] = 'Du har inte behörighet att fortsätta';
+            header("location:../logIn.php"); 
+            die();
+        }
+    if ($_SESSION['user']['lvl']<2){
+        //SLÄNG UT DOM   
+        $response['error'] = 'Du har inte behörighet att fortsätta';
+        header("location:../index.php"); 
+        die();
+    }
+    
+//var_dump($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>
