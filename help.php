@@ -22,7 +22,7 @@
 
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
-		<a href="index.php" class="logga"><img src="images/Logga.png" alt="Logga"></a>
+		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
         <a href="logIn.php"><img id="user" src="images/user.png"></a> 
         <a href="varukorg.php"><img id="cart" src="images/cart.png"></a>
 	</header>

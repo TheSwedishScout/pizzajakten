@@ -1,20 +1,24 @@
 VIKTIGA:
  • Lösenordsskyddade sidor
- • Select php pizzerior SQL- DONE
- • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
+ 
+ • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
+    - PÅBÖRJAD (ANTAGLIGEN FEL)
+            Annika tänker:
+                Måste kolla om det finns ett session?
+                
+            
+            
  • Spara bestälda Pizzor i DB orders 
+     - PÅBÖRJAD (ANTAGLIGEN FEL)
+ 
  • COOKIES va det ett måste? - This site uses coockies bar i headern ? med en cookie när man klickar bort den att den är borta i 3-4 dagar?
 
 
 Extra:
  • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
  • Orderhistorik SELECT 
- • klicka bort de ingredienser man valt - DONE
- • Knapp på klarsidan till index ("gör ny beställning")
  • felmeddelnaden på klar-sidan i vissa fall
  • LOGOTYP!!!!!!
-
-
 
 
 Att göra:
@@ -22,3 +26,24 @@ Att göra:
  • Kontakta Jasmin om redovisning
  • Gå igenom kod och kommentera
  • Lämna in på pinpong
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ SPARA I ORDERS??????????????????
+ <php
+    session_start();
+    require 'cart.php'
+    
+    //save order
+    mysqli_query (§con, 'INSERT INTO orders(user, pizza) values(?, ?)');
+    $orderid = mysqli_insert_id();
+ 
+ 
+ ?>
+ 
+ 
+ 
