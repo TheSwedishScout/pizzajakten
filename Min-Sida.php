@@ -35,6 +35,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 			Uppdatera/lägga till adress	
 		</li>
 		<li>
+			<a href="assets/logOut.php">Logga ut</a>
 			
 		</li>
 		<li>

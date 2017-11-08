@@ -1,5 +1,5 @@
 VIKTIGA:
- • Lösenordsskyddade sidor
+ • Logga ut
  
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
     - PÅBÖRJAD (ANTAGLIGEN FEL)
@@ -7,13 +7,13 @@ VIKTIGA:
                 Måste kolla om det finns ett session?
                 
             
+ • Lösenordsskyddade sidor --DONE
             
- • Spara bestälda Pizzor i DB orders 
+ • Spara bestälda Pizzor i DB orders --DONE
      - PÅBÖRJAD (ANTAGLIGEN FEL)
  
  • COOKIES va det ett måste? - This site uses coockies bar i headern ? med en cookie när man klickar bort den att den är borta i 3-4 dagar?
- • Lösenordsskyddade sidor (for grade 4)
- • Logga ut
+ • Lösenordsskyddade sidor (for grade 4) --DONE
 
 
 
