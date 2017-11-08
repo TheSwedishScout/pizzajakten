@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 errorMSG.innerText = data.error;
             }
+            if(formValidation === true) {
+                window.open("path/to/page.html", "_self");
+    }        else {
+                errorMSG.innerText = data.error;
+    }
+            
         })
         // Code taaken from: https://codepen.io/colorlib/pen/rxddKy
     });
@@ -60,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }else{
                 form.previousElementSibling.style.display = "block";
             }
+
     }
     
 })

@@ -49,8 +49,8 @@
 		  <input type="email" name="mail" placeholder="din.mail@hungrig.nu" required>
 		  <input type="text" name="Adress" placeholder="Adress" required>
 		  <input type="tel" name="Adress" placeholder="Postnummer" required>
-		  	<input type="submit" value="Send">
-			<input type="reset" value="Reset">
+		  	<input type="reset" value="Rensa fält">
+		  	<input type="submit" value="Skicka">	
 		</form> 
 
 	<p id="kassaP">Du får ett bekärftelsemail via den email du har angivit</p>
