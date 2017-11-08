@@ -5,7 +5,7 @@ $response = ['sucsses' => 'FALSE'];
 
 //echo "systemet kollar om du är inloggad.<br>";
 
-if (!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user'])){
 	$nick = test_input($_POST['username']);
 	$password = test_input($_POST['password']);
 	$name = test_input($_POST['name']);

@@ -113,16 +113,16 @@
 
 <!-- Hamburgermenyn -->
 <body>
-<div class="container">
     <div class="cookie">
     
         <p>Vi använder Cookies, bara så du vet!</p><button>OK!</button>
     </div>
+<div class="container">
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
 		<?php 
-		if(isset($_SESSION['user_id'])){
+		if(isset($_SESSION['user'])){
         	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
 		}else{
         	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
@@ -138,7 +138,7 @@
 		<!--<img src="images/star.png" alt="Favoriter">-->
 		<?php 
 		
-		if(isset($_SESSION['user_id'])){
+		if(isset($_SESSION['user'])){
         	echo '<a href="Min-Sida.php"><img src="images/user.png" alt="min sida"></a>';
 		}else{
         	echo '<a href="logIn.php"><img src="images/user.png" alt="min sida"></a>';
