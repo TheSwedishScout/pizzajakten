@@ -21,6 +21,7 @@
 	$cookie_name = "more_pizza";
 	$cookie_value = "Mer pizza åt folket!";
 	setcookie($cookie_name, $cookie_value, time() + (86400), "/"); // 86400 = 1 day
+	//resten av cookie ligger på min-sida.php
 	
 
 	

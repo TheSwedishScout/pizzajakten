@@ -1,9 +1,6 @@
 VIKTIGA:
  • Lösenordsskyddade sidor (for grade 4)
 
- 
-
-
 Extra:
  • Spara beställda Pizzor i DB orders 
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info 
