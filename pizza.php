@@ -1,5 +1,4 @@
 <?php
-    //require 'function.php';
 	include 'header.php';
     //An associative array of variables passed to the current script via the URL parameters. Are there ingredients in the url? checks via isset. 
 

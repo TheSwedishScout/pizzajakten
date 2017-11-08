@@ -4,7 +4,7 @@
 
 	if (isset($_GET['ingredienser'])) {
 		$ing = test_input($_GET['ingredienser']);
-		$ingredienser = explode(",", $ing);       //explode - split a string. 
+		$ingredienser = array_map('test_input',explode(",", $ing));       //explode - split a string. 
         $ing = implode(", ", $ingredienser);       //Implode - joins array-elements as a string
         $query = "'".implode("', '", $ingredienser). "'";
         $amount = count($ingredienser);

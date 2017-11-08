@@ -8,7 +8,26 @@
 	?>
 </main>
 <main class="right">
+	<ul>
+		<li>
+			Uppdatera/lägga till adress	
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
+			
+		</li>
+		<li>
 
+		</li>
+	</ul>
 </main>
 <?php
 	include 'footer.php';
