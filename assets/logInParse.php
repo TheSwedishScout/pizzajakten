@@ -6,7 +6,7 @@ include ("../function.php");
 
 session_start();
 
-if (!isset($_SESSION['user_id'])){
+if (!isset($_SESSION['user'])){
     session_unset();
     $in_user_lvl = 0;
     if (isset($_POST['user_lvl'])){
@@ -17,7 +17,7 @@ if (!isset($_SESSION['user_id'])){
     $username = test_input($_POST['username']);
     $password = test_input($_POST['password']);
     
-    $sql = "SELECT password, user_lvl, name, username FROM `user` WHERE `username` = ? OR email = ?";
+    $sql = "SELECT password, user_lvl, name, username, id FROM `user` WHERE `username` = ? OR email = ?";
     //echo($sql);
     $conn = connect_to_db();
 
@@ -35,10 +35,12 @@ if (!isset($_SESSION['user_id'])){
             
             if (password_verify($password, $password_hashed)) {
                 //echo 'Password is valid!';
-                $_SESSION['user_id'] = $row['username'];
-                $_SESSION['user_lvl'] = $row['user_lvl'];
-                $_SESSION['user_name'] = $row['name'];
-                $_SESSION['userip'] = $_SERVER['REMOTE_ADDR']; // SÄKERTHETs grej så att ingen kan komma in på samma session!!
+
+                $_SESSION['user']['id'] = $row['username'];
+                $_SESSION['user']['lvl'] = $row['user_lvl'];
+                $_SESSION['user']['name'] = $row['name'];
+                $_SESSION['user']['nr'] = $row['id'];
+                $_SESSION['user']['ip'] = $_SERVER['REMOTE_ADDR']; // SÄKERTHETs grej så att ingen kan komma in på samma session!!
                 //send to start peage
                 //header("Location: $pre_page");
                 //exit;

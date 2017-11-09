@@ -1,6 +1,5 @@
 VIKTIGA:
-<<<<<<< HEAD
- • Lösenordsskyddade sidor
+ • Logga ut
  
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
     - PÅBÖRJAD (ANTAGLIGEN FEL)
@@ -8,18 +7,21 @@ VIKTIGA:
                 Måste kolla om det finns ett session?
                 
             
+ • Lösenordsskyddade sidor --DONE
             
- • Spara bestälda Pizzor i DB orders 
+ • Spara bestälda Pizzor i DB orders --DONE
      - PÅBÖRJAD (ANTAGLIGEN FEL)
  
  • COOKIES va det ett måste? - This site uses coockies bar i headern ? med en cookie när man klickar bort den att den är borta i 3-4 dagar?
-=======
- • Lösenordsskyddade sidor (for grade 4)
+ • Lösenordsskyddade sidor (for grade 4) --DONE
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
  
 >>>>>>> 6661d209de193ea49f49eb9a35f2824ca26ef1ae
+=======
+>>>>>>> 3ed8a32f05eec26f0d981fdd82c83822534d428d
 
 
 >>>>>>> 42ea0b90fe1cf5ff3166b7db032135a2d3aa59c6
@@ -28,16 +30,12 @@ Extra:
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info 
  • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
  • Orderhistorik SELECT 
-<<<<<<< HEAD
  • felmeddelnaden på klar-sidan i vissa fall
  • LOGOTYP!!!!!!
-=======
  • Knapp på klarsidan till index ("gör ny beställning")
  • felmeddelnaden på klar-sidan i vissa fall
  • LOGOTYP!!!!!!
  • Redirect när man loggat in till en sida som man vart på innan eller till "minsida" 
->>>>>>> 6661d209de193ea49f49eb9a35f2824ca26ef1ae
-
 
 Att göra:
  • Kontakta Jasmin om redovisning

@@ -15,14 +15,10 @@
 		$user = [];
   */  
     
-	echo($_SESSION['user_name']);
+	echo($_SESSION['user']['name']);
 	var_dump($_SESSION);
 	?>
     <ul class="minInfo">
-	<!--<?php
-	echo($_SESSION['user_name']);
-	var_dump($_SESSION);
-	?>-->
 
 
 <?php
@@ -39,6 +35,7 @@
 			Uppdatera/lägga till adress	
 		</li>
 		<li>
+			<a href="assets/logOut.php">Logga ut</a>
 			
 		</li>
 		<li>

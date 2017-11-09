@@ -31,7 +31,7 @@
 <head>
 	<meta charset="UTF-8">
 
-	<title>Pizza jakten</title>
+	
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
@@ -77,53 +77,62 @@
 	switch ($page) {
 		case '':
 			$n_page = "pizzerior.php";
+			$print_page = "Start";
 			$p_page_hidden = 'hidden'; //döljer previous page
 			$page_nr = 1;
 			break;
 		case "index":
 			$n_page = "pizzerior.php";
+			$print_page = "Start";
 			$p_page_hidden = 'hidden'; //döljer previous page
 			$page_nr = 1;
 			break;
 		case "pizzerior":
 			$n_page = "varukorg.php";
+			$print_page = "Välj pizzeriap";
 			$p_page = "index.php";
 			$page_nr = 2;
 			break;
 		case "varukorg":
 			$n_page = "kassa.php";
+			$print_page = "Varukorg";
 			$p_page = "pizzerior.php";
 			$page_nr = 3;
 			break;
 		case "kassa":
 			$n_page_hidden = 'hidden'; //döljer next page
 			$p_page = "varukorg.php";
+			$print_page = "Kassa";
 			$page_nr = 4;
 			break;
 		case "klar":
 			$n_page_hidden = 'hidden'; //döljer next page
 			$p_page_hidden = 'hidden';
+			$print_page = 'klar';
 			$page_nr = 5;
 			break;
 	}
 
 ?>
-
+<title><?php if(isset($print_page)){echo($print_page);}else{echo($page);} ?> | Pizza jakten</title>
 </head>
 
 
 <!-- Hamburgermenyn -->
 <body>
-<div class="container">
+	<?php
+	if(!isset($_COOKIE['Cookie_bar'])) {
+    ?>
     <div class="cookie">
-    
-        <p>Vi använder Cookies, bara så du vet!</p><button>OK!</button>
+        <p>Vi använder Cookies, bara så du vet!</p><button id="cookie_button">OK!</button>
     </div>
+	<?php } ?>
+<div class="container">
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
 		<?php 
-		if(isset($_SESSION['user_id'])){
+		if(isset($_SESSION['user'])){
         	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
 		}else{
         	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
@@ -139,7 +148,7 @@
 		<!--<img src="images/star.png" alt="Favoriter">-->
 		<?php 
 		
-		if(isset($_SESSION['user_id'])){
+		if(isset($_SESSION['user'])){
         	echo '<a href="Min-Sida.php"><img src="images/user.png" alt="min sida"></a>';
 		}else{
         	echo '<a href="logIn.php"><img src="images/user.png" alt="min sida"></a>';

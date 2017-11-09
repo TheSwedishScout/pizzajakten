@@ -30,14 +30,17 @@
         mail($to, $subject, $message, $headers); //Mailar till ens angivna email när man har tryckt på submit
         $conn = connect_to_db();
         //save order
-        $sql='INSERT INTO orders(user, pizza) values(?, ?)';
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ii", $_SESSION['user_id'], $_SESSION['shopping-cart']['id']);
-        $stmt->execute();
+
+        $sql= "INSERT INTO orders(user, pizza) values(?, ?)"; // Förbererder sql statementen
+        foreach ($_SESSION['shopping-cart'] as $pizza) { // ser till att gå igenom alla pizzor i orden och lägger tilldem 
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ii", $_SESSION['user']['nr'], $pizza['id']); // Binder user nr (id) och pizzans id för att läggas in i databasen
+            $stmt->execute();
+        }
 
     
 
-            $_SESSION['shopping-cart'] = []; //Gör att sessionen avslutas och tidigare beställning rensas (startar om på 0 beställningar)
+        $_SESSION['shopping-cart'] = []; //Gör att sessionen avslutas och tidigare beställning rensas (startar om på 0 beställningar)
     
         ?>
 	<a href="index.php"><button><p>Forsätt handla</p></a></button></li>

@@ -16,6 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.removeEventListener('click', hide)
 	  }
 	};
+    if(!!document.getElementById('cookie_button')){
+        document.getElementById('cookie_button').addEventListener('click', function (e) {
+            ajax.post ('assets/start_cookie.php', {}, function (data) {
+                document.getElementById('cookie_button').parentNode.classList.add('hidden');
+                
+            });
+        })
+    }
 })
 // AJAX CODE FROM https://stackoverflow.com/questions/8567114/how-to-make-an-ajax-call-without-jquery
 var ajax = {};
