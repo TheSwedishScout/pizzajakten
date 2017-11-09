@@ -79,14 +79,14 @@
         }
         //var_dump($userinfo)
 		?>
-		<form>
+		<form action="assets/updateUser.php">
 			<input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
 			<input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
 			<input type="ort" name="adress" value="<?= $userinfo['town'] ?>">
 			<input type="email" name="email" value="<?= $userinfo['email'] ?>">
 			<input type="submit" name="" value="Spara">
 		</form>
-		<form>
+		<form action="assets/updateUserPassword.php">
 
 			<input type="password" name="password" value="<?= $userinfo['password'] ?>">
 			<input type="password" name="password" value="<?= $userinfo['password'] ?>">

@@ -71,7 +71,14 @@
         <li><h2>ÄR DU BELÅTEN ELLER VILL DU HA MER?</h2></li>
         <li><a href="index.php"><button><p>Forsätt handla</p></a></button></li>
         <li><a href="kassa.php"><button><p>Gå till kassan</p></a></button></li>
-        <li><a href="login.php"><button><p>Logga in</p></a></button></li>
+        <?php 
+
+        if(!isset($_SESSION['user'])){
+	        ?>
+	        <li><a href="login.php"><button><p>Logga in</p></a></button></li>
+	        <?php
+        } 
+         ?>
     </ul>
 </main>
 
