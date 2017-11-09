@@ -10,21 +10,26 @@ $_POST['post_nr']
 $_POST['ort']
 $_POST['email']
 */
-if(isset($_POST['adress'])){ // kollar om lössenordet är inskrivet
-	
-}
-if(!isset($_POST['password2'])){ // kollar om lössenord2 är inskrivet de ska vara lika
-	$errors[] = 'Lösenord2 inte satt';
-}
+
+
 if(!isset($_SESSION['user'])){ // kollar om en användare är inloggad
 	$errors[] = 'Ingen användare inloggad';
-}
-if($_POST['password'] !== $_POST['password2']){
-	$errors[] = 'Lösenord stämmer inte överäns!';	
 }
 
 if(empty($errors)){
 	//Uppdatera lösenord
+	if(isset($_POST['adress'])){ // kollar om lössenordet är inskrivet
+		$adress = test_input($_POST['adress']);
+	}
+	if(isset($_POST['post_nr'])){ // kollar om lössenordet är inskrivet
+		$post_nr = test_input($_POST['post_nr']);
+	}
+	if(isset($_POST['ort'])){ // kollar om lössenordet är inskrivet
+		$ort = test_input($_POST['ort']);
+	}
+	if(isset($_POST['email'])){ // kollar om lössenordet är inskrivet
+		$email = test_input($_POST['email']);
+	}
 	$password = test_input($_POST['password']);
 	$sql = 'UPDATE user SET password=? WHERE id = ?';
 	$conn = connect_to_db();
