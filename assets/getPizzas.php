@@ -26,6 +26,9 @@ if(isset($_GET['ingredienser'])){
 	$pizzor = [];     //Skapar en tom array av pizzor
 	$conn = connect_to_db();
 	$ing = test_input($_GET['ingredienser']); //hämtar ingredienser från url'en om ingredienser är definierat
+    
+    //explode Returns an array of strings. "split a string by string"
+    //trim — Strip whitespace (or other characters) from the beginning and end of a string
 	$ingred = array_map("trim",explode(",", $ing)); //array_map är en funktion som tar alla ingrediener 
 	$ingred = implode("' OR ingrediens LIKE '", $ingred); //Returnerar en sträng av arrayen 
 

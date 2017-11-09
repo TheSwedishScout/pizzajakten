@@ -2,6 +2,7 @@
  //Header
 	session_start();
 
+
 	if (isset($_SESSION['shopping-cart'])) {
 	$items_in_cart = is_array($_SESSION['shopping-cart']) ? count($_SESSION['shopping-cart']) : 0 ; 
 	}//Kollar om de finns en array/session med antal saker i (dvs hur mycket som ligger i varukorgen) annars visar countern 0
@@ -35,6 +36,13 @@
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<?php
+	if(isset($no_balls)){
+		?>
+		<link rel="stylesheet" type="text/css" href="css/no_balls.css">
+	<?php
+	}
+	?>
 
 	<!-- ****** faviconit.com favicons ****** -->
 	<link rel="shortcut icon" href="images/favicon/favicon.ico">
@@ -175,6 +183,12 @@
 
 
 <!-- Bilderna i tidslinjen som ska navigera användaren genom köpet-->
+
+
+<?php
+	if(!isset($no_balls)){
+	//var_dump($no_balls);
+	?>
 	<div class="progretion">
 		<ul>
 
@@ -212,13 +226,10 @@
 		</li>
 		
 
-	</ul>
-</div>
-
-
-
+		</ul>
+	</div>
 <?php
-
+	}
 
 ?>
 

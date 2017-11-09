@@ -2,25 +2,26 @@
 session_start();
 $link = explode('/', $_SERVER['REQUEST_URI']);
 $page = end($link);
+
+//Vi kollar på vilken sida vi är på. Om vi är på index.php på adminpanelen och vi INTE är inloggade (!isset) så tas vi till en länk där det står logga in. 
     if($page='index.php' && !isset($_SESSION['user'])){
          ?> <a href="../logIn.php">Logga in här</a>
   <?php
         die();
     }
+    //Gör så vi har ryggen fri från felmeddelanden. jämför här även lvl och vilken nivå de har. om det inte är satt skickas de till logg-in
     if (!isset($_SESSION['user']) && !isset($_SESSION['user']['lvl'])){
         //SLÄNG UT DOM   
             $response['error'] = 'Du har inte behörighet att fortsätta';
             header("location:../logIn.php"); 
             die();
         }
+    //Om user level är lägre än 2 så användaren de inte admin-lvl. De skickas tillbaka till förstasidan.
     if ($_SESSION['user']['lvl']<2){
-        //SLÄNG UT DOM   
         $response['error'] = 'Du har inte behörighet att fortsätta';
         header("location:../index.php"); 
         die();
     }
-    
-//var_dump($_SESSION['user']);
 ?>
 
 <!DOCTYPE html>

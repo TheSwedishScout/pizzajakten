@@ -1,5 +1,6 @@
 <?php
-	include 'header.php';
+	$no_balls = 'true';
+	include ('header.php');
 ?>
 <main class="left">
 
@@ -32,7 +33,6 @@
 ?>
 	<ul>
 		<li>
-			Uppdatera/lägga till adress	
 		</li>
 		<li>
 			<a href="assets/logOut.php">Logga ut</a>
