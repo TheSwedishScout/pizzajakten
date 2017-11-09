@@ -14,9 +14,11 @@
 <main class="left kassa">
 	<h2 class="order">Din beställning</h2>
 
-	<?php 
-	if (!empty($_SESSION["shopping-cart"])){
-		$total = 0;
+	
+	<?php
+	//Totala counte för hur mycket man har i sin order
+	if (!empty($_SESSION["shopping-cart"])){ 
+		$total = 0; //Count börjar från om med 0
 		foreach ($_SESSION["shopping-cart"] as $keys => $values) {
 			//var_dump($values)	
 	?>

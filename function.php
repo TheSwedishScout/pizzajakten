@@ -41,7 +41,7 @@ function connect_to_db(){
 	return $conn;
 }
 
-function getIngredients($kategori='')
+/*function getIngredients($kategori='')
 {
 	$conn = connect_to_db();
 	$stmt = $conn->prepare("SELECT namn, category FROM ingredienser WHERE category = ? ");
@@ -51,7 +51,7 @@ function getIngredients($kategori='')
 
 	$conn->close();
 	return $result;
-}
+}*/
 
 //
 
