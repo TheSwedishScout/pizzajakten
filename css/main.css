@@ -72,7 +72,7 @@ font-size: 1em;
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
     /*grid-template-rows: 1fr 2fr 1fr auto 1fr; */
-    grid-template-rows: 15% 15% 35px auto 1%;
+    grid-template-rows: 13% 17% 35px auto 1%;
     grid-template-areas: 
     "header header header header" 
     ". prog prog ."
@@ -122,7 +122,7 @@ header{
 	height: 100%;
 }
 .logga img {
-    height: 60%;
+    height: 70%;
     padding-top: 18px;
 }
 
@@ -197,7 +197,7 @@ header{
 	justify-content: space-between;
 }
 .progretion ul{
-	padding-bottom: 10px;
+	padding-bottom: 20px;
 	display: flex;
 	justify-content: space-evenly;
 	width: 100%;
@@ -216,10 +216,11 @@ header{
 }
 .progretion li p{
     position: absolute;
-    top: -17%;
+    top: 102%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 13px;
+    letter-spacing: 0.7px;
 }
 
 .progretion li img{
@@ -494,6 +495,16 @@ main.right{
 	grid-area: main2;
 	background: #4A89DC;
 	margin-bottom: 20px;	
+}
+
+main.right p {
+    font-family: helvetica;
+    padding: 3px 13px 13px 13px;
+}
+
+main.right h1 {
+    font-size: xx-large;
+    padding: 13px 13px 0px 13px;
 }
 
 main.left.pizzerior {
@@ -1061,19 +1072,19 @@ input::placeholder {
     cursor: pointer;
 }	
 
-.right.pizzerior input[type=submit], .left.pizzerior input[type=submit]:hover {
+.right.pizzerior input[type=submit]:hover, .left.pizzerior input[type=submit]:hover {
 	background: rgba(38, 62, 13, 0.4);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
 }
 
-.right.pizzerior input[type=submit], .left.pizzerior input[type=submit]:active {
+.right.pizzerior input[type=submit]:active , .left.pizzerior input[type=submit]:active {
 	background: rgba(38, 62, 13, 0.4);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
 }
 
-.right.pizzerior input[type=submit], .left.pizzerior input[type=submit]:focus {
+.right.pizzerior input[type=submit]:focus, .left.pizzerior input[type=submit]:focus {
 	background: rgba(38, 62, 13, 0.4);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
