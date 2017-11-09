@@ -197,7 +197,7 @@
 			<a class= "active" href="index.php">
 
 				<img src="images/pizza1.png"/>
-				<p>Start</p>
+				<p>Välj ingredienser</p>
 
 			</a>
 		</li>
@@ -205,7 +205,7 @@
 		<li>
 			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>"> <!-- classen talar om hur bilden ska bete sig när den är aktiv(dvs. den ska vara ifärgad osv)  href talar om huvida man kan klicka på knapparna och komma till sidorna -->
 				<img src="images/pizza2.png">
-				<p>Pizzeria</p>
+				<p>Hitta Pizzeria</p>
 			</a>
 		</li>
 		<li>

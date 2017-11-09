@@ -216,10 +216,12 @@ header{
 }
 .progretion li p{
     position: absolute;
-    top: 77%;
+    top: -17%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 29px;
+    font-size: 13px;
+
+
 }
 
 .progretion li img{
@@ -243,6 +245,7 @@ header{
 }
 
 */
+
 .progretion a img{
 	height: 100%;
     -webkit-filter: grayscale(100%); 
