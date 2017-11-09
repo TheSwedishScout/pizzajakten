@@ -18,29 +18,31 @@ if(!isset($_SESSION['user'])){ // kollar om en användare är inloggad
 
 if(empty($errors)){
 	//Uppdatera lösenord
+	$updates = "";
 	if(isset($_POST['adress'])){ // kollar om lössenordet är inskrivet
 		$adress = test_input($_POST['adress']);
+		$updates .= "adress='{$adress}',";
 	}
 	if(isset($_POST['post_nr'])){ // kollar om lössenordet är inskrivet
 		$post_nr = test_input($_POST['post_nr']);
+		$updates .= "post_nr='{$post_nr}',";
 	}
 	if(isset($_POST['ort'])){ // kollar om lössenordet är inskrivet
 		$ort = test_input($_POST['ort']);
+		$updates .= "town='{$ort}',";
 	}
 	if(isset($_POST['email'])){ // kollar om lössenordet är inskrivet
 		$email = test_input($_POST['email']);
+		$updates .= "email='{$email}',";
 	}
-	$password = test_input($_POST['password']);
-	$sql = 'UPDATE user SET password=? WHERE id = ?';
+	$updates .= "*";
+	$updates = str_replace(",*", "", $updates);
+
+	$sql = "UPDATE user SET {$updates} WHERE id = ?";
 	$conn = connect_to_db();
-	$options = [
-	'cost' => 10
-	];
-	$password_hashed = password_hash($password, PASSWORD_BCRYPT, $options);
-	unset($password);
 	$stmt = $conn->prepare($sql);
-	$id = 2;
-	$stmt->bind_param("si", $password_hashed, $id); // $_SESSION['user']['nr']
+	//$id = 2;
+	$stmt->bind_param("i", $_SESSION['user']['nr']);
 	$stmt->execute();
 	if($stmt->affected_rows === 1){
 		$sucsses = True;
