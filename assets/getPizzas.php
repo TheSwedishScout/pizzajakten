@@ -32,7 +32,7 @@ if(isset($_GET['ingredienser'])){
 	$ingred = array_map("trim",explode(",", $ing)); //array_map är en funktion som tar alla ingrediener 
 	$ingred = implode("' OR ingrediens LIKE '", $ingred); //Returnerar en sträng av arrayen 
 
-
+    //räknar hur många av någonting det finns 
 	$sql = "SELECT pizza, COUNT(*) as antal FROM ingredienseronpizza WHERE ingrediens LIKE '{$ingred}' GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC"; 
     //Om antal är angett i url'en så limiteras sql till att köras så många gånger som antal är
     if (isset($_GET['antal'])) {
@@ -61,10 +61,11 @@ if(isset($_GET['ingredienser'])){
 		while($row = $result->fetch_assoc()) {
 			$ingredienser[] = ($row['ingrediens']);
 			$namn = $row['name'];
-			//echo("hej");
 		}
-		//var_dump($ingredienser);
-		sort($ingredienser);
+
+		//sorterar ingredienser i bokstavsordning
+        sort($ingredienser);
+        //en check-variabel. säkerhet typ. Man checkar pizorns ingredienser. Om de finns så breakar det och det fortsätter inte till if.
 		$exists = false;
 		foreach ($pizzor as $check) {
 			if($check->ingredienser == $ingredienser){
@@ -77,6 +78,7 @@ if(isset($_GET['ingredienser'])){
 		}
 		
 	}
+    //jämför ingredienser med pizzor i procent. Den med högst match visas först.
 	function cmp($a, $b) {
     if ($a->matcningar == $b->matcningar) {
         return ($a->procent < $b->procent) ? 1 : -1;

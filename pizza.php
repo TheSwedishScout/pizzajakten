@@ -30,6 +30,7 @@
 			    'Accept: application/json',
 			    'Content-Type: application/json',
 			);
+            //phps motsvarighet till ajax. förfrågar url'en från högre upp för att få google maps geolocation. hämtar datan därifrån. 
 			        $handle = curl_init();
         			curl_setopt($handle, CURLOPT_URL, $url);
         			curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
@@ -39,9 +40,6 @@
         			$response = curl_exec($handle);
         			$code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
         			$adressData = json_decode($response);
-        			//var_dump($adressData);
-        			/*var_dump($adressData->results[0]->geometry->location->lng);
-        			var_dump($adressData->results[0]->geometry->location->lat);*/
         			$pizza['lng'] = $adressData->results[0]->geometry->location->lng;
         			$pizza['lat'] = $adressData->results[0]->geometry->location->lat;
         } 
