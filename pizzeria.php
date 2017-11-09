@@ -61,14 +61,19 @@
 <main class="left pizzerior">
         <h1><?php echo $pizzeria['namn']; ?></h1>
         <!-- Lista på pizzor hos pizzeria-->
-        <ul>
+        <ul class="helaPizzerian">
             <?php  
             foreach ($pizzor as $pizza) {
                 $ingredienser = explode(",", $pizza['ingredienser']);
                 ?>
                 <li>
                     <h2><a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a></h2>
-                    <ul>
+                    <ul class="allaPizzor">
+                         <form action="varukorg.php" method="POST">
+                        <input type="submit" name="Välj denna" value="Välj pizza">
+                        
+                        <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
+                    </form>
                     <?php 
                         foreach ($ingredienser as $ingrediens) {
                             ?>
@@ -76,13 +81,8 @@
                             <?php
                         }
                     ?>
-                    <form action="varukorg.php" method="POST">
-                        <input type="submit" name="Välj denna" value="Välj pizza">
-                        
-                        <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
-                    </form>
+                         <p><?= $pizza['pris']; ?> kr</p><br>
                     </ul>
-                    <p><?= $pizza['pris']; ?></p>
                 </li>
                 <?php
                 //var_dump($pizza);            
