@@ -1274,6 +1274,7 @@ input::placeholder {
     width: 90%;
     margin-top: 5%;
     padding: 15px;
+    height: 52px;
 }
 
 .continue button:hover {
