@@ -41,9 +41,10 @@
 <h2 class="order">Din Varukorg</h2>
 
 <?php
-	if (!empty($_SESSION["shopping-cart"])){
-		$total = 0;
-		foreach ($_SESSION["shopping-cart"] as $keys => $values) {
+	//Totala counte för hur mycket man har i sin order
+	if (!empty($_SESSION["shopping-cart"])){ 
+		$total = 0; //Count börjar från om med 0
+		foreach ($_SESSION["shopping-cart"] as $keys => $values) { 
 			//var_dump($values)
 			?>	
 			<ul>
@@ -70,7 +71,14 @@
         <li><h2>ÄR DU BELÅTEN ELLER VILL DU HA MER?</h2></li>
         <li><a href="index.php"><button><p>Forsätt handla</p></a></button></li>
         <li><a href="kassa.php"><button><p>Gå till kassan</p></a></button></li>
-        <li><a href="login.php"><button><p>Logga in</p></a></button></li>
+        <?php 
+
+        if(!isset($_SESSION['user'])){
+	        ?>
+	        <li><a href="login.php"><button><p>Logga in</p></a></button></li>
+	        <?php
+        } 
+         ?>
     </ul>
 </main>
 

@@ -48,6 +48,7 @@
         <ul>
                 <?php    
                 //en while loop får ut resultat, så länge det finns saker kvar att visa
+                //hämtar namn och url till pizzeriorna
                     $conn = connect_to_db();
                     $result = $conn->query("SELECT namn, url FROM pizzerior");
                     while($row = $result->fetch_assoc()) {

@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             }
         })
     }
-    GetCategory("grönsak");
+    GetCategory("grönsaker");
     // hämta tabarna
         var tabs = document.getElementsByClassName('tabs')[0];
     

@@ -2,12 +2,15 @@
 	display: grid;
 	grid-template-columns: 150px 1fr 1fr 150px;
     /*grid-template-rows: 1fr 2fr 1fr auto 1fr; */
-    grid-template-rows: 15% 15% 35px auto 1%;
+    grid-template-rows: 15% 35px 15% auto 1%;
     grid-template-areas: 
     "header header header header" 
-    ". main1 main2 ."
+    ". tabs . ."
     ". main1 main2 ."
     "left main1 main2 right"
     ". . . .";
     height: 100vh;
+}
+main{
+    /*margin-top: 20px;*/
 }

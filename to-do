@@ -1,7 +1,5 @@
 KVAR
  • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
- • (Orderhistorik SELECT) 
- • felmeddelnaden på klar-sidan i vissa fall?
  • LOGOTYP!!!!!! - saknas på någon sida
 
  • KOMENTERA KÅD
@@ -11,69 +9,20 @@ KVAR
  • Lämna in på pinpong
  Styla 
  pizzor.php och pizzeror.php
-______________________________________________________________________________________________________________________________________--
-
-VIKTIGA:
- • Logga ut - klåp men funkar
-
- • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
-    - PÅBÖRJAD (ANTAGLIGEN FEL)
-            Annika tänker:
-                Måste kolla om det finns ett session?
-                
-            
- • Lösenordsskyddade sidor --DONE
-            
- • Spara bestälda Pizzor i DB orders --DONE
-     - PÅBÖRJAD (ANTAGLIGEN FEL)
- 
- • COOKIES va det ett måste? - This site uses coockies bar i headern ? med en cookie när man klickar bort den att den är borta i 3-4 dagar?
- • Lösenordsskyddade sidor (for grade 4) --DONE
-
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
- 
->>>>>>> 6661d209de193ea49f49eb9a35f2824ca26ef1ae
-=======
->>>>>>> 3ed8a32f05eec26f0d981fdd82c83822534d428d
 
 
->>>>>>> 42ea0b90fe1cf5ff3166b7db032135a2d3aa59c6
->>>>>>> 32220f19eaab0239a6b289fae843cf6c5b1befb0
->>>>>>> 4174969497d532897c945c3cf11e6a1d47398490
-Extra:
- • Spara beställda Pizzor i DB orders 
- • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info 
- • Knapp på klarsidan till index ("gör ny beställning")
- • felmeddelnaden på klar-sidan i vissa fall
- • LOGOTYP!!!!!!
- • Redirect när man loggat in till en sida som man vart på innan eller till "minsida" 
+ sidor med kod som ska kommenteras:
+ •pizzeria.php + pizza.php är rätt okommenterad
 
-Att göra:
- 
- 
- 
- 
- 
- 
- 
- SPARA I ORDERS??????????????????
- <php
-    session_start();
-    require 'cart.php'
-    
-    //save order
-    mysqli_query (§con, 'INSERT INTO orders(user, pizza) values(?, ?)');
-    $orderid = mysqli_insert_id();
- 
- 
- ?>
- 
- 
- 
+ •login.php logga
+
+EXTRA
+Kategorier för ingredienser får en egen table så kategorin blir en forgen key
+
+Bild på usern/profil bild
+
+kunna kommentera pizza och pizzeria
+
+Sortera pizzor på olika vis när man visar all pizzerior som har den pizzan.
+
+inte lämna sidan när man är på pizzerans egna sida så man kan lägga till flera pizzor animera en ding så man ser att man lägger till det i varukorgen

@@ -8,11 +8,11 @@
 <ul class="tabs">
 	<?php
 		$conn = connect_to_db();
-		$sql = "SELECT category FROM `ingredienser` GROUP BY category";
+		$sql = "SELECT category FROM `ingredienser` GROUP BY category"; //flikarna i kategorier så som krydda, grönsaker osv
 		if ($result = $conn->query($sql)) {
 			$i = 1;
 			while ($row = $result->fetch_assoc()) {
-				echo("<li class='shadow tab{$i}' >". $row['category']."</li>");
+				echo("<li class='shadow tab{$i}' >". $row['category']."</li>"); //lägger på shadow på fliken
 				$i++;
 		    }
 		}
@@ -29,6 +29,10 @@
 <main class="right">
     <ul class="resultat">
     </ul>
+    	<h1>Pizzajakten</h1>
+    	<p>Hej Starta med att välja dina favorit ingredienser, så hittar vi din pizza som passar bäst med dina val.</p>
+    	<p>Sedan kommer vi att visa var du kan hitta din pizza.</p>
+    	<p>När du har hittat din pizzeria så kan du beställa den eller lämna över till nästa som får hitta sin pizza.</p>
 </main>
 
 <script src="js/getcategory.js"></script>
