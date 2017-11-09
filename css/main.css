@@ -220,8 +220,6 @@ header{
     left: 50%;
     transform: translateX(-50%);
     font-size: 13px;
-
-
 }
 
 .progretion li img{
@@ -537,22 +535,35 @@ main.right.klar {
 	margin-bottom: 20px; 
 }
 
+
+
+
+
 /*STYLING AV PIZZERIOR-SIDAN*/
 
 main.left.pizzerior img {
     width: 70%;
     margin: 10px;
+    padding-left: 30px;
 }
 
 main.left.pizzerior  {
     text-align: center;
-    padding: 10% 10% 0 10%;
+    padding: 7% 10% 0 10%;
+}
+
+
+main.left.pizzerior h1 {
+    font-size: 30px;
+
 }
 
 main.left.pizzerior h3 {
     font-family: helvetica;
+    font-size: 17px;
 
 }
+
 
 main.right.pizzerior li{
 	padding: 2% ; 
@@ -1029,20 +1040,40 @@ input::placeholder {
     font-family: helvetica;
     cursor: pointer;
 }	
+.left.pizzerior input[type=submit]{
+	margin: 0px;
+	margin-top: 14px;
 
-.right.pizzerior input[type=submit]:hover {
+	background: rgba(191, 232, 150, 0.7);
+	color: rgba(127, 191, 63, 1);
+
+	border: none;
+	border-radius: 25px;
+    color: white;
+    padding: 11px 30px;
+    box-sizing: border-box;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-family: helvetica;
+    cursor: pointer;
+}	
+
+.right.pizzerior input[type=submit], .left.pizzerior input[type=submit]:hover {
 	background: rgba(38, 62, 13, 0.4);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
 }
 
-.right.pizzerior input[type=submit]:active {
+.right.pizzerior input[type=submit], .left.pizzerior input[type=submit]:active {
 	background: rgba(38, 62, 13, 0.4);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
 }
 
-.right.pizzerior input[type=submit]:focus {
+.right.pizzerior input[type=submit], .left.pizzerior input[type=submit]:focus {
 	background: rgba(38, 62, 13, 0.4);
 	transition-timing-function: ease-in;
 	transition: 0.3s;
