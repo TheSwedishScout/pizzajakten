@@ -1,17 +1,21 @@
 KVAR
  • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
 
+ •Styla index.php
+ •Styla pizzor.php och pizzeria.php
+ •Gå igenom kod och kommentera
+ •Ny backup databas fil
 
- • Kontakta Jasmin om redovisning
- • Gå igenom kod och kommentera
- • Lämna in på pinpong
+•Kontakta Jasmin om redovisning
+ •Lämna in på pinpong
+
  
- Styla 
- pizzor.php och pizzeror.php
-
 
  sidor med kod som ska kommenteras:
  •pizzeria.php + pizza.php är rätt okommenterad
+
+
+
 
 
 EXTRA
