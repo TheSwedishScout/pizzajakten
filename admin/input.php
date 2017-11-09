@@ -46,70 +46,12 @@
             $pizzeria['gluten'] = 1;
         }
         $conn = connect_to_db();
+        //värderna av det vi sagt i formen sätts i ?. Det fästs sedan via bind_param
         $stmt = $conn->prepare("INSERT INTO `pizzerior`(`id`, `namn`, `hasGlutenFree`, `openinghouers`, `adress`) VALUES (NULL,?,?,?,?)");
         $stmt->bind_param('siss', $pizzeria['namn'], $pizzeria['gluten'], $pizzeria['open'], $pizzeria['adress'] );
         $stmt->execute();
         $conn->close();
         //var_dump($pizzeria);
-    }
-    if (isset($_POST['nyPizza'])) {
-        $pizza = [];
-        $pizza['pizzeria'] = (int)test_input($_POST['pizzeria']);
-        $pizza['namn'] = test_input($_POST['namn']);
-        $pizza['pizzanr'] = (int)test_input($_POST['listnr']);
-        $pizza['ingredienser'] = array_map('ucwords',array_map('strtolower',array_map('test_input',array_map('trim',explode(",", test_input($_POST['ingredienser']))))));
-
-        $pizza['pris'] = (int)test_input($_POST['pris']);
-
-        #kolla att pizzerian finns
-        $conn = connect_to_db();
-        $stmt = $conn->prepare("SELECT id FROM pizzerior where id = ? ");
-        $stmt->bind_param('i', $pizza['pizzeria']);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $errors = [];
-        //var_dump($result->num_rows);
-        if ($result->num_rows != 1) {
-            $errors[] = "pizzeria dose not exists!";
-        }
-        # kolla om ingredienserna finns 
-        $ingredienser = "'".implode("', '", $pizza['ingredienser'])."'";
-        //$sql = "SELECT count(*) from ingredienser where ingredienser.namn in (?)";
-        $sql = "SELECT GROUP_CONCAT(namn) as ingredienser, count(*) as count from ingredienser where ingredienser.namn in ($ingredienser)";
-        $stmt = $conn->prepare($sql);
-        //$stmt->bind_param('s',$ingredienser);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        //var_dump($result);
-        $result = $result->fetch_array(MYSQLI_ASSOC);
-        //var_dump($result);
-        //echo(count($pizza['ingredienser']));
-        if($result['count'] != count($pizza['ingredienser'])){
-            $ingredienserInDB = array_map('ucwords',array_map('strtolower',explode(",", $result['ingredienser'])));
-            /*var_dump($ingredienserInDB);
-            var_dump($pizza['ingredienser']);*/
-            //ucwords(strtolower($bar))
-            $skilnad = array_diff($pizza['ingredienser'], $ingredienserInDB);
-            var_dump($skilnad);
-            //$errors[] = "tyvär men $result['ingredienser'] saknas i vår databas, var god och lägg till dem.";
-            # lägg till ingredienser som saknas till db
-        }
-
-        #OM INGA FEL SÅ 
-
-        #lägg in pizzan till pizzerian
-        /*
-        $sql = "INSERT INTO `pizzorinpizzeria`(`id`, `name`, `pizzeria`, `pizzanr`, `pris`, `favorits`, `orders`) VALUES (NULL,?,?,?,?,0,0)";
-        $stmt = $conn->prepare("SELECT id FROM pizzerior where id = ? ");
-        $stmt->bind_param('siii',$pizza['namn'], $pizza['pizzeria'], $pizza['pizzanr'], $pizza['pris']);
-        $stmt->execute();
-        */
-
-
-        #koppla ingredienser till pizza
-
-
-
     }
     ?>
     <main class="left">

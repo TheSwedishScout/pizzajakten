@@ -1,19 +1,19 @@
 <?php 
-function test_input($data) {
-
+//testar så det inte finns några felaktiga tecken för sql och html. Bra säkerhet!
+function test_input($data) { //$data är värdet av det vi skriver i fälten
+    //trim tar bort alla tomma tecken i början och slutet av strängen 
 	$data = trim($data);
-
+    // sätter \ framför fnuttar och specialtecken för att ta bort funktionalitete
 	$data = stripslashes($data);
-
+    //omvandlar åäö och andra specialtecken till säkra html tecken
 	$data = htmlspecialchars($data);
 
 	$conn = connect_to_db();
-
+    //gör exakt som sql
 	$data = mysqli_real_escape_string ( $conn , $data );
 
 	return $data;
 	$conn->close();
-
 }
 
 function connect_to_db(){

@@ -1,5 +1,6 @@
 <?php
 require '../function.php';
+//get hämtar från url. I detta fall hämtar vi via en ajax
 if(isset($_GET['category'])){
 	//header('Content-type: text/html; charset=UTF-8');
 	$category = test_input($_GET['category']);
