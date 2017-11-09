@@ -48,6 +48,13 @@
 
 	}
 ?>
+
+
+
+
+
+
+
 <main class="left pizzerior">
          <!-- Lista på ingredienser-->
          <h1><?php echo $pizza['name']; ?></h1>
@@ -58,6 +65,13 @@
             <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
         </form>
 </main>
+
+
+
+
+
+
+
 <main class="right pizzerior">
 	<?php //var_dump($pizza); ?>
     <div id="map"></div>
@@ -68,7 +82,7 @@
         var uluru = {lat: <?php echo($pizza['lat']) ?>, lng: <?php echo($pizza['lng']) ?>};
         var icons = {
 			pizza: {
-				icon: 'images/0.5x/Map marker.png'
+				icon: 'images/0.5x/Map marker.png' //den som placeras ut på kartan vart pizzerian finns
 			}
       	}
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -94,6 +108,11 @@
     </script>
     </ul>
 </main>
+
+
+
+
+
 
 <?php
 	include 'footer.php';
