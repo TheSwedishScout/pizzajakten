@@ -30,19 +30,19 @@
 			    'Content-Type: application/json',
 			);
 			        $handle = curl_init();
-			curl_setopt($handle, CURLOPT_URL, $url);
-			curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
-			curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
-			$response = curl_exec($handle);
-			$code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
-			$adressData = json_decode($response);
-			//var_dump($adressData);
-			/*var_dump($adressData->results[0]->geometry->location->lng);
-			var_dump($adressData->results[0]->geometry->location->lat);*/
-			$pizza['lng'] = $adressData->results[0]->geometry->location->lng;
-			$pizza['lat'] = $adressData->results[0]->geometry->location->lat;
+        			curl_setopt($handle, CURLOPT_URL, $url);
+        			curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
+        			curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+        			curl_setopt($handle, CURLOPT_SSL_VERIFYHOST, false);
+        			curl_setopt($handle, CURLOPT_SSL_VERIFYPEER, false);
+        			$response = curl_exec($handle);
+        			$code = curl_getinfo($handle, CURLINFO_HTTP_CODE);
+        			$adressData = json_decode($response);
+        			//var_dump($adressData);
+        			/*var_dump($adressData->results[0]->geometry->location->lng);
+        			var_dump($adressData->results[0]->geometry->location->lat);*/
+        			$pizza['lng'] = $adressData->results[0]->geometry->location->lng;
+        			$pizza['lat'] = $adressData->results[0]->geometry->location->lat;
         } 
 
 
@@ -53,6 +53,10 @@
          <h1><?php echo $pizza['name']; ?></h1>
         <img src="images/pizza7.png">
         <h3><?php echo $ing; ?></h3>
+        <form action="varukorg.php" method="POST">
+            <input type="submit" name="Välj denna" value="Välj pizza">
+            <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
+        </form>
 </main>
 <main class="right pizzerior">
 	<?php //var_dump($pizza); ?>

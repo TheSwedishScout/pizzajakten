@@ -67,7 +67,7 @@
                 $ingredienser = explode(",", $pizza['ingredienser']);
                 ?>
                 <li>
-                    <h2><?php echo($pizza['name']); ?></h2>
+                    <h2><a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a></h2>
                     <ul>
                     <?php 
                         foreach ($ingredienser as $ingrediens) {
@@ -76,6 +76,11 @@
                             <?php
                         }
                     ?>
+                    <form action="varukorg.php" method="POST">
+                        <input type="submit" name="Välj denna" value="Välj pizza">
+                        
+                        <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
+                    </form>
                     </ul>
                     <p><?= $pizza['pris']; ?></p>
                 </li>
