@@ -1,18 +1,66 @@
 VIKTIGA:
+<<<<<<< HEAD
+ • Lösenordsskyddade sidor
+ 
+ • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
+    - PÅBÖRJAD (ANTAGLIGEN FEL)
+            Annika tänker:
+                Måste kolla om det finns ett session?
+                
+            
+            
+ • Spara bestälda Pizzor i DB orders 
+     - PÅBÖRJAD (ANTAGLIGEN FEL)
+ 
+ • COOKIES va det ett måste? - This site uses coockies bar i headern ? med en cookie när man klickar bort den att den är borta i 3-4 dagar?
+=======
  • Lösenordsskyddade sidor (for grade 4)
 
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 6661d209de193ea49f49eb9a35f2824ca26ef1ae
+
+
+>>>>>>> 42ea0b90fe1cf5ff3166b7db032135a2d3aa59c6
 Extra:
  • Spara beställda Pizzor i DB orders 
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info 
  • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
  • Orderhistorik SELECT 
+<<<<<<< HEAD
+ • felmeddelnaden på klar-sidan i vissa fall
+ • LOGOTYP!!!!!!
+=======
  • Knapp på klarsidan till index ("gör ny beställning")
  • felmeddelnaden på klar-sidan i vissa fall
  • LOGOTYP!!!!!!
  • Redirect när man loggat in till en sida som man vart på innan eller till "minsida" 
+>>>>>>> 6661d209de193ea49f49eb9a35f2824ca26ef1ae
 
 
 Att göra:
  • Kontakta Jasmin om redovisning
  • Gå igenom kod och kommentera
  • Lämna in på pinpong
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ SPARA I ORDERS??????????????????
+ <php
+    session_start();
+    require 'cart.php'
+    
+    //save order
+    mysqli_query (§con, 'INSERT INTO orders(user, pizza) values(?, ?)');
+    $orderid = mysqli_insert_id();
+ 
+ 
+ ?>
+ 
+ 
+ 

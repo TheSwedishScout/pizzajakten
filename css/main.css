@@ -121,8 +121,9 @@ header{
 	display: block;	
 	height: 100%;
 }
-.logga img{
-	height: 100%;
+.logga img {
+    height: 60%;
+    padding-top: 2%;
 }
 
 #cart {
@@ -1295,9 +1296,27 @@ input::placeholder {
     cursor: pointer;
 }
 
-
-
 #map{
 	height: 100%;
     width: 100%;
+}
+
+.done button {
+    position: absolute;
+    top: 63%;
+    right: 31%;
+    background: #ed5e5e;
+}
+
+.done button:hover {
+    background: #b13232;
+}
+
+
+.cookie {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+      z-index: 999;
 }

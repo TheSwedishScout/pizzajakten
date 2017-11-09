@@ -8,12 +8,8 @@
 
 		//ta bort item från _session[cart] från position $hittad
 		array_splice($_SESSION['shopping-cart'], $hittad, 1); //1an betyder att den bara bort en pizza åt gången/per klick på ta bort
-	}
+	}  
 
-	
-
-
-	
 ?>
 <main class="left kassa">
 	<h2 class="order">Din beställning</h2>
@@ -32,9 +28,6 @@
         <li class="Pizza_pris"><?php echo $values["pris"]; ?> kr</li> 
         <input type="hidden" name="pizzaid" value="<?php echo $values['id'] ?>">
 	</form>
-
-
-
 </ul>
 
 
@@ -62,6 +55,26 @@
 
 	<p id="kassaP">Du får ett bekärftelsemail via den email du har angivit</p>
 
+    
+    <?php
+    //Annikas klåp
+//    $sql =  "SELECT user.* FROM user where id = ?";
+//    $stmt = $conn->prepare($sql);
+//		//var_dump($pizza);
+//		$stmt->bind_param("s", $user['user_id']);
+//		$stmt->execute();
+//		$result = $stmt->get_result();
+//		$user = [];
+//    
+//    if (isset($_POST['user_id'])) {
+//        //BLA BLA BLA BLA BLA 
+//    
+//	}
+
+    
+    
+//    SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
+    ?>
 
 </main>
 
