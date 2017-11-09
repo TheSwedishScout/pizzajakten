@@ -1408,4 +1408,48 @@ main.left.pizzerior h1{
         font-size: xx-large;
     padding-bottom: 20px;
 }
+
+/*MIN SIDA*/
+.userRight form {
+    margin: 10px; 
+}
+
+.userRight input{
+    margin: 10px 2px 10px 0px;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.spara {
+    background: #2f70c7;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+}
+
+.spara:hover {
+    background: #26589c;
+    	transition-timing-function: ease-in;
+	transition: 0.4s;
+	-webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+}
+
+.minInfo {
+    text-align: center;
+}
+
+.minInfo img {
+    padding-top: 10%;
+    width: 50%;
+}
+
+.minInfo h1 {
+    font-size: xx-large;
+    padding-top: 5%;
+}
+
+.minInfo a {
+    margin-bottom: 5%;
 }
