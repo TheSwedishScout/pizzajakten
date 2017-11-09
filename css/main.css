@@ -1368,3 +1368,33 @@ input::placeholder {
 .cookie button{
 	display: inline-block;
 }
+
+.allaPizzor li {
+    display: inline-block;
+}
+
+
+.helaPizzerian {
+    float: left;
+    text-align: left;
+
+}
+
+.helaPizzerian form {
+    float: right;
+}
+
+.helaPizzerian input {
+    border: none;
+    background: #8CC512;
+	border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+main.left.pizzerior h1{
+        font-size: xx-large;
+    padding-bottom: 20px;
+}
+}
