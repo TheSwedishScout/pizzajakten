@@ -9,45 +9,27 @@
 </ul>
 
 <main class="left">
-
-	<?php
+    <div class="minInfo">
+        <img src="images/user.png"><br>
+	<h1><?php
     
 	echo($_SESSION['user']['name']);
 	//var_dump($_SESSION);
-	?>
-    <ul class="minInfo">
-
+	?></h1><br>
 
 <?php
 		//Cookie code from https://www.w3schools.com/php/func_http_setcookie.asp
 		if(!isset($_COOKIE[$cookie_name])) {
 		    echo "Välkommen! Vad kul att du är här!"; //Detta visas första gången man är inne
 		} else {
-		    echo "Välkommen igen!"; 
+		    echo "Välkommen Tillbaka! "; 
 		    echo $_COOKIE[$cookie_name];//detta fr.o.m. andra gånge man är inne + 1 dag framåt
 		}
 ?>
-	<ul>
-		<li>
-		</li>
-		<li>
-			<a href="assets/logOut.php">Logga ut</a>
-			
-		</li>
-		<li>
-			<button>Uppdatera/lägg till adress</button>
-		</li>
-		<li>
-			<button>Uppdatera/lägg till telefonnummer</button>
-		</li>
-		<li>
-		      <button>Uppdatera/lägg till mailadress</button>
-		</li>
-		<li>
-		      <button>Ändra lösenord</button>
-		</li> 
-	</ul>
+			        <br>
+        <br><a href="assets/logOut.php">Logga ut</a><br>
 
+    </div>
 </main>
 
 
@@ -69,19 +51,24 @@
         }
         //var_dump($userinfo)
 		?>
-		<form action="assets/updateUser.php" method="POST">
-			<input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
-			<input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
-			<input type="ort" name="ort" value="<?= $userinfo['town'] ?>">
-			<input type="email" name="email" value="<?= $userinfo['email'] ?>">
-			<input type="submit" name="" value="Spara">
-		</form>
-		<form action="assets/updateUserPassword.php"  method="POST">
+        <div class="userRight">
+            <h1>Uppdatera adress</h1>
+            <form action="assets/updateUser.php" method="POST">
+                <input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
+                <input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
+                <input type="ort" name="ort" value="<?= $userinfo['town'] ?>">
+                <h1>Uppdatera mailadress</h1>
+                <input type="email" name="email" value="<?= $userinfo['email'] ?>">
+                <input class="spara" type="submit" name="" value="Spara">
+            </form>
+                    <h1>Uppdatera lösenord</h1>
+            <form action="assets/updateUserPassword.php"  method="POST">
 
-			<input type="password" name="password" placeholder="********">
-			<input type="password" name="password2" placeholder="********">
-			<input type="submit" name="" value="Spara">
-		</form>
+                <input type="password" name="password" placeholder="********">
+                <input type="password" name="password2" placeholder="********">
+                <input class="spara" type="submit" name="" value="Spara">
+            </form>
+        </div>
 	
 </main>
 
