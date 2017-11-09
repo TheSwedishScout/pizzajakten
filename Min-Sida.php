@@ -2,6 +2,12 @@
 	$no_balls = 'true';
 	include ('header.php');
 ?>
+<ul class="tabs">
+	<li>
+		<a href="index.php">Starta här</a>
+	</li>
+</ul>
+
 <main class="left">
 
 	<?php
@@ -56,16 +62,39 @@
 
 
 <main class="right">
-		<ul>
-			<li>
-				orderhistorik
-			</li>
-		</ul>
+		<?php
+		 $conn = connect_to_db();
+        $sql = "SELECT * FROM user WHERE id = ? LIMIT 1";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $_SESSION['user']['nr']);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+        $conn->close();
+        if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                	$userinfo = $row;
+                    
+            }
+        }
+        //var_dump($userinfo)
+		?>
+		<form>
+			<input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
+			<input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
+			<input type="ort" name="adress" value="<?= $userinfo['town'] ?>">
+			<input type="email" name="email" value="<?= $userinfo['email'] ?>">
+			<input type="submit" name="" value="Spara">
+		</form>
+		<form>
+
+			<input type="password" name="password" value="<?= $userinfo['password'] ?>">
+			<input type="password" name="password" value="<?= $userinfo['password'] ?>">
+			<input type="submit" name="" value="Spara">
+		</form>
 	
 </main>
-<main class="right">
-	
-</main>
+
 <?php
 	include 'footer.php';
 
