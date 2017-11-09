@@ -12,16 +12,6 @@
 
 	<?php
     
-/*    //Annikas klåpkod
-     $sql =  "SELECT user.* FROM user where id = ?";
-    $stmt = $conn->prepare($sql);
-		//var_dump($pizza);
-		$stmt->bind_param("s", $user['user_id']);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$user = [];
-  */  
-    
 	echo($_SESSION['user']['name']);
 	//var_dump($_SESSION);
 	?>
@@ -79,17 +69,17 @@
         }
         //var_dump($userinfo)
 		?>
-		<form action="assets/updateUser.php">
+		<form action="assets/updateUser.php" method="POST">
 			<input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
 			<input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
-			<input type="ort" name="adress" value="<?= $userinfo['town'] ?>">
+			<input type="ort" name="ort" value="<?= $userinfo['town'] ?>">
 			<input type="email" name="email" value="<?= $userinfo['email'] ?>">
 			<input type="submit" name="" value="Spara">
 		</form>
-		<form action="assets/updateUserPassword.php">
+		<form action="assets/updateUserPassword.php"  method="POST">
 
-			<input type="password" name="password" value="<?= $userinfo['password'] ?>">
-			<input type="password" name="password" value="<?= $userinfo['password'] ?>">
+			<input type="password" name="password" placeholder="********">
+			<input type="password" name="password2" placeholder="********">
 			<input type="submit" name="" value="Spara">
 		</form>
 	
