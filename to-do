@@ -1,6 +1,21 @@
+KVAR
+ • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
+ • (Orderhistorik SELECT) 
+ • felmeddelnaden på klar-sidan i vissa fall?
+ • LOGOTYP!!!!!! - saknas på någon sida
+
+ • KOMENTERA KÅD
+
+ • Kontakta Jasmin om redovisning
+ • Gå igenom kod och kommentera
+ • Lämna in på pinpong
+ Styla 
+ pizzor.php och pizzeror.php
+______________________________________________________________________________________________________________________________________--
+
 VIKTIGA:
- • Logga ut
- 
+ • Logga ut - klåp men funkar
+
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till x   ['user_id'] | get the info
     - PÅBÖRJAD (ANTAGLIGEN FEL)
             Annika tänker:
@@ -15,23 +30,32 @@ VIKTIGA:
  • COOKIES va det ett måste? - This site uses coockies bar i headern ? med en cookie när man klickar bort den att den är borta i 3-4 dagar?
  • Lösenordsskyddade sidor (for grade 4) --DONE
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 6661d209de193ea49f49eb9a35f2824ca26ef1ae
+=======
+>>>>>>> 3ed8a32f05eec26f0d981fdd82c83822534d428d
+
+
+>>>>>>> 42ea0b90fe1cf5ff3166b7db032135a2d3aa59c6
+>>>>>>> 32220f19eaab0239a6b289fae843cf6c5b1befb0
+>>>>>>> 4174969497d532897c945c3cf11e6a1d47398490
 Extra:
  • Spara beställda Pizzor i DB orders 
  • Kassa-right automatiska innloggningsuppgifter   SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info 
- • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
- • Orderhistorik SELECT 
- • felmeddelnaden på klar-sidan i vissa fall
- • LOGOTYP!!!!!!
  • Knapp på klarsidan till index ("gör ny beställning")
  • felmeddelnaden på klar-sidan i vissa fall
  • LOGOTYP!!!!!!
  • Redirect när man loggat in till en sida som man vart på innan eller till "minsida" 
 
 Att göra:
- • Kontakta Jasmin om redovisning
- • Gå igenom kod och kommentera
- • Lämna in på pinpong
  
  
  
