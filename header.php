@@ -128,24 +128,33 @@
 
 <!-- Hamburgermenyn -->
 <body>
+
+
 	<?php
+
+		//Cookie som uppmanar om att vi använder cookies
 	if(!isset($_COOKIE['Cookie_bar'])) {
     ?>
     <div class="cookie">
         <p>Vi använder Cookies, bara så du vet!</p><button id="cookie_button">OK!</button>
     </div>
 	<?php } ?>
+
+
+
 <div class="container">
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
 		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
-		<?php 
+		
+		<?php //länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
 		if(isset($_SESSION['user'])){
         	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
 		}else{
         	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
 		}
 		?>
+
         <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 	</header>
 
@@ -155,8 +164,8 @@
 		<div class="counter1"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 		<!--<img src="images/star.png" alt="Favoriter">-->
 		<?php 
-		
-		if(isset($_SESSION['user'])){
+		//länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
+		if(isset($_SESSION['user'])){ 
         	echo '<a href="Min-Sida.php"><img src="images/user.png" alt="min sida"></a>';
 		}else{
         	echo '<a href="logIn.php"><img src="images/user.png" alt="min sida"></a>';
@@ -193,7 +202,7 @@
 		</li>
 		
 		<li>
-			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>">
+			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>"> <!-- classen talar om hur bilden ska bete sig när den är aktiv(dvs. den ska vara ifärgad osv)  href talar om huvida man kan klicka på knapparna och komma till sidorna -->
 				<img src="images/pizza2.png">
 			</a>
 		</li>

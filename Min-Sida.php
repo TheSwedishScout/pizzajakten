@@ -23,7 +23,7 @@
   */  
     
 	echo($_SESSION['user']['name']);
-	var_dump($_SESSION);
+	//var_dump($_SESSION);
 	?>
     <ul class="minInfo">
 

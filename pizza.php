@@ -62,6 +62,8 @@
 	<?php //var_dump($pizza); ?>
     <div id="map"></div>
     <script>
+
+        //Googlekartan som visar vilken log/lat som ska visas
       function initMap() {
         var uluru = {lat: <?php echo($pizza['lat']) ?>, lng: <?php echo($pizza['lng']) ?>};
         var icons = {
