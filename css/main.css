@@ -497,6 +497,16 @@ main.right{
 	margin-bottom: 20px;	
 }
 
+main.right p {
+    font-family: helvetica;
+    padding: 3px 13px 13px 13px;
+}
+
+main.right h1 {
+    font-size: xx-large;
+    padding: 13px 13px 0px 13px;
+}
+
 main.left.pizzerior {
 	background: #A0D468;
 	margin-bottom: 20px; 
