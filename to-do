@@ -14,4 +14,13 @@ KVAR
  •pizzeria.php + pizza.php är rätt okommenterad
 
 
+EXTRA
+Kategorier för ingredienser får en egen table så kategorin blir en forgen key
 
+Bild på usern/profil bild
+
+kunna kommentera pizza och pizzeria
+
+Sortera pizzor på olika vis när man visar all pizzerior som har den pizzan.
+
+inte lämna sidan när man är på pizzerans egna sida så man kan lägga till flera pizzor animera en ding så man ser att man lägger till det i varukorgen

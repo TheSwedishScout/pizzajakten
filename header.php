@@ -155,7 +155,7 @@
 		}
 		?>
 
-        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
+        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen--></a>
 	</header>
 
 <!-- Hamburgermenyns innehåll -->	
@@ -197,6 +197,7 @@
 			<a class= "active" href="index.php">
 
 				<img src="images/pizza1.png"/>
+				<p>Start</p>
 
 			</a>
 		</li>
@@ -204,27 +205,33 @@
 		<li>
 			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>"> <!-- classen talar om hur bilden ska bete sig när den är aktiv(dvs. den ska vara ifärgad osv)  href talar om huvida man kan klicka på knapparna och komma till sidorna -->
 				<img src="images/pizza2.png">
+				<p>Pizzeria</p>
 			</a>
 		</li>
 		<li>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 2  ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr > 2 ? 'varukorg.php' : '#' ?>">
 				<img src="images/pizza3.png">
+				<p>Varukorg</p>
+				
 
 			</a>
 		</li>
 		<li>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 3 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr > 3 ? 'kassa.php' : '#' ?>">
 				<img src="images/pizza4.png">
+				<p>Beställ</p>
 
 			</a>
 		</li>
 		<li>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 4 ? 'active' : null; ?>" href="#">
 				<img src="images/pizza5.png">
+				<p>Klar</p>
 
 			</a>
 		</li>
 		
+
 
 		</ul>
 	</div>

@@ -53,14 +53,4 @@ function connect_to_db(){
 	return $result;
 }*/
 
-//
-
-
-
-
-
-
-
-
-
 ?>

@@ -197,6 +197,7 @@ header{
 	justify-content: space-between;
 }
 .progretion ul{
+	padding-bottom: 10px;
 	display: flex;
 	justify-content: space-evenly;
 	width: 100%;
@@ -207,10 +208,18 @@ header{
 	text-align: center;
 	height: 100%;
 	max-width: 20%;
+	position: relative;
 }
 .progretion li a{
 	display: block;
 	height: 100%;
+}
+.progretion li p{
+    position: absolute;
+    top: 77%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 29px;
 }
 
 .progretion li img{
