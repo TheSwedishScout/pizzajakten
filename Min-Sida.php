@@ -22,13 +22,13 @@
 
 
 <?php
-//Cookie code from https://www.w3schools.com/php/func_http_setcookie.asp
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Välkommen! Vad kul att du är här!";
-} else {
-    echo "Välkommen igen! ";
-    echo $_COOKIE[$cookie_name];
-}
+		//Cookie code from https://www.w3schools.com/php/func_http_setcookie.asp
+		if(!isset($_COOKIE[$cookie_name])) {
+		    echo "Välkommen! Vad kul att du är här!"; //Detta visas första gången man är inne
+		} else {
+		    echo "Välkommen igen!"; 
+		    echo $_COOKIE[$cookie_name];//detta fr.o.m. andra gånge man är inne + 1 dag framåt
+		}
 ?>
 	<ul>
 		<li>
