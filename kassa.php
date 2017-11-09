@@ -1,7 +1,7 @@
 <?php
 	include 'header.php';
 
-
+    //ta bort pizza-knappar från kassa sidan
 	if (isset($_POST['delete'])) {
 		//letar efter _POST pizzaid i arrayn från session och columnen i arrayn "id"
 		$hittad = array_search($_POST['pizzaid'], array_column($_SESSION["shopping-cart"], 'id'));

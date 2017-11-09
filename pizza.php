@@ -20,6 +20,7 @@
             }
         }
         $ing = explode(",", $pizza['ingredienser']);
+        //implode — Join array elements with a string
         $ing = implode(", ", $ing);
         if($pizza['lng'] == 0 || $pizza['lat'] == 0 ){
         	$adress = urlencode($pizza['adress']);

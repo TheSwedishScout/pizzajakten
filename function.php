@@ -53,14 +53,4 @@ function getIngredients($kategori='')
 	return $result;
 }
 
-//
-
-
-
-
-
-
-
-
-
 ?>

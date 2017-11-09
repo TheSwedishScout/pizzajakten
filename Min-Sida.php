@@ -6,16 +6,6 @@
 
 	<?php
     
-/*    //Annikas klåpkod
-     $sql =  "SELECT user.* FROM user where id = ?";
-    $stmt = $conn->prepare($sql);
-		//var_dump($pizza);
-		$stmt->bind_param("s", $user['user_id']);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$user = [];
-  */  
-    
 	echo($_SESSION['user']['name']);
 	var_dump($_SESSION);
 	?>
