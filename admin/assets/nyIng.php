@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 require '../../function.php';
 
 //check session is admin or have prommision to edit this pizzeria
@@ -16,7 +17,14 @@ if(!isset($_POST['namn'])){
 	$error[] = "Inget namn";
 
 }
-
+if(isset($_SESSION['user'])){
+	if($_SESSION['user']['lvl'] > 2){
+		$error[] = "user not in admin mode";
+	}
+}else{
+	$error[]= "no user";
+	
+}
 	/*
 		namn
 		kat
