@@ -1389,9 +1389,12 @@ input::placeholder {
 .helaPizzerian {
     float: left;
     text-align: left;
-
+    width: 100%;
 }
-
+.helaPizzerian > li:not(:last-child){
+	border-bottom: 1px solid #fff;
+    margin-bottom: 12px;
+}
 .helaPizzerian form {
     float: right;
 }
@@ -1403,6 +1406,7 @@ input::placeholder {
     padding: 10px;
     cursor: pointer;
     color: white;
+    margin-top: 0px !important; 
 }
 
 main.left.pizzerior h1{

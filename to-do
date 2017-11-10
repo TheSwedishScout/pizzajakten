@@ -1,32 +1,37 @@
 KVAR
- • Min-sida sida (uppdatera lösen, adress, tel, mail) SELECT user.* FROM user where id = ?  |  bind ? till $_session['user_id'] | get the info
-
- •Styla index.php
- •Styla pizzor.php och pizzeria.php
- •Gå igenom kod och kommentera
- •Ny backup databas fil
+ • Min-sida sida (uppdatera lösen, adress, tel, mail)  Gör om till ajax request
+ • Styla index.php
+ • Styla pizzor.php och pizzeria.php
+ • Gå igenom kod och kommentera
+ • Ny backup databas fil
 
 •Kontakta Jasmin om redovisning
  •Lämna in på pinpong
 
  
 
- sidor med kod som ska kommenteras:
- •pizzeria.php + pizza.php är rätt okommenterad
-
- Alla pizzor dyker upp oavsett vilken pizzeria man valt på pizzeria.php
-
 
 
 
 
 EXTRA
-Kategorier för ingredienser får en egen table så kategorin blir en forgen key
+Fead back på att pizza är tillagd
+feedbak på uppdatering av pizza
+
+uppdatera headern i admin
+
+inte lämna sidan när man är på pizzerans egna sida så man kan lägga till flera pizzor animera en ding så man ser att man lägger till det i varukorgen
+
+Sortera pizzor på olika vis när man visar all pizzerior som har den pizzan.
 
 Bild på usern/profil bild
 
 kunna kommentera pizza och pizzeria
 
-Sortera pizzor på olika vis när man visar all pizzerior som har den pizzan.
+Tutoral?
 
-inte lämna sidan när man är på pizzerans egna sida så man kan lägga till flera pizzor animera en ding så man ser att man lägger till det i varukorgen
+
+
+
+DONE
+Kategorier för ingredienser får en egen table så kategorin blir en forgen key

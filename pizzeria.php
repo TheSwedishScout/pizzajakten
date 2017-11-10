@@ -43,7 +43,7 @@
 
         $sql = "SELECT pizzorinpizzeria.id, pizzorinpizzeria.name, pizzorinpizzeria.pizzanr, pizzorinpizzeria.pris, GROUP_CONCAT(ingredienseronpizza.ingrediens) as ingredienser from pizzorinpizzeria, ingredienseronpizza WHERE pizzeria = ? AND pizzorinpizzeria.id =  ingredienseronpizza.pizza GROUP BY ingredienseronpizza.pizza";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $pizzeria);
+        $stmt->bind_param("i", $pizzeria['id']);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -68,12 +68,12 @@
                 ?>
                 <li>
                     <h2><a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a></h2>
-                    <ul class="allaPizzor">
                          <form action="varukorg.php" method="POST">
                         <input type="submit" name="Välj denna" value="Välj pizza">
                         
                         <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
                     </form>
+                    <ul class="allaPizzor">
                     <?php 
                         foreach ($ingredienser as $ingrediens) {
                             ?>
@@ -81,8 +81,8 @@
                             <?php
                         }
                     ?>
-                         <p><?= $pizza['pris']; ?> kr</p><br>
                     </ul>
+                         <p><?= $pizza['pris']; ?> kr</p><br>
                 </li>
                 <?php
                 //var_dump($pizza);            

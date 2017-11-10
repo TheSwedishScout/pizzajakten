@@ -115,7 +115,8 @@
     <main class="right">
         <?php
         $conn = connect_to_db();
-            $sql = "SELECT `id`, `namn` FROM `pizzerior` WHERE 1";
+            $sql = "SELECT pizzerior.id, pizzerior.`namn` FROM `pizzerior`";
+            //SELECT MAX(pizzanr) FROM pizzorinpizzeria WHERE 1 GROUP BY pizzeria
             $result = $conn->query($sql);
             $rows = $result->fetch_all(MYSQLI_ASSOC);
 
@@ -124,7 +125,8 @@
         <h2>Ny pizza</h2><br>
         <form method="POST" id="AddPizza">
             Välj pizzeria <br>
-            <select name="pizzeria">
+            <select name="pizzeria" id="SelectPizzeria">
+                <option value='' disabled selected>--SELECT PIZZERIA--</option>
                 <?php
                     foreach ($rows as $row) {
                         echo "<option value='".$row['id']."'>{$row['namn']}</option>";
@@ -132,7 +134,7 @@
                 ?>
             </select><br><br>
             namn:<br> <input type="text" name="namn"><br>
-            pizza nr <br><input type="number" name="listnr"><br>
+            pizza nr <br><input type="number" name="listnr" id="pizzaNR"><br>
             ingredienser
             <ul id="list">
             </ul>

@@ -30,6 +30,7 @@ $page = end($link);
 	<meta charset="UTF-8">
 	<title>Pizza jakten</title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/no_balls.css">
 	<script src="https://use.typekit.net/iau7beu.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
 <?php
@@ -57,10 +58,8 @@ $page = end($link);
 		<input type="search" placeholder="sök" name="">
 	</div>
 	
-	<ul class="progretion">
-		<li>Ny pizzeria</li>
-		<li>updatera pizzor</li>
-		<li>TBD</li>
-		<li>TBD</li>
-		<li>TBD</li>
+	<ul class="tabs">
+		<li><a href="index.php">hem</a></li>
+		<li><a href="input.php">Ny pizzeria</a></li>
+		<li><a href="update.php">updatera pizzor</a></li>
 	</ul>
