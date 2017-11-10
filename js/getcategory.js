@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             mainDiv.innerHTML='';
             for(var i = 0; i < options.length; i++){ //loppar igenom alla ingredienser
                 var btn = document.createElement("button"); // skapar en knapp
-                btn.innerText=options[i].namn; // skriver ingrediensens namn i knappen
+                btn.innerText=capitalizeFirstLetter(options[i].namn); // skriver ingrediensens namn i knappen
                 if (choosenIng.includes(options[i].namn)){
                     btn.classList.add('activeButton');
                 }

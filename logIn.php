@@ -1,6 +1,10 @@
 <?php
 $no_balls = 'true';
 include 'header.php';
+if(isset($_SESSION['user'])){
+  header('location: Min-Sida.php');
+  exit();
+}
 ?>
 <!--
 Code taken from https://codepen.io/colorlib/pen/rxddKy

@@ -99,4 +99,18 @@ document.addEventListener('DOMContentLoaded', function(e) {
 		})
 		
 	})
+	document.getElementById('nyIngrediens').addEventListener('submit', function (e) {
+		e.preventDefault();
+		var ing = {};
+		var elems = {};
+		elems.namn = this[0];
+		ing.namn = this[0].value;
+		elems.kat = this[1];
+		ing.kat = this[1].value;
+		debugger;
+		ajax.post("./assets/nyIng.php", ing, function (data) {
+			elems.namn.value = "";
+
+		})
+	});
 })

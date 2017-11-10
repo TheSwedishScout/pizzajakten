@@ -1,14 +1,12 @@
 <?php
     require 'header.php';
-
+    //Lägg till en pizzeria
     if (isset($_POST['nyPizzeria'])) {
         $pizzeria = [];
         $pizzeria['namn'] = test_input($_POST['pizzeria']);
-        /*
-        $pizzeria['lng'] = (float)test_input($_POST['lng']);
-        $pizzeria['lat'] = (float)test_input($_POST['lat']);
-        */
         $pizzeria['adress'] = test_input($_POST['adress']);
+
+        //Fixar öppetider till JSON format beroende på om man har klickat på de olika alternativna alladagar helger eller alla olika
         if(isset($_POST['oppetalladagar'])){
             /*{'mon':"hh-mm"}*/
             $open = test_input($_POST['mondag-open']);
@@ -143,18 +141,29 @@
             <input type="nummer" name="pris">
             <input type="submit" name="nyPizza">
         </form>
-        <form name="nyIngrediens">
+
+
+
+        <?php
+        //Hämta kategorier för ingredienser som finns i db
+        $sql = "SELECT namn FROM `kategorier`";
+        $result = $conn->query($sql);
+        $rows = $result->fetch_all(MYSQLI_ASSOC);
+        ?>
+        <form name="nyIngrediens" id="nyIngrediens">
             <h2>Ny ingrediens</h2>
             <input type="text" placeholder="namn" name="namn">
-            <select>
-                <option>grönsak</option>
-                <option>kryda</option>
-                <option>krydda</option>
-                <option>kött</option>
-                <option>ost</option>
-                <option>övrigt</option>
+            <select name="kategori">
+                <?php
+                    foreach ($rows as $kategori) {
+                        ?>
+                            <option><?= $kategori['namn']; ?></option>
+                        <?php
+                    }
+                ?>
             </select>
-        </form><br><br>
+            <input type="submit" name="">
+        </form>
         </div>
 
     </main>

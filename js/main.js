@@ -84,6 +84,9 @@ ajax.post = function (url, data, callback, async) {
     }
     ajax.send(url, callback, 'POST', query.join('&'), async)
 };
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 
 

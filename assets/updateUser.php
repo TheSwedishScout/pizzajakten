@@ -29,7 +29,7 @@ if(empty($errors)){
 	}
 	if(isset($_POST['ort'])){ // kollar om lössenordet är inskrivet
 		$ort = test_input($_POST['ort']);
-		$updates .= "town='{$ort}',";
+		$updates .= "ort='{$ort}',";
 	}
 	if(isset($_POST['email'])){ // kollar om lössenordet är inskrivet
 		$email = test_input($_POST['email']);

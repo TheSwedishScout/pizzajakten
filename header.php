@@ -176,7 +176,7 @@
             <h3><a href="help.php">Hur fungerar det?</a></h3>
             <h3><a href="hittaPizzeria.php">Hitta din pizzeria</a></h3>
 		</nav>
-		<input type="search" placeholder="sök" name="">
+		<!--<input type="search" placeholder="sök" name="">-->
 	</div>
 
 
@@ -209,7 +209,7 @@
 			</a>
 		</li>
 		<li>
-			<a class=" <?php echo isset($page_nr) && $page_nr > 2  ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr > 2 ? 'varukorg.php' : '#' ?>">
+			<a class=" <?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0  ? 'active' : null; ?>" href="<?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0 ? 'varukorg.php' : '#' ?>">
 				<img src="images/pizza3.png">
 				<p>Varukorg</p>
 				

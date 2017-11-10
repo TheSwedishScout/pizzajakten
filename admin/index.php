@@ -10,5 +10,5 @@
         <li><a href="input.php"><button><p>Lägg till en pizzeria</p></a></button></li>
     </ul>
     <?php
-	include '../footer.php';
+	include 'footer.php';
     ?>

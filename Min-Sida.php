@@ -1,11 +1,24 @@
 <?php
 	$no_balls = 'true';
 	include ('header.php');
+    if(!isset($_SESSION['user'])){
+      header('location: logIn.php');
+      exit();
+    }
 ?>
 <ul class="tabs">
 	<li>
 		<a href="index.php">Starta här</a>
 	</li>
+    <?php
+        if($_SESSION['user']['lvl'] >= 2){
+            ?>
+            <li>
+                <a href="./admin">admin</a>
+            </li>
+            <?php           
+        }  
+    ?>
 </ul>
 
 <main class="left">
@@ -36,7 +49,7 @@
 <main class="right">
 		<?php
 		 $conn = connect_to_db();
-        $sql = "SELECT * FROM user WHERE id = ? LIMIT 1";
+        $sql = "SELECT user.adress, user.post_nr, user.email, user.ort FROM user WHERE user.id = ? LIMIT 1";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $_SESSION['user']['nr']);
         $stmt->execute();
@@ -56,7 +69,7 @@
             <form action="assets/updateUser.php" method="POST">
                 <input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
                 <input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
-                <input type="ort" name="ort" value="<?= $userinfo['town'] ?>">
+                <input type="ort" name="ort" value="<?= $userinfo['ort'] ?>">
                 <h1>Uppdatera mailadress</h1>
                 <input type="email" name="email" value="<?= $userinfo['email'] ?>">
                 <input class="spara" type="submit" name="" value="Spara">
