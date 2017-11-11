@@ -56,9 +56,37 @@
 
 <main class="left pizzerior">
          <!-- Lista på ingredienser-->
-         <h1><?php echo $pizza['name']; ?></h1>
+         <h1><?php echo $pizza['name']; ?>
+             
+
+         </h1>
         <img src="images/pizza7.png">
-        <h3><?php echo $ing; ?></h3>
+        <h3><?php echo $ing; ?>
+            <?php 
+            if(isset($_SESSION['user'])){ 
+                //$ost = in_array($pizza['id'], $favorites);
+                    /*var_dump($pizza['id']);
+                    var_dump($favorites);
+                    var_dump($ost);*/
+
+                if(isset($favorites)){
+                    if(in_array($pizza['id'], $favorites)){
+                    ?>
+                        <a value="<?= $pizza['id']; ?>" href="#" class="star stared"></a>
+                    <?php
+                    }else{
+                    ?> 
+                            <a value="<?= $pizza['id']; ?>" href="#" class="star"></a>
+                    <?php 
+                    }
+                }else{
+                    ?> 
+                        <a value="<?= $pizza['id']; ?>" href="#" class="star"></a>
+                    <?php 
+                }
+            }
+            ?>
+        </h3>
         <form action="varukorg.php" method="POST">
             <input type="submit" name="Välj denna" value="Välj pizza">
             <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
