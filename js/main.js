@@ -24,6 +24,38 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
     }
+
+    if(!!document.getElementsByClassName('star')){
+        elems = document.getElementsByClassName('star');
+        for (var i = 0; i < elems.length; i++) {
+            (function () {
+                var denna = i;
+                elems[i].addEventListener('click', function (e) {
+                    e.preventDefault()
+                    var id = this.attributes.value.nodeValue;
+                    star(id, elems[denna])
+                }
+                )
+            }
+            )()
+            
+
+        }
+        
+    }
+    function star(id, elem) {
+        ajax.post('assets/starPizza.php', {'pizza': id}, function (data) {
+            data = JSON.parse(data);
+            var hmm = typeof data.deleted; 
+            elem.classList.toggle('stared');
+            /*if (typeof data.deleted !== 'undefined'){
+                elem.innerHTML = "Star";
+            }else{
+                elem.innerHTML = "Stared";
+            }*/
+            //debugger
+        })
+    }
 })
 // AJAX CODE FROM https://stackoverflow.com/questions/8567114/how-to-make-an-ajax-call-without-jquery
 var ajax = {};

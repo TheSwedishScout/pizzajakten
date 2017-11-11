@@ -1561,3 +1561,17 @@ main.left.pizzerior h1{
 .minInfo a {
     margin-bottom: 5%;
 }
+
+.star{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(../images/not-stared.png);
+}
+.star:hover{
+	background: url(../images/starhover.png);
+}
+.stared{
+	background: white;
+	background: url(../images/stared.png);
+}

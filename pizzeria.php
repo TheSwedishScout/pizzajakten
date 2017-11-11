@@ -5,6 +5,24 @@
 	if (isset($_GET['pizzeria'])) {
 		$pizzeria = test_input($_GET['pizzeria']);
 		$conn = connect_to_db();
+        if(isset($_SESSION['user']['nr'])){
+            // Hämta favorit markerade pizzor
+            $sql = "SELECT favorites.pizza FROM favorites WHERE user = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $_SESSION['user']['nr']);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $stmt->close();
+            $favorites = [];
+            if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $favorites[] = $row['pizza'];
+                }
+            }
+            //var_dump($favorites);
+        }
+
+
         $sql = "SELECT pizzerior.* from pizzerior WHERE pizzerior.id = ? LIMIT 1";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $pizzeria);
@@ -67,7 +85,33 @@
                 $ingredienser = explode(",", $pizza['ingredienser']);
                 ?>
                 <li>
-                    <h2><a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a></h2>
+                    <h2><?= $pizza['id']; ?> <a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a> 
+                    <?php 
+                        if(isset($_SESSION['user'])){ 
+                            //$ost = in_array($pizza['id'], $favorites);
+                                /*var_dump($pizza['id']);
+                                var_dump($favorites);
+                                var_dump($ost);*/
+
+                            if(isset($favorites)){
+                                if(in_array($pizza['id'], $favorites)){
+                                ?>
+                                    <a value="<?= $pizza['id']; ?>" href="#" class="star stared"></a></h2>
+                                <?php
+                                }else{
+                                ?> 
+                                        <a value="<?= $pizza['id']; ?>" href="#" class="star"></a></h2>
+                                <?php 
+
+                                }
+                                    
+                            }else{
+                                ?> 
+                                    <a value="<?= $pizza['id']; ?>" href="#" class="star"></a></h2>
+                                <?php 
+                            }
+                        }
+                        ?>
                          <form action="varukorg.php" method="POST">
                         <input type="submit" name="Välj denna" value="Välj pizza">
                         
