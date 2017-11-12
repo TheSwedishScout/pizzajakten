@@ -75,7 +75,7 @@
 
         if(!isset($_SESSION['user'])){
 	        ?>
-	        <li><a href="login.php"><button><p>Logga in</p></a></button></li>
+	        <li><a href="logIn.php"><button><p>Logga in</p></a></button></li>
 	        <?php
         } 
          ?>
