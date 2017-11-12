@@ -80,7 +80,7 @@ font-size: 1em;
     ". prog prog ."
     ". tabs . ."
     "left main1 main2 right"
-    ". . . .";
+    ". . note note";
     height: 100vh;
 }
 
@@ -1578,4 +1578,11 @@ main.left.pizzerior h1{
 	background: white;
 	background: url(../images/stared.png);
 	background-repeat: no-repeat;
+}
+.note{
+	grid-area: note;
+	display: block;
+    text-align: right;
+    margin-top: -12px;
+    margin-right: 10px;
 }

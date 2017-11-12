@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Värd: 127.0.0.1
--- Tid vid skapande: 10 nov 2017 kl 12:39
+-- Tid vid skapande: 12 nov 2017 kl 11:13
 -- Serverversion: 5.7.11
 -- PHP-version: 5.6.19
 
@@ -48,6 +48,13 @@ CREATE TABLE `favorites` (
   `pizza` int(4) NOT NULL,
   `user` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumpning av Data i tabell `favorites`
+--
+
+INSERT INTO `favorites` (`pizza`, `user`) VALUES
+(59, 2);
 
 -- --------------------------------------------------------
 
@@ -650,20 +657,21 @@ INSERT INTO `ingredienseronpizza` (`id`, `ingrediens`, `pizza`) VALUES
 (560, 'champinjoner', 113),
 (561, 'tomatsås', 113),
 (562, 'ost', 113),
-(563, 'skinka', 62),
-(564, 'tomatsås', 62),
-(565, 'ost', 62),
-(566, 'ananas', 62),
-(567, 'skinka', 114),
-(568, 'räkor', 114),
-(569, 'tomatsås', 114),
-(570, 'ost', 114),
 (584, 'tomatsås', 115),
 (585, 'ost', 115),
 (586, 'banan', 115),
 (587, 'curry', 115),
 (588, 'ananas', 115),
-(589, 'skinka', 115);
+(589, 'skinka', 115),
+(590, 'skinka', 114),
+(591, 'räkor', 114),
+(592, 'tomatsås', 114),
+(593, 'ost', 114),
+(594, 'lök', 114),
+(598, 'skinka', 62),
+(599, 'tomatsås', 62),
+(600, 'ost', 62),
+(601, 'ananas', 62);
 
 -- --------------------------------------------------------
 
@@ -713,7 +721,8 @@ INSERT INTO `orders` (`id`, `user`, `pizza`, `time_orderd`) VALUES
 (14, 2, 105, '2017-11-09 14:01:06'),
 (15, 2, 1, '2017-11-09 14:01:07'),
 (16, 2, 83, '2017-11-09 14:01:07'),
-(17, 6, 9, '2017-11-10 10:17:34');
+(17, 6, 9, '2017-11-10 10:17:34'),
+(18, 6, 79, '2017-11-10 17:28:50');
 
 -- --------------------------------------------------------
 
@@ -888,7 +897,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `user_lvl`, `adress`, `post_nr`, `email`, `username`, `password`, `active`, `town`, `ort`) VALUES
-(2, 'Max Timje', 3, 'Jönköping 1', 55464, 'ttiimmjjee@hotmail.com', 'theSwedishScout', '$2y$10$AL1rU3OBcWFQw96nG5inreMOxZtjWFwISANZokXescWMR3CVx7VXm', 1, 1, 'Jönköping'),
+(2, 'Max Timje', 3, 'Jönköping 1', 55464, 'ttiimmjjee@hotmail.com', 'theSwedishScout', '$2y$10$RPcAIvIv4NFXTkTaTycy.uWdigyxC6mm0xqOaj9OSKe6eF3ONmbCm', 1, 1, 'Jönköping'),
 (5, 'Miranda Nordholm', 3, '0', 0, 'mirnor890@hotmail.com', 'mirnor890', '$2y$10$mUZlqh0umhHqhbd1LxHbmOJhjavpylPV1Kgg/qb6S227znQq71mNm', 1, NULL, NULL),
 (6, 'Annika', 3, 'Polstjärnevägen 4', 55464, 'annikasofia@gmail.com', 'Annika', '$2y$10$jE8phSzy0cUVvHr7sUk/pOD9xBl28Pggz.BEZqYR9qmuyIGbz1GcK', 1, 1, 'Jönköping'),
 (7, 'Björn j Andersson', 0, 'Huskvarna 1', 454525, 'j@h.se', 'j', '$2y$10$iX.HSSaYeTofKxMJjz.AWOQ0EpvbAB1whV1UQ4U1FbLDu5raOIMhm', 0, NULL, NULL);
@@ -978,12 +987,12 @@ ALTER TABLE `cities`
 -- AUTO_INCREMENT för tabell `ingredienseronpizza`
 --
 ALTER TABLE `ingredienseronpizza`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=590;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=602;
 --
 -- AUTO_INCREMENT för tabell `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT för tabell `pizzerior`
 --

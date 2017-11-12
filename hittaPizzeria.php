@@ -15,12 +15,12 @@
                 //en while loop får ut resultat, så länge det finns saker kvar att visa
                 //hämtar namn och url till pizzeriorna
                     $conn = connect_to_db();
-                    $result = $conn->query("SELECT namn, url FROM pizzerior");
+                    $result = $conn->query("SELECT id, namn FROM pizzerior");
                     while($row = $result->fetch_assoc()) {
                     //Echoar ut namn plus länk i en lista
                     ?> 
                         <li>
-                            <a target="_blank" href="<?php echo $row['url'];?>"><?php echo $row['namn']; ?> </a>
+                            <a target="_blank" href="pizzeria.php?pizzeria=<?= $row['id'];?>"><?php echo $row['namn']; ?> </a>
                         </li>
                         <?php
                     }      
