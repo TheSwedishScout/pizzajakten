@@ -12,7 +12,12 @@
 		if ($result = $conn->query($sql)) {
 			$i = 1;
 			while ($row = $result->fetch_assoc()) {
-				echo("<li class='shadow tab{$i}' >". $row['category']."</li>"); //lägger på shadow på fliken
+				if ($i == 1) {
+				echo("<li class='shadow active tab{$i}' >". $row['category']."</li>"); //lägger på shadow på fliken
+					# code...
+				}else{
+					echo("<li class='shadow tab{$i}' >". $row['category']."</li>"); //lägger på shadow på fliken
+				}
 				$i++;
 		    }
 		}

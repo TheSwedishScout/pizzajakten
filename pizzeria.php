@@ -4,7 +4,7 @@
 
 	if (isset($_GET['pizzeria'])) {
 		$pizzeria = test_input($_GET['pizzeria']);
-		$conn = connect_to_db();
+        $conn = connect_to_db();
         if(isset($_SESSION['user']['nr'])){
             // Hämta favorit markerade pizzor
             $sql = "SELECT favorites.pizza FROM favorites WHERE user = ?";
@@ -22,10 +22,19 @@
             //var_dump($favorites);
         }
 
+        if(is_numeric($pizzeria)){
 
-        $sql = "SELECT pizzerior.* from pizzerior WHERE pizzerior.id = ? LIMIT 1";
+           $sql = "SELECT pizzerior.* from pizzerior WHERE pizzerior.id = ? LIMIT 1";
+        }else{
+            $sql = "SELECT pizzerior.* from pizzerior WHERE pizzerior.namn = ? LIMIT 1";
+        }
+
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $pizzeria);
+        if(is_numeric($pizzeria)){
+            $stmt->bind_param("i", $pizzeria);
+        }else{
+            $stmt->bind_param("s", $pizzeria);
+        }
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -74,7 +83,9 @@
         }
         $conn->close();
            
-	}
+	}else{
+        die('no pizzeria');
+    }
 ?>
 <main class="left pizzerior">
         <h1><?php echo $pizzeria['namn']; ?></h1>

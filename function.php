@@ -40,6 +40,26 @@ function connect_to_db(){
 	
 	return $conn;
 }
+function sendActivationCode($userid){
+
+	// hämta kontkt uppgifter från db
+
+	//Skapa en aktiverings kåd och spara i db 
+
+	$to = $mail;
+	$firstname = $name;
+	$subject = 'Pizzaleverans';
+	$message = "
+
+
+	";
+	$headers = 'From: no-reply@scouten.se' . "\r\n" .
+	    'X-Mailer: PHP/' . phpversion();
+
+	mail($to, $subject, $message, $headers); //Mailar till ens angivna email när man har tryckt på submit
+	$conn = connect_to_db();
+	//save order
+}
 
 /*function getIngredients($kategori='')
 {

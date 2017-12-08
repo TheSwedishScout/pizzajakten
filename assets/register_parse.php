@@ -31,6 +31,7 @@ if (!isset($_SESSION['user'])){
 		if ($stmt->execute() === TRUE) { //successfully insertded values to database
 
 			$response = ['sucsess' => true];
+			// Mail the activation code to the user
 		}else{
 			$response['error'] = $stmt->error;
 			

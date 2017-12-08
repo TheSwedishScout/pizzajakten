@@ -140,24 +140,6 @@
     </div>
 	<?php } ?>
 
-
-
-<div class="container">
-	<header>
-		<img id="burger" class="shadow" src="images/burger.png"/>
-		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
-		
-		<?php //länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
-		if(isset($_SESSION['user'])){
-        	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
-		}else{
-        	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
-		}
-		?>
-
-        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen--></a>
-	</header>
-
 <!-- Hamburgermenyns innehåll -->	
 	<div id="meny" class="shadow">
 		<a href="varukorg.php"><img src="images/cart.png" alt="kundvangn"></a>
@@ -178,6 +160,24 @@
 		</nav>
 		<!--<input type="search" placeholder="sök" name="">-->
 	</div>
+
+<div class="container">
+	<header>
+		<img id="burger" class="shadow" src="images/burger.png"/>
+		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
+		
+		<?php //länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
+		if(isset($_SESSION['user'])){
+        	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
+		}else{
+        	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
+		}
+		?>
+
+        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen--></a>
+	</header>
+
+
 
 
 

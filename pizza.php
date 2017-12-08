@@ -1,7 +1,6 @@
 <?php
 	include 'header.php';
     //An associative array of variables passed to the current script via the URL parameters. Are there ingredients in the url? checks via isset. 
-
 	if (isset($_GET['pizza'])) {
 		$pizza = test_input($_GET['pizza']);
 		$conn = connect_to_db();
@@ -16,6 +15,7 @@
         if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                 	$pizza = $row;
+                    
                     
             }
         }
@@ -56,7 +56,8 @@
 
 <main class="left pizzerior">
          <!-- Lista på ingredienser-->
-         <h1><?php echo $pizza['name']; ?>
+         <h1><?php echo $pizza['name']." - ";?>
+            <a href="pizzeria.php?pizzeria=<?= $pizza['namn']; ?>"><?= $pizza['namn']; ?></a>
              
 
          </h1>

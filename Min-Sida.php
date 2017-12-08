@@ -5,21 +5,10 @@
       header('location: logIn.php');
       exit();
     }
+
+include 'assets/min-sida-tabs.php';
 ?>
-<ul class="tabs">
-	<li>
-		<a href="index.php">Starta här</a>
-	</li>
-    <?php
-        if($_SESSION['user']['lvl'] >= 2){
-            ?>
-            <li>
-                <a href="./admin">admin</a>
-            </li>
-            <?php           
-        }  
-    ?>
-</ul>
+
 
 <main class="left">
     <div class="minInfo">

@@ -8,7 +8,7 @@
     ". tabs . ."
     ". main1 main2 ."
     "left main1 main2 right"
-    ". . . .";
+    ". . footer footer";
     height: 100vh;
 }
 main{

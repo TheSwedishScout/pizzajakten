@@ -60,12 +60,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed5e5e', end
 font-family: "bebas-neue";
 /*font-family: "bebas-neue";*/
 
-font-family: "bebas-neue";
-/*font-family: "bebas-neue";*/
-
 color: #fff;
 font-size: 1em;
 
+}
+p {
+    font-family: helvetica;
 }
 .container{
 	display: -ms-grid;
@@ -80,7 +80,7 @@ font-size: 1em;
     ". prog prog ."
     ". tabs . ."
     "left main1 main2 right"
-    ". . note note";
+    ". . footer footer";
     height: 100vh;
 }
 
@@ -455,6 +455,9 @@ input[type=search] {
 .tabs li.active{
 	border-radius: 23px 23px 0 0;
 	z-index: 10;
+}
+.tabs li a{
+	display: block;
 }
 .tab1{
 	background: #5D9CEC !important;
@@ -1579,8 +1582,10 @@ main.left.pizzerior h1{
 	background: url(../images/stared.png);
 	background-repeat: no-repeat;
 }
+footer{
+	grid-area: footer;
+}
 .note{
-	grid-area: note;
 	display: block;
     text-align: right;
     margin-top: -12px;
