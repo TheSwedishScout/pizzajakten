@@ -24,6 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
     }
+    if(!!document.getElementById('tillKassa')){
+        document.getElementById('tillKassa').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (pizzerior > 1){
+                if (confirm("Du har mer än 1 pizzeria") == true) {
+                    txt = "You pressed OK!";
+                    window.location.replace('kassa.php');
+                } else {
+                    txt = "You pressed Cancel!";
+                }
+                console.log(txt);
+            }
+        })
+    }
+    
 
     if(!!document.getElementsByClassName('star')){
         elems = document.getElementsByClassName('star');
