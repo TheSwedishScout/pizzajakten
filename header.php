@@ -200,30 +200,38 @@
 				<p>Välj ingredienser</p>
 
 			</a>
+			<div class="right-line"></div>
 		</li>
 		
 		<li>
-			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? 'pizzerior.php' : '#' ?>"> <!-- classen talar om hur bilden ska bete sig när den är aktiv(dvs. den ska vara ifärgad osv)  href talar om huvida man kan klicka på knapparna och komma till sidorna -->
+			<div class="left-line"></div>
+			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? $link[0] : '#' ?>"> <!-- classen talar om hur bilden ska bete sig när den är aktiv(dvs. den ska vara ifärgad osv)  href talar om huvida man kan klicka på knapparna och komma till sidorna -->
 				<img src="images/pizza2.png">
 				<p>Hitta Pizzeria</p>
 			</a>
+			<div class="right-line"></div>
 		</li>
 		<li>
+			<div class="left-line"></div>
 			<a class=" <?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0  ? 'active' : null; ?>" href="<?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0 ? 'varukorg.php' : '#' ?>">
 				<img src="images/pizza3.png">
 				<p>Varukorg</p>
 				
 
 			</a>
+			<div class="right-line"></div>
 		</li>
 		<li>
+			<div class="left-line"></div>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 3 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr > 3 ? 'kassa.php' : '#' ?>">
 				<img src="images/pizza4.png">
 				<p>Beställ</p>
 
 			</a>
+			<div class="right-line"></div>
 		</li>
 		<li>
+			<div class="left-line"></div>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 4 ? 'active' : null; ?>" href="#">
 				<img src="images/pizza5.png">
 				<p>Klar</p>

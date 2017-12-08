@@ -1586,3 +1586,23 @@ main.left.pizzerior h1{
     margin-top: -12px;
     margin-right: 10px;
 }
+.left-line{
+	    background: white;
+    width: 25%;
+    z-index: -1;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(50%)
+}
+.right-line{
+		    background: white;
+    width: 25%;
+    z-index: -1;
+    height: 2px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(50%)
+}
