@@ -142,19 +142,26 @@
 
 <!-- Hamburgermenyns innehåll -->	
 	<div id="meny" class="shadow">
-		<a href="varukorg.php"><img src="images/cart.png" alt="kundvangn"></a>
-		<div class="counter1"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
+		<div class="links">
+			
+		<a href="varukorg.php">
+			<img src="images/cart.png" alt="Varukorg">
+			<div class="counter counter1"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
+			<small>Varukorg</small>
+		</a>
 		<!--<img src="images/star.png" alt="Favoriter">-->
 		<?php 
 		//länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
 		if(isset($_SESSION['user'])){ 
-        	echo '<a href="Min-Sida.php"><img src="images/user.png" alt="min sida"></a>';
+        	echo '<a href="Min-Sida.php"><img src="images/user.png" alt="min sida"><small>Min sida</small></a>';
 		}else{
-        	echo '<a href="logIn.php"><img src="images/user.png" alt="min sida"></a>';
+        	echo '<a href="logIn.php"><img src="images/user.png" alt="logga in"><small>Logga in</small></a>';
 		}
 
 		?>
+		</div>
 		<nav>
+            <h3><a href="./">Hem</a></h3>
             <h3><a href="help.php">Hur fungerar det?</a></h3>
             <h3><a href="hittaPizzeria.php">Hitta din pizzeria</a></h3>
 		</nav>
@@ -168,13 +175,14 @@
 		
 		<?php //länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
 		if(isset($_SESSION['user'])){
-        	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"></a>';
+        	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"><small>Min sida</small></a>';
 		}else{
-        	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"></a>';
+        	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"><small>logga in</small></a>';
 		}
 		?>
 
-        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen--></a>
+        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
+        <small>Varukorg</small></a>
 	</header>
 
 
@@ -200,38 +208,38 @@
 				<p>Välj ingredienser</p>
 
 			</a>
-			<div class="right-line"></div>
+			<div class="line right-line"></div>
 		</li>
 		
 		<li>
-			<div class="left-line"></div>
+			<div class="line left-line"></div>
 			<a class="<?php echo isset($page_nr) && $page_nr >= 2 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr == 2 ? $link[0] : '#' ?>"> <!-- classen talar om hur bilden ska bete sig när den är aktiv(dvs. den ska vara ifärgad osv)  href talar om huvida man kan klicka på knapparna och komma till sidorna -->
 				<img src="images/pizza2.png">
 				<p>Hitta Pizzeria</p>
 			</a>
-			<div class="right-line"></div>
+			<div class="line right-line"></div>
 		</li>
 		<li>
-			<div class="left-line"></div>
+			<div class="line left-line"></div>
 			<a class=" <?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0  ? 'active' : null; ?>" href="<?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0 ? 'varukorg.php' : '#' ?>">
 				<img src="images/pizza3.png">
 				<p>Varukorg</p>
 				
 
 			</a>
-			<div class="right-line"></div>
+			<div class="line right-line"></div>
 		</li>
 		<li>
-			<div class="left-line"></div>
+			<div class="line left-line"></div>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 3 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr > 3 ? 'kassa.php' : '#' ?>">
 				<img src="images/pizza4.png">
 				<p>Beställ</p>
 
 			</a>
-			<div class="right-line"></div>
+			<div class="line right-line"></div>
 		</li>
 		<li>
-			<div class="left-line"></div>
+			<div class="line left-line"></div>
 			<a class=" <?php echo isset($page_nr) && $page_nr > 4 ? 'active' : null; ?>" href="#">
 				<img src="images/pizza5.png">
 				<p>Klar</p>

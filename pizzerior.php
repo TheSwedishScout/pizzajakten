@@ -9,7 +9,7 @@
         $query = "'".implode("', '", $ingredienser). "'";
         $amount = count($ingredienser);
         $conn = connect_to_db();
-        $sql = "SELECT ingredienseronpizza.pizza, pizzorinpizzeria.id, pizzorinpizzeria.name, pizzerior.id as pid, pizzerior.namn, pizzerior.adress, pizzorinpizzeria.pris FROM ingredienseronpizza, pizzorinpizzeria, pizzerior WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id AND pizzorinpizzeria.pizzeria=pizzerior.id GROUP BY ingredienseronpizza.pizza HAVING SUM(IF (ingredienseronpizza.ingrediens IN ({$query}), 1, 100 )) = {$amount};";
+        $sql = "SELECT ingredienseronpizza.pizza,pizzorinpizzeria.favorits, pizzorinpizzeria.id, pizzorinpizzeria.name, pizzerior.id as pid, pizzerior.namn, pizzerior.adress, pizzorinpizzeria.pris FROM ingredienseronpizza, pizzorinpizzeria, pizzerior WHERE ingredienseronpizza.pizza = pizzorinpizzeria.id AND pizzorinpizzeria.pizzeria=pizzerior.id GROUP BY ingredienseronpizza.pizza HAVING SUM(IF (ingredienseronpizza.ingrediens IN ({$query}), 1, 100 )) = {$amount};";
             /*
             Väljer pizzor som har de valda ingredienser genom att ge ett värde på 100 till ingrediener som inte är valda och 1p till de som är valda och summerar upp dessa, kollar sedan om det talet är likamed antalet ingredienser som är valda
             */
@@ -57,6 +57,7 @@
                         <h3><a href="pizzeria.php?pizzeria=<?= $row['pid']; ?>"><?php echo($row['namn']); ?></a></h3>
                         <p><?php echo($row['adress']); ?></p>
                         <h3><?php echo($row['pris']); ?> kr</h3>
+                        <p>Favoriserad av <?php echo($row['favorits']);?> personer</p>
                         <form action="varukorg.php" method="POST">
                             <input type="submit" name="Välj denna" value="Välj pizza">
                             

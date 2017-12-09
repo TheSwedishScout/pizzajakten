@@ -128,34 +128,39 @@ header{
 }
 .logga img {
     height: 70%;
+    max-width: 45%;
     padding-top: 18px;
 }
 
-#cart {
-    width: 3%;
+header>a:nth-child(3){
+    right: 225px;
     position: absolute;
+    width: 46.4px;
+    height: auto;
+    top: 6px;
+    text-align: center;
+}
+header>a:nth-child(4){
     right: 150px;
-    top: 23px;
-}
-
-#cart:hover {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-    cursor: pointer;
-}
-
-#user {
-    width: 2.5%;
     position: absolute;
-    right: 218px;
-    top: 25px;
+    width: 51.4px;
+    height: auto;
+    top: 6px;
+    text-align: center;
 }
 
-#user:hover {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+#cart, #user {
+    width: 100%;
+    height: auto;
+    transition: 0.1s linear;
+}
+
+#user:hover, #cart:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
     cursor: pointer;
 }
+
 
 #burger:active {
     color: red;
@@ -170,15 +175,7 @@ header{
     /*z-index: 999;*/
 }
 
-#meny img {
-    width: 14%;
-    margin-right: 13%;
-}
-#meny img:hover {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-    cursor: pointer;
-}
+/*hamburger meny*/
 #meny{
 	position: absolute;
 	left: -385px;
@@ -189,11 +186,64 @@ header{
 	z-index: 190;
 	-webkit-transition: left 0.4s;
 	transition: left 0.4s;
+	padding-top: 100px;
+	padding-left: 20px;
 }
 
 #meny.visabale{
 	left: 0px;
 }
+#meny .links{
+	overflow: hidden;
+	padding: 10px;
+}
+#meny .links a{
+	width: 14%;
+	display: block;
+	float: left;
+	text-align: center;
+}
+#meny .links a:first-child{
+	position: relative;
+	margin-right: 25px;
+}
+#meny .links a:first-child small{
+	display: block;
+	margin-top:8px;
+}
+
+#meny .links a img {
+    width: 100%;
+    transition: 0.1s linear;
+    /*margin-right: 13%;*/
+}
+#meny .links a img:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+#meny>nav {
+	margin-top: 70px;
+	margin-bottom: 40px; 
+}
+
+#meny>nav>h3 {
+	font-size: 35px;
+	padding-top: 15px;
+	cursor: pointer;
+}
+#meny>nav>h3>a:hover{
+	color: #EEE;
+	text-decoration: underline;
+}
+#meny>nav>h3>a:active{
+	color: #EEE;
+	text-decoration: underline;
+}
+#meny>nav>h3>a:visited{
+	color:rgb(160,200,255);
+}
+
 .progretion{
 	width: 100%;
 	grid-area: prog;
@@ -243,27 +293,9 @@ header{
 .progretion li img{
 	height: 100%;
 }
-/*.progretion{
-	grid-area: prog;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: center;
-}
-.progretion li{
-	height: 100%;
-	flex-grow:1;
-}
-.progretion a{
-	height: 100%;
-	display: block;	
-}
-
-*/
 
 .progretion a img{
-	height: 100%;
+	max-height: 100%;
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);
 }
@@ -282,22 +314,20 @@ header{
 	-webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
-
-/*hamburger meny*/
-#meny {
-	padding-top: 100px;
-	padding-left: 20px;
+.progretion .line{
+	    background: white;
+    width: 25%;
+    z-index: -1;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
 }
-
-#meny>nav {
-	margin-top: 70px;
-	margin-bottom: 40px; 
+.progretion .left-line{
+    left: 0;
 }
-
-#meny>nav>h3 {
-	font-size: 35px;
-	padding-top: 15px;
-	cursor: pointer;
+.progretion .right-line{
+    right: 0;
 }
 
 input[type=search] {
@@ -312,55 +342,38 @@ input[type=search] {
 
 /*counter som räknar hur mycket som ligger i varukorgen i hamburgermenyn och top-right*/
 /*se counter2 för counter i kassa och varukorg*/
-.counter1 {
+.counter{
 	background: #928FC1;
 	border: none;
 	border-radius: 50px;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
-	width: 30px;
-	height: 30px;
 	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 	        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 	z-index: 100;
-
 	position: absolute;
-	top: 140px;
-    right: 300px;
-
 	text-align: center;
-	padding-top: 6px;
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
     font-family: helvetica;
     cursor: pointer;
+	
+}
+.counter1 {
+	width: 30px;
+	height: 30px;
+	top: 28px;
+    left: 30px;
+	padding-top: 7px;
 
 }
 .counter2 {
-	background: #928FC1;
-	border: none;
-	border-radius: 70px;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
 	width: 20px;
 	height: 20px;
-	-webkit-box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-	        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-	z-index: 100;
-
-	position: absolute;
-	top: 49px;
-    right: 144px;
-
-	text-align: center;
-	padding-top: 5px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 10px;
-    font-family: helvetica;
-    cursor: pointer;
-
+	bottom: 17px;
+    left: 5px;
+    padding-top: 3px;
 }
 
 .total {
@@ -490,9 +503,6 @@ main{
 /*	min-height: 500px;*/
 	overflow-y: auto;
 }
-
-
-
 /*SCROLLBAR*/
 
 /*bakrund för scrollbar*/
@@ -540,7 +550,7 @@ main.right{
 
 main.right p {
     font-family: helvetica;
-    padding: 3px 13px 13px 13px;
+    padding: 3px 13px 13px 0px;
 }
 
 main.right h1 {
@@ -594,7 +604,7 @@ main.right.klar {
 /*STYLING AV PIZZERIOR-SIDAN*/
 
 main.left.pizzerior img {
-    width: 70%;
+    width: 60%;
     margin: 10px;
     padding-left: 30px;
 }
@@ -727,18 +737,6 @@ button:active {
 	-ms-grid-columns: (1fr)[3];
 	    grid-template-columns: repeat(3, 1fr);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /**************************************************************\
 |**************************************************************|
@@ -1582,6 +1580,8 @@ main.left.pizzerior h1{
 	background: url(../images/stared.png);
 	background-repeat: no-repeat;
 }
+
+/*----FOOTER----*/
 footer{
 	grid-area: footer;
 }
@@ -1590,24 +1590,4 @@ footer{
     text-align: right;
     margin-top: -12px;
     margin-right: 10px;
-}
-.left-line{
-	    background: white;
-    width: 25%;
-    z-index: -1;
-    height: 2px;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(50%)
-}
-.right-line{
-		    background: white;
-    width: 25%;
-    z-index: -1;
-    height: 2px;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(50%)
 }

@@ -31,9 +31,11 @@ if(isset($_GET['ingredienser'])){
     //trim — Strip whitespace (or other characters) from the beginning and end of a string
 	$ingred = array_map("trim",explode(",", $ing)); //array_map är en funktion som tar alla ingrediener 
 	$ingred = implode("' OR ingrediens LIKE '", $ingred); //Returnerar en sträng av arrayen 
+	//$ingred = implode("', '", $ingred); //Returnerar en sträng av arrayen 
 
     //räknar hur många av någonting det finns 
 	$sql = "SELECT pizza, COUNT(*) as antal FROM ingredienseronpizza WHERE ingrediens LIKE '{$ingred}' GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC"; 
+	//$sql = "SELECT pizza, COUNT(*) as antal FROM ingredienseronpizza WHERE WHERE ingrediens IN('{$ingred}') GROUP BY pizza HAVING COUNT(pizza) >= 1 ORDER BY COUNT(*) DESC"; 
     //Om antal är angett i url'en så limiteras sql till att köras så många gånger som antal är
     if (isset($_GET['antal'])) {
 		$antal = (int)test_input($_GET['antal']);

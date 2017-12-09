@@ -92,6 +92,7 @@
             <input type="submit" name="Välj denna" value="Välj pizza">
             <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
         </form>
+        <a href="pizzerior.php?ingredienser=<?= $ing; ?>">hitta andra pizzerior med denna pizza</a>
 </main>
 
 
