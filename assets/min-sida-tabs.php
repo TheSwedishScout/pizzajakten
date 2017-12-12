@@ -1,20 +1,28 @@
+<?php
+$tabpages = ['Min-Sida' => 'Instälnigar',
+             'Mina-Favoriter' => 'Mina Favoriter',
+             'oldOrders' => 'Orderhistorik',
+             'index' => 'Gör bestälning',
+         ];
+$i = 1;
+?>
 <ul class="tabs">
-	<li class="tab1 <?php echo $page == 'Min-Sida' ? 'active' : ''; ?>">
-        <a href="Min-Sida.php">Min sida</a>
+<?php
+foreach ($tabpages as $url => $name) {
+    ?>
+    <li class="tab<?= $i; ?> <?php echo $page == $url ? 'active' : ''; ?>">
+        <a href="<?= $url; ?>.php"><?= $name; ?></a>
     </li>
-    <li class="tab2 <?php echo $page == 'oldOrders' ? 'active' : ''; ?>">
-        <a href="oldOrders.php">Orderhistorik</a>
-    </li>
-    <li class="tab3">
-        <a href="index.php">Gör bestälning</a>
-	</li>
     <?php
-        if($_SESSION['user']['lvl'] >= 2){
-            ?>
-            <li class="tab4">
-                <a href="./admin">admin</a>
-            </li>
-            <?php           
-        }  
+    $i++;
+}
+    //Print link to admin aria
+    if($_SESSION['user']['lvl'] >= 2){
+        ?>
+        <li class="tab<?= $i; ?>">
+            <a href="./admin">admin</a>
+        </li>
+        <?php           
+    }  
     ?>
 </ul>

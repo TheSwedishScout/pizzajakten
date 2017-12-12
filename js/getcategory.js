@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
         // byt bakgrundsfärg på main
 
     function GetPizza(choosenIng) { 
+        var valda = choosenIng;
         ajax.get("assets/getPizzas.php", {'ingredienser':choosenIng}, function (data) { // hämtar data från asset... med en get parameter 
             var result = JSON.parse(data);
             var ul = document.getElementsByClassName('resultat')[0];
@@ -96,9 +97,21 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 image.src = "images/pizza6.png";
                 var h2 = document.createElement("h2");
                 h2.innerText = pizza.namn;
-                var h3 = document.createElement("h3");
+                var h3 = document.createElement("ul");
+                var sorted = [];
+                for (var i = 0, L=valda.length ; i < L; i++) {
+                  sorted[i]=valda[i].toLowerCase();
+                }
+
+                for (var i = 0; i < pizza.ingredienser.length; i++) {
+                    var ingredElem = document.createElement("li");
+                    ingredElem.innerText = pizza.ingredienser[i];
+                    if(sorted.includes(pizza.ingredienser[i])) {
+                        ingredElem.classList.add('chosen');
+                    }
+                    h3.appendChild(ingredElem);
+                }
                 var ingred = pizza.ingredienser.join(", ");
-                h3.innerText = ingred;
                 /*var image = document.createElement("h4");
                 image.innerText = "images/pizza6.png";
                 **/
@@ -112,8 +125,3 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
         })
     }
 })
-
-
-
-
-

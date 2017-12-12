@@ -69,20 +69,20 @@
                     /*var_dump($pizza['id']);
                     var_dump($favorites);
                     var_dump($ost);*/
-
+                $favorites = getFavorites();
                 if(isset($favorites)){
                     if(in_array($pizza['id'], $favorites)){
                     ?>
-                        <a value="<?= $pizza['id']; ?>" href="#" class="star stared"></a>
+                        <a value="<?= $pizza['id']; ?>" href="#" class="star stared" title="favorit"></a>
                     <?php
                     }else{
                     ?> 
-                            <a value="<?= $pizza['id']; ?>" href="#" class="star"></a>
+                            <a value="<?= $pizza['id']; ?>" href="#" class="star" title="favorit"></a>
                     <?php 
                     }
                 }else{
                     ?> 
-                        <a value="<?= $pizza['id']; ?>" href="#" class="star"></a>
+                        <a value="<?= $pizza['id']; ?>" href="#" class="star" title="favorit"></a>
                     <?php 
                 }
             }

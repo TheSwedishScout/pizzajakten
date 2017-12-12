@@ -87,7 +87,14 @@
         die('no pizzeria');
     }
 ?>
-<main class="left pizzerior">
+<ul class="tabsR tabs">
+    <li id="kartaTab" class="shadow tab1 active">karta</li>
+    <li id="öppettiderTab" class="shadow tab2">öppetider</li>
+    <!--<li id="ingrediensTab" class="shadow tab3">Ingrediens val</li>
+    <li id="#" class="shadow tab4">karta</li>-->
+</ul>
+
+<main class="left pizzerior" >
         <h1><?php echo $pizzeria['namn']; ?></h1>
         <!-- Lista på pizzor hos pizzeria-->
         <ul class="helaPizzerian">
@@ -145,7 +152,8 @@
         </ul>
         
 </main>
-<main class="right pizzerior">
+
+<main class="right pizzerior tab1 " id="karta">
 	<?php //var_dump($pizzeria); ?>
     <div id="map"></div>
     <script>
@@ -179,7 +187,24 @@
     </script>
     </ul>
 </main>
-
+<main class="right pizzeria hidden tab2 " id="öppetider">
+    <h2>Öppettider</h2>
+    <?php 
+        $son = str_replace("'", '"', $pizzeria['openinghouers']);
+        $open = json_decode($son, TRUE);
+        //var_dump($open);
+        ?>
+        <ul>
+        <li>Måndagar: <?= $open['mon']; ?></li>
+        <li>Tisdagar: <?= $open['tis'];?></li>
+        <li>Onsdagar: <?= $open['ons'];?></li>
+        <li>Torsdagar: <?= $open['tor'];?></li>
+        <li>Fredagar: <?= $open['fre'];?></li>
+        <li>Lördagar: <?= $open['lor'];?></li>
+        <li>Söndagar: <?= $open['son'];?></li>
+        </ul>
+</main>
+<script type="text/javascript" src="js/pizzeria.js"></script>
 <?php
 	include 'footer.php';
 ?>

@@ -78,7 +78,7 @@ p {
     grid-template-areas: 
     "header header header header" 
     ". prog prog ."
-    ". tabs . ."
+    ". tabs tabsR ."
     "left main1 main2 right"
     ". . footer footer";
     height: 100vh;
@@ -410,6 +410,9 @@ input[type=search] {
 	    grid-template-rows: 35px;
 	/*justify-items: stretch;*/
 }
+.tabsR{
+	grid-area: tabsR;
+}
 .tabs li{
 	padding: 5px 10px;
 	display: block;
@@ -424,7 +427,7 @@ input[type=search] {
 	text-decoration: none;
 	color:#fff;
 	cursor: pointer;
-	border-radius: 0 24px 0 0; 	
+	border-radius: 15px 15px 0 0; 	
 }
 
 
@@ -434,6 +437,7 @@ input[type=search] {
 	-ms-grid-row:1;
 	    grid-row:1;
 	z-index: 5;	
+	
 }
 .tabs li:nth-child(2){
 	grid-column: 2 /5;
@@ -466,34 +470,47 @@ input[type=search] {
 	z-index: 0;
 }
 .tabs li.active{
-	border-radius: 23px 23px 0 0;
+	/*border-radius: 23px 23px 0 0;*/
 	z-index: 10;
 }
 .tabs li a{
 	display: block;
 }
 .tab1{
-	background: #5D9CEC !important;
-	
+	background: #5D9CEC !important;	
 }
 .tab2{
-	background: #4f8ad6 !important;
-	
+	background: #4f8ad6 !important;	
 }
 .tab3{
-	background: #3a71b7 !important;
-	
+	background: #3a71b7 !important;	
 }
 .tab4{
-	background: #2b5ea0 !important;
-	
+	background: #2b5ea0 !important;	
 }
 .tab5{
-	background: #1e4b84 !important;
-	
+	background: #1e4b84 !important;	
 }
 .tab6{
 	background: #103c75 !important;
+}
+.pizzeria .tab1{
+	background: #badc70 !important;
+}
+.pizzeria .tab2{
+	background: #aed659 !important;
+}
+.pizzeria .tab3{
+	background: #a3d041 !important;	
+}
+.pizzeria .tab4{
+	background: #97ca29 !important;	
+}
+.pizzeria .tab5{
+	background: #8cc512 !important;	
+}
+.pizzeria .tab6{
+	background: #7eb110 !important;
 }
 main{
 	z-index: 100;
@@ -726,9 +743,21 @@ button:active {
 }
 
 .resultatInner h4{
+}
+.resultatInner ul{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: center;
+}
+.resultatInner li{
     font-family: helvetica;
     font-style: italic;
     font-size: small;
+	padding: 5px 6px;
+	border-radius: 34px;
+}
+.resultatInner .chosen{
+	background: #499348;
 }
 
 .resultat {
@@ -1053,7 +1082,7 @@ input::placeholder {
 |**********************************höger sida******************|
 |**************************************************************|
 \**************************************************************/
-.hittaPizzeria {
+.container .hittaPizzeria {
     text-align: center;
     position: absolute;
     height: 70%;
@@ -1064,17 +1093,17 @@ input::placeholder {
     line-height: 22px;
 }
 
-.hittaPizzeria button{
+.container .hittaPizzeria button{
        background-color: rgba(255, 107, 107, 0.7);
 }
 
-.hittaPizzeria p {
+.container .hittaPizzeria p {
     font-family: helvetica;
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.hittaPizzeria h1{   
+.container .hittaPizzeria h1{   
     font-size: -webkit-xxx-large;
 }
 
@@ -1444,8 +1473,9 @@ input::placeholder {
     margin-top: 5px;
     margin-bottom: 5px;
     padding: 7px;
-    border: 1px solid;
+    /*border: 1px solid;*/
     border-radius: 18px;
+    background: #499348
 }
 
 #selected  li:hover  {

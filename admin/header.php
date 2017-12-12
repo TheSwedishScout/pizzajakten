@@ -22,6 +22,18 @@ $page = end($link);
         header("location:../index.php"); 
         die();
     }
+    if (isset($_SESSION['shopping-cart'])) {
+	$items_in_cart = is_array($_SESSION['shopping-cart']) ? count($_SESSION['shopping-cart']) : 0 ; 
+	}//Kollar om de finns en array/session med antal saker i (dvs hur mycket som ligger i varukorgen) annars visar countern 0
+	else{
+		$items_in_cart = 0 ; //visar en nolla när det inte är några produkter i varukorgen
+	}
+	if(isset($_POST["pizza"]) && !empty($_POST["pizza"])) {//Kollar om variabeln _Post pizza är satt  coh om den inte är tom (att den är definerad), och adderar då +1 i varukorgen 
+		$items_in_cart++;
+	}
+	if(isset($_POST["delete"]) && !empty($_POST["delete"])) {//Kollar om variabeln _Post pizza är satt  coh om den inte är tom (att den är definerad), och adderar då +1 i varukorgen 
+		$items_in_cart--; //tar bort från shopping cart när man trycker på delete
+	}
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +72,18 @@ $page = end($link);
 ?>
 </head>
 <body>
-<div class="container">
+	<?php
+
+		//Cookie som uppmanar om att vi använder cookies
+	if(!isset($_COOKIE['Cookie_bar'])) {
+    ?>
+    <div class="cookie">
+        <p>Vi använder Cookies, bara så du vet!</p><button id="cookie_button">OK!</button>
+    </div>
+	<?php } ?>
+	<!-- Hamburgermenyns innehåll -->	
+	<?php printBurger('..', $items_in_cart); ?>
+<div class="container <?= $page; ?>">
 	<header>
 		<img id="burger" class="shadow" src="../images/burger.png"/>
 		<a href="../index.php" class="logga"><img src="../images/logotyp.svg" alt="Logga"></a>
@@ -68,17 +91,6 @@ $page = end($link);
 		<a href="varukorg.php"><img id="cart" src="../images/cart.png"></a>
 	</header>
 
-	<!-- Hamburgermenyns innehåll -->	
-	<div id="meny" class="shadow">
-		<a href="../varukorg.php"><img src="../images/cart.png" alt="kundvangn"></a>
-		<!--<img src="images/star.png" alt="Favoriter">-->
-		<a href="../logIn.php"><img src="../images/user.png" alt="min sida"></a>
-		<nav>
-			<h3><a href="../help.php">Hur fungerar det?</a></h3>
-			<h3><a href="../hittaPizzeria.php">Hitta din pizzeria</a></h3>
-		</nav>
-		<!--<input type="search" placeholder="sök" name="">-->
-	</div>
 	
 	<ul class="tabs">
 		<li><a href="index.php">hem</a></li>

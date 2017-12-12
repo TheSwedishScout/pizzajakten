@@ -9,7 +9,7 @@
 include 'assets/min-sida-tabs.php';
 ?>
 
-<main class="left tab2">
+<main class="left tab3">
 SELECT order
 <?php
 
@@ -49,7 +49,7 @@ SELECT order
 ?>
 
 </main>
-<main class="right tab3">
+<main class="right tab4">
  order ditails
 <?php
 	if (isset($_GET['order'])) {

@@ -20,7 +20,7 @@
                     //Echoar ut namn plus länk i en lista
                     ?> 
                         <li>
-                            <a target="_blank" href="pizzeria.php?pizzeria=<?= $row['id'];?>"><?php echo $row['namn']; ?> </a>
+                            <a href="pizzeria.php?pizzeria=<?= $row['id'];?>"><?php echo $row['namn']; ?> </a>
                         </li>
                         <?php
                     }      
