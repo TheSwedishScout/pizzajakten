@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 for (var i = 0; i < pizza.ingredienser.length; i++) {
                     var ingredElem = document.createElement("li");
                     ingredElem.innerText = pizza.ingredienser[i];
-                    if(sorted.includes(pizza.ingredienser[i])) {
+
+                    if(sorted.includes(pizza.ingredienser[i].toLowerCase())) {
                         ingredElem.classList.add('chosen');
                     }
                     h3.appendChild(ingredElem);

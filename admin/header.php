@@ -42,6 +42,7 @@ $page = end($link);
 	<meta charset="UTF-8">
 	<title>Pizza jakten</title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" media="screen and (min-width: 800px)" href="../css/800.css" />
 	<link rel="stylesheet" type="text/css" href="../css/no_balls.css">
 	<script src="https://use.typekit.net/iau7beu.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>

@@ -34,8 +34,9 @@
 
 	
 
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" media="screen and (min-device-width: 800px)" href="./css/800.css" />
 	<?php
 	if(isset($no_balls)){
 		?>
@@ -149,7 +150,7 @@
 		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
 		
 		<?php //länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
-		if(isset($_SESSION['user'])){
+		if(isset($_SESSION['user']['nr']) && !empty($_SESSION['user']['nr'])){
         	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"><small>Min sida</small></a>';
 		}else{
         	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"><small>logga in</small></a>';

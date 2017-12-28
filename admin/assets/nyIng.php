@@ -18,7 +18,7 @@ if(!isset($_POST['namn'])){
 
 }
 if(isset($_SESSION['user'])){
-	if($_SESSION['user']['lvl'] > 2){
+	if($_SESSION['user']['lvl'] < 2){
 		$error[] = "user not in admin mode";
 	}
 }else{

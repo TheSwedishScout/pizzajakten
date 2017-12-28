@@ -32,15 +32,19 @@ document.addEventListener('DOMContentLoaded', function(e) {
 
 		if(this.value.length >= 3 && e.inputType != "deleteContentBackward" && e.inputType != 'deleteWordBackward'){
 			let input = this;
-			ajax.get("../assets/gettopalikeingredients.php", {'term':this.value}, function (data) {
-				var options= JSON.parse(data)[0];
+			// let words = input.split(",");
+			// for (var i = 0; i < words.length; i++) {
+			// 	let word = words[i].trim();
+				ajax.get("../assets/gettopalikeingredients.php", {'term':this.value}, function (data) {
+					var options= JSON.parse(data)[0];
+					input.value = options[0].namn;
+				})
+			//}
 
-				input.value = options[0].namn;
-				
-			})
+			
 		}
 	})
-	pizza.ingredienser=[];
+	pizza.ingredienser=["Ost", "Tomatsås"];
 	document.getElementById('ingredinesIn').addEventListener("keydown", function (e) {
 		
 		if(e.key == "Tab" || e.key == 'Enter') {
@@ -50,21 +54,25 @@ document.addEventListener('DOMContentLoaded', function(e) {
             }
             /*add to list of ingrediens*/
             var ul = document.getElementById('list');
-            var li = document.createElement("li");
             let input = this;
-            ajax.get("../assets/gettopalikeingredients.php", {'term':this.value}, function (data) {
+            let words = input.value.split(",");
+			for (var i = 0; i < words.length; i++) {
+				let word = words[i].trim();
+            	ajax.get("../assets/gettopalikeingredients.php", {'term':word}, function (data) {
 				
-				var options= JSON.parse(data)[0];
-				if(typeof(options[0].namn) == "string"){
-					if(!pizza.ingredienser.includes(options[0].namn)){
-						pizza.ingredienser.push(options[0].namn);
-            			li.innerText = options[0].namn;
-            			ul.appendChild(li);
+					var options= JSON.parse(data)[0];
+					if(typeof(options[0].namn) == "string"){
+						if(!pizza.ingredienser.includes(options[0].namn)){
+							var li = document.createElement("li");
+							pizza.ingredienser.push(options[0].namn);
+	            			li.innerText = options[0].namn;
+	            			ul.appendChild(li);
+						}
 					}
-				}
-				console.log(pizza);
-            	input.value = "";
-			})
+					console.log(pizza);
+	            	input.value = "";
+				})
+            }
         }
 	})
 	document.getElementById('AddPizza').addEventListener("submit", function(e){
@@ -86,8 +94,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
 			pizza.namn =""
 			pizza.nummer =""
 			pizza.pris =""
-
-			debugger;
 		})
 	})
 	document.getElementById('SelectPizzeria').addEventListener("change", function (e) {

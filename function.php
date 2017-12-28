@@ -12,8 +12,8 @@ function test_input($data) { //$data är värdet av det vi skriver i fälten
     //gör exakt som sql
 	$data = mysqli_real_escape_string ( $conn , $data );
 
-	return $data;
 	$conn->close();
+	return $data;
 }
 
 function connect_to_db(){

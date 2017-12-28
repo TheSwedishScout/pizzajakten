@@ -133,8 +133,10 @@
             </select><br><br>
             namn:<br> <input type="text" name="namn"><br>
             pizza nr <br><input type="number" name="listnr" id="pizzaNR"><br>
-            ingredienser
+            ingredienser: 
             <ul id="list">
+                <li>Ost</li>
+                <li>Tomatsås</li>
             </ul>
             <input type="text" id="ingredinesIn" name="ingredienser"><br>
             pris nummer<br>
