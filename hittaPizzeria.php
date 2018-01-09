@@ -6,7 +6,7 @@
     <div class="hittaPizzeria">
         <h1>Hitta din pizzeria</h1>
         <p>Vilka pizzaställen finns egenligen? Här har vi samlat alla pizzerior så att du lätt kan gå in och kika på hela deras menyer!</p>
-                    <button><a href="index.php" >Tillbaka</a></button>
+                    <button><a href="/" >Tillbaka</a></button>
     </div>
     
     <div class="listaPizzerior">
@@ -20,7 +20,7 @@
                     //Echoar ut namn plus länk i en lista
                     ?> 
                         <li>
-                            <a href="pizzeria.php?pizzeria=<?= $row['id'];?>"><?php echo $row['namn']; ?> </a>
+                            <a href="pizzeria?pizzeria=<?= $row['id'];?>"><?php echo $row['namn']; ?> </a>
                         </li>
                         <?php
                     }      

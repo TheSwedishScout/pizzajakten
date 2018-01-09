@@ -2,7 +2,7 @@
 	$no_balls = 'true';
 	include ('header.php');
     if(!isset($_SESSION['user'])){
-      header('location: logIn.php');
+      header('location: logIn');
       exit();
     }
 

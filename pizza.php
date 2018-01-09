@@ -57,7 +57,7 @@
 <main class="left pizzerior">
          <!-- Lista på ingredienser-->
          <h1><?php echo $pizza['name']." - ";?>
-            <a href="pizzeria.php?pizzeria=<?= $pizza['namn']; ?>"><?= $pizza['namn']; ?></a>
+            <a href="pizzeria?pizzeria=<?= $pizza['namn']; ?>"><?= $pizza['namn']; ?></a>
              
 
          </h1>
@@ -88,11 +88,11 @@
             }
             ?>
         </h3>
-        <form action="varukorg.php" method="POST">
+        <form action="varukorg" method="POST">
             <input type="submit" name="Välj denna" value="Välj pizza">
             <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
         </form>
-        <a href="pizzerior.php?ingredienser=<?= $ing; ?>">hitta andra pizzerior med denna pizza</a>
+        <a href="pizzerior?ingredienser=<?= $ing; ?>">hitta andra pizzerior med denna pizza</a>
 </main>
 
 

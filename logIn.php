@@ -2,7 +2,7 @@
 $no_balls = 'true';
 include 'header.php';
 if(isset($_SESSION['user'])){
-  header('location: Min-Sida.php');
+  header('location: Min-Sida');
   exit();
 }
 ?>

@@ -51,6 +51,6 @@ if(empty($errors)){
 	$conn->close();
 }
 
-header("Location: ../Min-Sida.php"); // eller JSON
+header("Location: ../Min-Sida"); // eller JSON
 exit();
 ?>

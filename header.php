@@ -82,35 +82,35 @@
 	$p_page = '';
 	$n_page_hidden = '';
 	$p_page_hidden = '';
-	$page = explode(".", $page)[0];
+	$page = explode("?", $page)[0];
 	switch ($page) {
 		case '':
-			$n_page = "pizzerior.php";
+			$n_page = "pizzerior";
 			$print_page = "Start";
 			$p_page_hidden = 'hidden'; //döljer previous page
 			$page_nr = 1;
 			break;
 		case "index":
-			$n_page = "pizzerior.php";
+			$n_page = "pizzerior";
 			$print_page = "Start";
 			$p_page_hidden = 'hidden'; //döljer previous page
 			$page_nr = 1;
 			break;
 		case "pizzerior":
-			$n_page = "varukorg.php";
-			$print_page = "Välj pizzeriap";
-			$p_page = "index.php";
+			$n_page = "varukorg";
+			$print_page = "Välj pizzeria";
+			$p_page = "index";
 			$page_nr = 2;
 			break;
 		case "varukorg":
-			$n_page = "kassa.php";
+			$n_page = "kassa";
 			$print_page = "Varukorg";
-			$p_page = "pizzerior.php";
+			$p_page = "pizzerior";
 			$page_nr = 3;
 			break;
 		case "kassa":
 			$n_page_hidden = 'hidden'; //döljer next page
-			$p_page = "varukorg.php";
+			$p_page = "varukorg";
 			$print_page = "Kassa";
 			$page_nr = 4;
 			break;
@@ -128,7 +128,7 @@
 
 
 <!-- Hamburgermenyn -->
-<body>
+<body class='<?php echo($page); if(isset($no_balls)) {echo " small";}?>'>
 
 
 	<?php
@@ -147,17 +147,17 @@
 <div class="container <?php if(isset($print_page)){echo(trim($print_page));}else{echo(trim($page));} ?>">
 	<header>
 		<img id="burger" class="shadow" src="images/burger.png"/>
-		<a href="index.php" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
+		<a href="./" class="logga"><img src="images/logotyp.svg" alt="Logga"></a>
 		
 		<?php //länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
 		if(isset($_SESSION['user']['nr']) && !empty($_SESSION['user']['nr'])){
-        	echo '<a href="Min-Sida.php"><img id="user" src="images/user.png" alt="min sida"><small>Min sida</small></a>';
+        	echo '<a href="Min-Sida"><img id="user" src="images/user.png" alt="min sida"><small>Min sida</small></a>';
 		}else{
-        	echo '<a href="logIn.php"><img id="user" src="images/user.png" alt="min sida"><small>logga in</small></a>';
+        	echo '<a href="logIn"><img id="user" src="images/user.png" alt="min sida"><small>logga in</small></a>';
 		}
 		?>
 
-        <a href="varukorg.php"><img id="cart" src="images/cart.png"><div class="counter counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
+        <a href="varukorg"><img id="cart" src="images/cart.png"><div class="counter counter2"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
         <small>Varukorg</small></a>
 	</header>
 
@@ -178,7 +178,7 @@
 
 		<li>
 			
-			<a class= "active" href="index.php">
+			<a class= "active" href="index">
 
 				<img src="images/pizza1.png"/>
 				<p>Välj ingredienser</p>
@@ -197,7 +197,7 @@
 		</li>
 		<li>
 			<div class="line left-line"></div>
-			<a class=" <?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0  ? 'active' : null; ?>" href="<?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0 ? 'varukorg.php' : '#' ?>">
+			<a class=" <?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0  ? 'active' : null; ?>" href="<?php echo (isset($page_nr) && $page_nr > 2) || $items_in_cart > 0 ? 'varukorg' : '#' ?>">
 				<img src="images/pizza3.png">
 				<p>Varukorg</p>
 				
@@ -207,7 +207,7 @@
 		</li>
 		<li>
 			<div class="line left-line"></div>
-			<a class=" <?php echo isset($page_nr) && $page_nr > 3 ? 'active' : null; ?>" href="<?php echo isset($page_nr) && $page_nr > 3 ? 'kassa.php' : '#' ?>">
+			<a class=" <?php echo isset($page_nr) && $page_nr > 3 ? 'active' : null; ?>" href="<?php echo (isset($page_nr) && $page_nr > 3) || $items_in_cart > 0 ? 'kassa' : '#' ?>">
 				<img src="images/pizza4.png">
 				<p>Beställ</p>
 

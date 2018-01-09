@@ -12,7 +12,7 @@
             <br><br>
             Vi gillar pizza, och vi gillar dig. <br>Så det här känns som en match made in heaven!</p>
 
-            <button id="help-button" type="button"><a href="index.php">Hitta din pizza!</a></button>
+            <button id="help-button" type="button"><a href="/">Hitta din pizza!</a></button>
     </div>
 
 </div>

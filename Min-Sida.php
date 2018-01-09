@@ -2,7 +2,7 @@
 	$no_balls = 'true';
 	include ('header.php');
     if(!isset($_SESSION['user'])){
-      header('location: logIn.php');
+      header('location: logIn');
       exit();
     }
 
@@ -29,7 +29,7 @@ include 'assets/min-sida-tabs.php';
 		}
 ?>
 			        <br>
-        <br><a href="assets/logOut.php">Logga ut</a><br>
+        <br><a href="assets/logOut">Logga ut</a><br>
 
     </div>
 </main>
@@ -55,19 +55,19 @@ include 'assets/min-sida-tabs.php';
 		?>
         <div class="userRight">
             <h1>Uppdatera adress</h1>
-            <form action="assets/updateUser.php" method="POST">
-                <input type="text" name="adress" value="<?= $userinfo['adress'] ?>">
-                <input type="nmmer" name="post_nr" value="<?= $userinfo['post_nr'] ?>">
-                <input type="ort" name="ort" value="<?= $userinfo['ort'] ?>">
+            <form action="assets/updateUser" method="POST">
+                <input type="text" name="adress"  required placeholder="Adress" value="<?= $userinfo['adress'] ?>">
+                <input type="nmmer" name="post_nr"  required placeholder="post nr" value="<?= $userinfo['post_nr'] ?>">
+                <input type="ort" name="ort"  required placeholder="Ort" value="<?= $userinfo['ort'] ?>">
                 <h1>Uppdatera mailadress</h1>
-                <input type="email" name="email" value="<?= $userinfo['email'] ?>">
+                <input type="email" name="email" required placeholder="namn@domain.com" value="<?= $userinfo['email'] ?>">
                 <input class="spara" type="submit" name="" value="Spara">
             </form>
                     <h1>Uppdatera lösenord</h1>
-            <form action="assets/updateUserPassword.php"  method="POST">
+            <form action="assets/updateUserPassword"  method="POST">
 
-                <input type="password" name="password" placeholder="********">
-                <input type="password" name="password2" placeholder="********">
+                <input type="password" name="password" placeholder="********" minlength="8" required>
+                <input type="password" name="password2" placeholder="********" minlength="8" required>
                 <input class="spara" type="submit" name="" value="Spara">
             </form>
         </div>

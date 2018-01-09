@@ -56,7 +56,7 @@
 		<ul>
 		<?php
 		foreach ($pizzerior as $pizzeria) {
-			echo("<li><a href='pizzeria.php?pizzeria={$pizzeria}'>".$pizzeria."</a></li>");
+			echo("<li><a href='pizzeria?pizzeria={$pizzeria}'>".$pizzeria."</a></li>");
 		}
 	}
 ?>
@@ -70,20 +70,20 @@
         <?php
         foreach ($pizzerior as $pizzeria) {
         	?>
-        	<li><a href="pizzeria.php?pizzeria=<?= $pizzeria; ?>"><button><p>Hitta fler pizzor hos <?= $pizzeria; ?></p></button></a></li>
+        	<li><a href="pizzeria?pizzeria=<?= $pizzeria; ?>"><button><p>Hitta fler pizzor hos <?= $pizzeria; ?></p></button></a></li>
         	<?php
         }
         ?>
-        <li><a href="index.php"><button><p>Forsätt handla</p></button></a></li>
+        <li><a href="/"><button><p>Forsätt handla</p></button></a></li>
         <?php if (!empty($_SESSION["shopping-cart"])){ ?>
-        <li ><a href="kassa.php"><button id="tillKassa"><p>Gå till kassan</p></button></a></li>
+        <li ><a href="kassa"><button id="tillKassa"><p>Gå till kassan</p></button></a></li>
         <?php 
     	}else{
     		?><li><a href="#"><button><p>Gå till kassan</p></button></a></li><?php
     	}
         if(!isset($_SESSION['user'])){
 	        ?>
-	        <li><a href="logIn.php"><button><p>Logga in</p></button></a></li>
+	        <li><a href="logIn"><button><p>Logga in</p></button></a></li>
 	        <?php
         } 
          ?>

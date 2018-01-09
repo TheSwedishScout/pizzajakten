@@ -11,7 +11,7 @@ $i = 1;
 foreach ($tabpages as $url => $name) {
     ?>
     <li class="tab<?= $i; ?> <?php echo $page == $url ? 'active' : ''; ?>">
-        <a href="<?= $url; ?>.php"><?= $name; ?></a>
+        <a href="<?= $url; ?>"><?= $name; ?></a>
     </li>
     <?php
     $i++;
@@ -20,7 +20,7 @@ foreach ($tabpages as $url => $name) {
     if($_SESSION['user']['lvl'] >= 2){
         ?>
         <li class="tab<?= $i; ?>">
-            <a href="./admin">admin</a>
+            <a href="./admin/index">admin</a>
         </li>
         <?php           
     }  

@@ -42,7 +42,7 @@
         $_SESSION['shopping-cart'] = []; //Gör att sessionen avslutas och tidigare beställning rensas (startar om på 0 beställningar)
     
         ?>
-	<a href="index.php"><button><p>Forsätt handla</p></a></button></li>
+	<a href="/"><button><p>Forsätt handla</p></a></button></li>
 </div>
 
 

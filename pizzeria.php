@@ -103,7 +103,7 @@
                 $ingredienser = explode(",", $pizza['ingredienser']);
                 ?>
                 <li>
-                    <h2><a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a> 
+                    <h2><a href="pizza?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a> 
                     <?php 
                         if(isset($_SESSION['user'])){ 
                             //$ost = in_array($pizza['id'], $favorites);
@@ -129,7 +129,7 @@
                         }
                         ?>
                         </h2>
-                         <form action="varukorg.php" method="POST">
+                         <form action="varukorg" method="POST">
                         <input type="submit" name="Välj denna" value="Välj pizza">
                         
                         <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">

@@ -25,7 +25,7 @@
             <h1>Inga valda ingredienser</h1>
             <br>
             <br>
-            <p><a href="index.php">Börja om!</a></p>
+            <p><a href="/">Börja om!</a></p>
         </main>
         <main class="right pizzerior">
             
@@ -53,12 +53,12 @@
                         <!--                                
                         Här väljer vi ut de delar från arrayen row vi vill echo'a ut. Vi gör li-element för varje som hjälper oss med styling
                         -->
-                        <h2><a href="pizza.php?pizza=<?= $row['id']; ?>"><?php echo($row['name']); ?></a></h2>
-                        <h3><a href="pizzeria.php?pizzeria=<?= $row['pid']; ?>"><?php echo($row['namn']); ?></a></h3>
+                        <h2><a href="pizza?pizza=<?= $row['id']; ?>"><?php echo($row['name']); ?></a></h2>
+                        <h3><a href="pizzeria?pizzeria=<?= $row['pid']; ?>"><?php echo($row['namn']); ?></a></h3>
                         <p><?php echo($row['adress']); ?></p>
                         <h3><?php echo($row['pris']); ?> kr</h3>
                         <p>Favoriserad av <?php echo($row['favorits']);?> personer</p>
-                        <form action="varukorg.php" method="POST">
+                        <form action="varukorg" method="POST">
                             <input type="submit" name="Välj denna" value="Välj pizza">
                             
                             <input type="hidden" name="pizza" value="<?php echo $row['id'] ?>">

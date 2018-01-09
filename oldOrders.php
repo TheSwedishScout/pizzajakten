@@ -2,7 +2,7 @@
 	$no_balls = 'true';
 	include ('header.php');
     if(!isset($_SESSION['user'])){
-      header('location: logIn.php');
+      header('location: logIn');
       exit();
     }
 
@@ -72,7 +72,7 @@ SELECT order
                 	//var_dump($row);
                 	?>
                 	<li>
-                		<a href="pizza.php?pizza=<?= $row['pizzaID'];?>">
+                		<a href="pizza?pizza=<?= $row['pizzaID'];?>">
 	                		<h2><?= $row['name'];?> - <?= $row['namn'];?></h2>
 	                		<p>pris: <?= $row['pris'];?> kr</p>
                 		</a>

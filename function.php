@@ -91,7 +91,7 @@ function printPizza($pizzaid){
 			<ul>
 				<form method="post">
 				<!--Denna kod skriver ut i en tabell alla de saker som hämtats från db-->
-				<li class="Pizza_namn"><a href="pizza.php?pizza=<?= $row['id'];?>"><?php echo $row["name"]; ?></a><input class="raderaKnapp" type="submit" name="delete" value="Ta bort"></li>
+				<li class="Pizza_namn"><a href="pizza?pizza=<?= $row['id'];?>"><?php echo $row["name"]; ?></a><input class="raderaKnapp" type="submit" name="delete" value="Ta bort"></li>
 				<li><p><?= $row['ing']; ?></p></li>
 				<!--<li><?php echo $row["pizza_ingredienser"]; ?></li>-->
 				<li class="Pizza_pris"><?php echo $row["pris"]; ?> kr</li> 
@@ -130,7 +130,7 @@ function printPizzaAdd($pizza){
 $ingredienser = explode(",", $pizza['ingredienser']);
 	?>
     <li>
-        <h2><a href="pizza.php?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a> 
+        <h2><a href="pizza?pizza=<?= $pizza['id']; ?>"><?php echo($pizza['name']); ?></a> 
         <?php 
             if(isset($_SESSION['user'])){ 
                 //$ost = in_array($pizza['id'], $favorites);
@@ -156,7 +156,7 @@ $ingredienser = explode(",", $pizza['ingredienser']);
             }
             ?>
             </h2>
-             <form action="varukorg.php" method="POST">
+             <form action="varukorg" method="POST">
             <input type="submit" name="Välj denna" value="Välj pizza">
             
             <input type="hidden" name="pizza" value="<?php echo $pizza['id'] ?>">
@@ -180,7 +180,7 @@ function printBurger($dirtotop, $items_in_cart)
 	<div id="meny" class="shadow">
 		<div class="links">
 			
-		<a href="<?= $dirtotop; ?>/varukorg.php">
+		<a href="<?= $dirtotop; ?>/varukorg">
 			<img src="<?= $dirtotop; ?>/images/cart.png" alt="Varukorg">
 			<div class="counter counter1"><?php echo $items_in_cart; ?></div><!-- Echoar ut antal saker som ska ligga i varukorgen-->
 			<small>Varukorg</small>
@@ -189,17 +189,17 @@ function printBurger($dirtotop, $items_in_cart)
 		<?php 
 		//länkar min-sida ikonen till min sida eller login sidan beroende på om man ör inloggad eller ej
 		if(isset($_SESSION['user'])){ 
-        	echo '<a href="Min-Sida.php"><img src="'.$dirtotop.'/images/user.png" alt="min sida"><small>Min sida</small></a>';
+        	echo '<a href="Min-Sida"><img src="'.$dirtotop.'/images/user.png" alt="min sida"><small>Min sida</small></a>';
 		}else{
-        	echo '<a href="logIn.php"><img src="'.$dirtotop.'/images/user.png" alt="logga in"><small>Logga in</small></a>';
+        	echo '<a href="logIn"><img src="'.$dirtotop.'/images/user.png" alt="logga in"><small>Logga in</small></a>';
 		}
 
 		?>
 		</div>
 		<nav>
             <h3><a href="<?= $dirtotop; ?>/">Hem</a></h3>
-            <h3><a href="<?= $dirtotop; ?>/help.php">Hur fungerar det?</a></h3>
-            <h3><a href="<?= $dirtotop; ?>/hittaPizzeria.php">Hitta din pizzeria</a></h3>
+            <h3><a href="<?= $dirtotop; ?>/help">Hur fungerar det?</a></h3>
+            <h3><a href="<?= $dirtotop; ?>/hittaPizzeria">Hitta din pizzeria</a></h3>
 		</nav>
 		<!--<input type="search" placeholder="sök" name="">-->
 	</div>

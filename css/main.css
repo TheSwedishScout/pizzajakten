@@ -428,7 +428,7 @@ input[type=search] {
 
 .tabs li.active{
 	/*border-radius: 23px 23px 0 0;*/
-	z-index: 10;
+	z-index: 10 !important;
 }
 .tabs li a{
 	display: block;
@@ -655,6 +655,9 @@ button {
     font-family: helvetica;
     cursor: pointer;
 }
+button:hover{
+	background-color: #5B9D5A;
+}
 
 button:active {
   background-color: #499348;
@@ -662,6 +665,12 @@ button:active {
 
 .activeButton {
 	background: #499348;
+}
+button.activeButton:hover{
+	background-color: #ed5e5e;
+}
+button.unvanted{
+	background-color: #ed5e5e;
 }
 .resultatInner a{
 	display:block;
@@ -1538,7 +1547,8 @@ main.left.pizzerior h1{
 
 .minInfo img {
     padding-top: 10%;
-    width: 50%;
+    max-height: 150px;
+    width: auto;
 }
 
 .minInfo h1 {

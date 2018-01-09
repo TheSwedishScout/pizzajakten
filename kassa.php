@@ -67,7 +67,7 @@ $pizzerior = [];
 <main class="right kassa">
 	<h2 class="order">Kassa</h2>
 	<h3 id="kassaH3">Fyll i dina uppgifter så skickas din beställning till pizzerian</h3>
-		<form class="kassa" action="klar.php" method="POST">
+		<form class="kassa" action="klar" method="POST">
 <!--            Vi sätter ett value där vi lägger in variablerna vi har hämtat från tabellen-->
 		  <input type="text" value="<?php echo $fnamn;?>" name="firstname" placeholder="Förnamn" required>
 		  <input type="text" value="<?php echo $enamn;?>" name="lastname" placeholder="Efternamn" required>

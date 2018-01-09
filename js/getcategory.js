@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(){ //Ser till att scriptet inte laddar förens allt är inladdat
     var choosenIng = [];
     var choosenIngElem = [];
+    var deChoosenIng = [];
+    var deChoosenIngElem = [];
     function GetCategory(cat) { 
         ajax.get("assets/getcategory.php", {'category':cat}, function (data) { // hämtar data från asset... med en get parameter "category" 
             var options= JSON.parse(data); // skapar en array från json data
@@ -18,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 (btn.addEventListener('click', adding));
 
                 function adding(e){
-                    this.classList.toggle('activeButton') // aktiv knapp som är tryckt. går att "trycka av"
+                    this.classList.add('activeButton') // aktiv knapp som är tryckt. går att "trycka av"
                     
                     var index = choosenIng.indexOf(this.innerText);
                     if (index > -1){
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
             for (var pizza of result ){
                 //Create and print a pizza object
                 var link = document.createElement("a");
-                link.href = "pizzerior.php?ingredienser="+pizza.ingredienser.join(",")
+                link.href = "pizzerior?ingredienser="+pizza.ingredienser.join(",")
                 var li = document.createElement("li");
                 li.classList.add("resultatInner");
                 var image = document.createElement("img");
