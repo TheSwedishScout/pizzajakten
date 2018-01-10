@@ -20,23 +20,31 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
                 (btn.addEventListener('click', adding));
 
                 function adding(e){
-                    this.classList.add('activeButton') // aktiv knapp som är tryckt. går att "trycka av"
                     
                     var index = choosenIng.indexOf(this.innerText);
-                    if (index > -1){
+                    var indexNot = deChoosenIng.indexOf(this.innerText);
+                    if (index > -1){ //Finns i arrayn chosen ing
                         choosenIng.splice(index,1);
                         choosenIngElem[index].classList.remove('activeButton');
+                        choosenIngElem[index].classList.add('unvanted');
                         choosenIngElem.splice(index,1);
                         var indexOfElem = choosenIngElem.indexOf(this);
+                        deChoosenIng.push(this.innerText);
+                        deChoosenIngElem.push(this);
                         
+                    }else if(indexNot > -1){ // i unselected
+                        deChoosenIng.splice(indexNot,1);
+                        deChoosenIngElem[indexNot].classList.remove('unvanted');
+                        deChoosenIngElem.splice(indexNot,1);
                     }else{
+                        this.classList.add('activeButton') // aktiv knapp som är tryckt. går att "trycka av"
                         choosenIng.push(this.innerText);
                         choosenIngElem.push(this);
                     }
-                    GetPizza(choosenIng);
+                    GetPizza(choosenIng, deChoosenIng);
                     //splice gör att det tas bort från arrayen
                     console.log(choosenIng);
-                    console.log(choosenIngElem);
+                    console.log(deChoosenIng);
                     
                     //Add a list of selected items on the top
                     var ul = document.getElementById('selected');
@@ -83,10 +91,12 @@ document.addEventListener("DOMContentLoaded", function(){ //Ser till att scripte
         // hämta ingredienserna som ska visas under den tabben
         // byt bakgrundsfärg på main
 
-    function GetPizza(choosenIng) { 
+    function GetPizza(choosenIng, deChoosenIng) { 
         var valda = choosenIng;
-        ajax.get("assets/getPizzas.php", {'ingredienser':choosenIng}, function (data) { // hämtar data från asset... med en get parameter 
+        var ovalda = deChoosenIng;
+        ajax.get("assets/getPizzas.php", {'ingredienser':choosenIng, 'ejdessa': deChoosenIng}, function (data) { // hämtar data från asset... med en get parameter 
             var result = JSON.parse(data);
+            console.log(result);
             var ul = document.getElementsByClassName('resultat')[0];
             ul.innerHTML = "";
             for (var pizza of result ){

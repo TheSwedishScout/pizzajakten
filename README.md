@@ -6,7 +6,7 @@
 * mobile frendly (jobba om all css)
 * Sortera pizzor på olika vis när man visar all pizzerior som har den pizzan.
 * stjärn markerade pizzor visas på något vis när man väljer pizzeria
-* kunna välja INTE ingredienser för att få pizzor utan speciella saker på.
+* ~~kunna välja INTE ingredienser för att få pizzor utan speciella saker på.~~ Bättea på utsendet
 * ränsa alla valda ingredienser
 * karta till alla pizzorior på "hitta din pizzeria"
 

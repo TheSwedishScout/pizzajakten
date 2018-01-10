@@ -31,6 +31,12 @@ if(isset($_GET['ingredienser'])){
     //trim — Strip whitespace (or other characters) from the beginning and end of a string
 	$ingred = array_map("trim",explode(",", $ing)); //array_map är en funktion som tar alla ingrediener 
 	$ingred = implode("' OR ingrediens LIKE '", $ingred); //Returnerar en sträng av arrayen 
+
+	if (isset($_GET['ejdessa'])){
+		$noting = test_input($_GET['ejdessa']);	
+		$noting = array_map("strtolower",array_map("trim",explode(",", $noting))); //array_map är en funktion som tar alla ingrediener 
+		//$ingred .= implode("' OR ingrediens LIKE '", $noting); //Returnerar en sträng av arrayen 
+	}
 	//$ingred = implode("', '", $ingred); //Returnerar en sträng av arrayen 
 
     //räknar hur många av någonting det finns 
@@ -60,15 +66,20 @@ if(isset($_GET['ingredienser'])){
 		$ingredienser = [];
 		$namn = "";
 
+		$exists = false;
 		while($row = $result->fetch_assoc()) {
-			$ingredienser[] = ($row['ingrediens']);
+			if (in_array ( strtolower($row['ingrediens']), $noting)){
+				
+				$exists = true;
+				//echo "hej";
+			}
+			$ingredienser[] = ucfirst(strtolower($row['ingrediens']));
 			$namn = $row['name'];
 		}
 
 		//sorterar ingredienser i bokstavsordning
         sort($ingredienser);
         //en check-variabel. säkerhet typ. Man checkar pizorns ingredienser. Om de finns så breakar det och det fortsätter inte till if.
-		$exists = false;
 		foreach ($pizzor as $check) {
 			if($check->ingredienser == $ingredienser){
 				$exists = true;
